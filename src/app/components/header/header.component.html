@@ -4,11 +4,11 @@
         <img src="../../../assets/iconos/sillon.svg" alt="Sillon">
     </div>
     <ul>
-        <li>Inicio</li>
-        <li>Productos</li>
-        <li>Acerca de</li>
-        <li>FAQ</li>
-        <li>Contacto</li>
+        <li 
+            *ngFor="let opcion of opciones"
+            [ngClass]="{'selected': opcion == navOpcion}"   
+            (click)="cambiarOpcion(opcion)" 
+        >{{opcion}}</li>
     </ul>
     <div class="iconos">
         <img src="../../../assets/iconos/lupa.svg" alt="Buscar">
