@@ -1,0 +1,21 @@
+.item,
+.beneficios {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.beneficios {
+    padding: 20px 50px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+}
+
+.item {
+    gap: 20px;
+}
+
+.item > img {
+    transform: scale(0.6);
+}
