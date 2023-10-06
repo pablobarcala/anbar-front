@@ -8,6 +8,7 @@ import { DestacadosComponent } from './components/destacados/destacados.componen
 import { DestacadoItemComponent } from './components/destacado-item/destacado-item.component';
 import { SubrayadoComponent } from './components/subrayado/subrayado.component';
 import { BeneficiosComponent } from './components/beneficios/beneficios.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BeneficiosComponent } from './components/beneficios/beneficios.componen
     DestacadosComponent,
     DestacadoItemComponent,
     SubrayadoComponent,
-    BeneficiosComponent
+    BeneficiosComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule
