@@ -1,0 +1,18 @@
+.container-opciones {
+    display: flex;
+    padding: 20px 0;
+    gap: 10px;
+}
+
+.opcion {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 600;
+    background-color: #777777;
+}
+
+.opcion.selected {
+    background-color: var(--main-color);
+}
