@@ -5,8 +5,7 @@
     </div>
     <ul>
         <li 
-            *ngFor="let opcion of opciones"   
-            (click)="cambiarOpcion(opcion)"
+            *ngFor="let opcion of opciones" 
             routerLink="{{opcion}}"
             [routerLinkActive]="'selected'"
         >{{opcion}}</li>

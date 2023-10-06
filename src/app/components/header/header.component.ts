@@ -14,16 +14,4 @@ export class HeaderComponent {
     "FAQ",
     "Contacto"
   ]
-
-  navOpcion: string = ''
-
-  constructor(
-    private menuService: MenuService
-  ){
-    menuService.getOpcion().subscribe(opcion => this.navOpcion = opcion)
-  }
-
-  cambiarOpcion(opcion: string){
-    this.menuService.cambiarOpcion(opcion)
-  }
 }
