@@ -1,28 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { InicioModule } from './modules/inicio/inicio.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { DestacadosComponent } from './components/destacados/destacados.component';
-import { DestacadoItemComponent } from './components/destacado-item/destacado-item.component';
 import { SubrayadoComponent } from './components/subrayado/subrayado.component';
-import { BeneficiosComponent } from './components/beneficios/beneficios.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
+import { RoutingModule } from './modules/routing/routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
-    DestacadosComponent,
-    DestacadoItemComponent,
-    SubrayadoComponent,
-    BeneficiosComponent,
-    CarouselComponent
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RoutingModule,
+    InicioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
