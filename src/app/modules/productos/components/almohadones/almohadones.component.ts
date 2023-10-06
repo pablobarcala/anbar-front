@@ -16,27 +16,27 @@ export class AlmohadonesComponent {
     {
       nombre: "Combo zig zag gris",
       precio: 1700,
-      categorias: ["Almohadon", "Gris"]
+      categorias: ["Almohadones", "Gris"]
     },
     {
       nombre: "Combo b/n",
       precio: 1500,
-      categorias: ["Almohadon", "B / N", "Living"]
+      categorias: ["Almohadones", "B / N", "Living"]
     },
     {
       nombre: "Combo rosa",
       precio: 1700,
-      categorias: ["Almohadon", "Rosa"]
+      categorias: ["Almohadones", "Rosa"]
     },
     {
       nombre: "Combo zig zag gris",
       precio: 1700,
-      categorias: ["Almohadon", "Gris"]
+      categorias: ["Almohadones", "Gris"]
     },
     {
       nombre: "Combo zig zag gris",
       precio: 1700,
-      categorias: ["Almohadon", "Gris"]
+      categorias: ["Almohadones", "Gris"]
     }
   ]
 }
