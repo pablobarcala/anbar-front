@@ -1,4 +1,7 @@
 div {
     background-color: var(--bg-color);
+}
+
+div.main {
     padding: 0 130px;
 }

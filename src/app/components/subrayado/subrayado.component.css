@@ -1,0 +1,22 @@
+.subrayado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linea1 {
+    background-color: #000;
+    width: 380px;
+    height: 8px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.linea2 {
+    background-color: var(--second-color);
+    width: 310px;
+    height: 10px;
+    border-radius: 10px;
+    position: relative;
+    top: -3px;
+}
