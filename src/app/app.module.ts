@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { SubrayadoComponent } from './components/subrayado/subrayado.component';
 import { RoutingModule } from './modules/routing/routing.module';
+import { ProductosModule } from './modules/productos/productos.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RoutingModule } from './modules/routing/routing.module';
   imports: [
     BrowserModule,
     RoutingModule,
-    InicioModule
+    InicioModule,
+    ProductosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

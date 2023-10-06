@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Almohadones</h2>
+    <div 
+        class="item"
+        *ngFor="let almohadon of almohadones"    
+    >
+        <h3>{{almohadon.nombre}}</h3>
+        <p>${{almohadon.precio}}</p>
+        <div class="categorias">
+            <div *ngFor="let categoria of almohadon.categorias">{{categoria}}</div>
+        </div>
+    </div>
+</div>

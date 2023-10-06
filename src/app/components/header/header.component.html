@@ -5,10 +5,10 @@
     </div>
     <ul>
         <li 
-            *ngFor="let opcion of opciones"
-            [ngClass]="{'selected': opcion == navOpcion}"   
+            *ngFor="let opcion of opciones"   
             (click)="cambiarOpcion(opcion)"
             routerLink="{{opcion}}"
+            [routerLinkActive]="'selected'"
         >{{opcion}}</li>
     </ul>
     <div class="iconos">
