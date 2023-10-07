@@ -4,10 +4,13 @@
         class="item"
         *ngFor="let almohadon of almohadones"    
     >
-        <h3>{{almohadon.nombre}}</h3>
-        <p>${{almohadon.precio}}</p>
-        <div class="categorias">
-            <div *ngFor="let categoria of almohadon.categorias">{{categoria}}</div>
+        <img src="../../../../../assets/iconos/almohadones.png" width="10%" alt="Almohadones">
+        <div class="info">
+            <h3>{{almohadon.nombre}}</h3>
+            <p>${{almohadon.precio}}</p>
+            <div class="categorias">
+                <div *ngFor="let categoria of almohadon.categorias">{{categoria}}</div>
+            </div>
         </div>
     </div>
 </div>
