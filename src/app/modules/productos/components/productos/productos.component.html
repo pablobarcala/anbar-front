@@ -1,3 +1,11 @@
-<div>
-    <app-almohadones></app-almohadones>
+<div [ngSwitch]="navOpcion" class="container">
+    <div class="container-opciones">
+        <div
+            class="opcion"
+            *ngFor="let opcion of navegacion"
+            (click)="cambiarOpcion(opcion)"
+            [ngClass]="{'selected': opcion == navOpcion}"
+        >{{opcion}}</div>
+    </div>
+    <app-items [navOpcion]="navOpcion"></app-items>
 </div>

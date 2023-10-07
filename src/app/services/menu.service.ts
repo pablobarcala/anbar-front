@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class MenuService {
-  navOpcion: BehaviorSubject<string> = new BehaviorSubject<string>("")
+  navOpcion: BehaviorSubject<string> = new BehaviorSubject<string>("Almohadones")
 
   constructor() { }
 

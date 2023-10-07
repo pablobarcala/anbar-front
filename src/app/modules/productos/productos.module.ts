@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductosComponent } from './components/productos/productos.component';
-import { AlmohadonesComponent } from './components/almohadones/almohadones.component';
+import { ItemsComponent } from './components/items/items.component';
 
 
 
 @NgModule({
   declarations: [
     ProductosComponent,
-    AlmohadonesComponent
+    ItemsComponent
   ],
   imports: [
     CommonModule

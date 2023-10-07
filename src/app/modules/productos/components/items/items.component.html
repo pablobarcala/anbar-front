@@ -1,15 +1,15 @@
 <div class="container">
-    <h2>Almohadones</h2>
+    <h2>{{navOpcion}}</h2>
     <div 
         class="item"
-        *ngFor="let almohadon of almohadones"    
+        *ngFor="let producto of productosFiltrados" 
     >
         <img src="../../../../../assets/iconos/almohadones.png" width="10%" alt="Almohadones">
         <div class="info">
-            <h3>{{almohadon.nombre}}</h3>
-            <p>${{almohadon.precio}}</p>
+            <h3>{{producto.nombre}}</h3>
+            <p>${{producto.precio}}</p>
             <div class="categorias">
-                <div *ngFor="let categoria of almohadon.categorias">{{categoria}}</div>
+                <div *ngFor="let categoria of producto.categorias">{{categoria}}</div>
             </div>
         </div>
     </div>
