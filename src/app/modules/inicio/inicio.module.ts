@@ -6,6 +6,7 @@ import { DestacadosComponent } from './components/destacados/destacados.componen
 import { DestacadoItemComponent } from './components/destacado-item/destacado-item.component';
 import { BeneficiosComponent } from './components/beneficios/beneficios.component';
 import { SubrayadoComponent } from 'src/app/components/subrayado/subrayado.component';
+import { UltimosComponent } from './components/ultimos/ultimos.component';
 
 
 
@@ -16,7 +17,8 @@ import { SubrayadoComponent } from 'src/app/components/subrayado/subrayado.compo
     DestacadosComponent,
     DestacadoItemComponent,
     BeneficiosComponent,
-    SubrayadoComponent
+    SubrayadoComponent,
+    UltimosComponent
   ],
   imports: [
     CommonModule
