@@ -6,7 +6,7 @@
     <ul>
         <li 
             *ngFor="let opcion of opciones" 
-            routerLink="{{opcion}}"
+            routerLink="/main/{{opcion}}"
             [routerLinkActive]="'selected'"
         >{{opcion}}</li>
     </ul>

@@ -3,11 +3,22 @@ import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { InicioComponent } from '../inicio/components/inicio/inicio.component';
 import { ProductosComponent } from '../productos/components/productos/productos.component';
+import { HomeComponent } from 'src/app/components/home/home.component';
+import { LoginComponent } from '../admin/components/login/login.component';
+import { DashboardComponent } from '../admin/components/dashboard/dashboard.component';
+import { AdminComponent } from '../admin/components/admin/admin.component';
 
 const routes: Route[] = [
-  {path: '', redirectTo: '/Inicio', pathMatch: 'full'},
-  {path: 'Inicio', component: InicioComponent},
-  {path: 'Productos', component: ProductosComponent}
+  {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
+  {path: 'main', component: HomeComponent, children: [
+    {path: 'Inicio', component: InicioComponent},
+    {path: 'Productos', component: ProductosComponent}
+  ]},
+  {path: 'admin', component: AdminComponent, children: [
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
+    {path: 'login', component: LoginComponent},
+    {path: 'dashboard', component: DashboardComponent}
+  ]}
 ]
 
 @NgModule({
