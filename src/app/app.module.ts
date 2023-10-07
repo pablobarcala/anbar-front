@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { InicioModule } from './modules/inicio/inicio.module';
+import { RoutingModule } from './modules/routing/routing.module';
+import { ProductosModule } from './modules/productos/productos.module';
+import { AdminModule } from './modules/admin/admin.module';
+import { AcercaDeModule } from './modules/acerca-de/acerca-de.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { SubrayadoComponent } from './components/subrayado/subrayado.component';
-import { RoutingModule } from './modules/routing/routing.module';
-import { ProductosModule } from './modules/productos/productos.module';
-import { AdminModule } from './modules/admin/admin.module';
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
@@ -23,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RoutingModule,
     InicioModule,
     ProductosModule,
-    AdminModule
+    AdminModule,
+    AcercaDeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

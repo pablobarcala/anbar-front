@@ -7,12 +7,14 @@ import { HomeComponent } from 'src/app/components/home/home.component';
 import { LoginComponent } from '../admin/components/login/login.component';
 import { DashboardComponent } from '../admin/components/dashboard/dashboard.component';
 import { AdminComponent } from '../admin/components/admin/admin.component';
+import { AcercaDeComponent } from '../acerca-de/components/acerca-de/acerca-de.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
   {path: 'main', component: HomeComponent, children: [
     {path: 'Inicio', component: InicioComponent},
-    {path: 'Productos', component: ProductosComponent}
+    {path: 'Productos', component: ProductosComponent},
+    {path: 'Acerca de', component: AcercaDeComponent}
   ]},
   {path: 'admin', component: AdminComponent, children: [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
