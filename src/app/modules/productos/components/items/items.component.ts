@@ -3,7 +3,8 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 interface Producto {
   nombre: string,
   precio: number,
-  categorias: string[]
+  categorias: string[],
+  imagen: string
 }
 
 
@@ -17,22 +18,26 @@ export class ItemsComponent {
     {
       nombre: "Combo zig zag gris",
       precio: 1700,
-      categorias: ["Almohadones", "Gris"]
+      categorias: ["Almohadones", "Gris"],
+      imagen: "../../../../../assets/iconos/almohadones.png"
     },
     {
       nombre: "Combo b/n",
       precio: 1500,
-      categorias: ["Almohadones", "B / N", "Living"]
+      categorias: ["Almohadones", "B / N", "Living"],
+      imagen: "../../../../../assets/iconos/almohadones.png"
     },
     {
       nombre: "Combo rosa",
       precio: 1700,
-      categorias: ["Almohadones", "Rosa"]
+      categorias: ["Almohadones", "Rosa"],
+      imagen: "../../../../../assets/iconos/almohadones.png"
     },
     {
       nombre: "Mesa ratona",
       precio: 3000,
-      categorias: ["Muebles", "Gris"]
+      categorias: ["Muebles", "Gris"],
+      imagen: "https://drive.google.com/uc?export=view&id=10BCmPfRcQolhRQzOBD_ksysnkTnMnNdE"
     }
   ]
 

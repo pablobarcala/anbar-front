@@ -4,7 +4,7 @@
         class="item"
         *ngFor="let producto of productosFiltrados" 
     >
-        <img src="../../../../../assets/iconos/almohadones.png" width="10%" alt="Almohadones">
+        <img src="{{producto.imagen}}" width="10%" alt="Almohadones">
         <div class="info">
             <h3>{{producto.nombre}}</h3>
             <p>${{producto.precio}}</p>
