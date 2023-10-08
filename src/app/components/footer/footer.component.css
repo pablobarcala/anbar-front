@@ -18,3 +18,7 @@
 .redes h3 {
     font-size: 2rem;
 }
+
+.redes img {
+    transform: scale(0.6);
+}
