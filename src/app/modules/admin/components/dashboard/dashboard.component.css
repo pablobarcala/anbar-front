@@ -47,6 +47,10 @@ li {
     padding: 10px;
 }
 
+li:hover {
+    background-color: #b6b6b633;
+}
+
 li.selected {
     cursor: pointer;
     padding: 10px;
