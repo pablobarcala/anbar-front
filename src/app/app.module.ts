@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FaqModule } from './modules/faq/faq.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './components/footer/footer.component';
     InicioModule,
     ProductosModule,
     AdminModule,
-    AcercaDeModule
+    AcercaDeModule,
+    FaqModule
   ],
   providers: [],
   bootstrap: [AppComponent]
