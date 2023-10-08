@@ -11,9 +11,13 @@
         >{{opcion}}</li>
     </ul>
     <div class="iconos">
-        <img src="../../../assets/iconos/lupa.svg" alt="Buscar">
+        <img src="../../../assets/iconos/lupa.svg" alt="Buscar" (click)="mostrarBuscar()">
         <img src="../../../assets/iconos/bolsa.svg" alt="Bolsa">
         <div class="cantidad">0</div>
         <span class="precio">$0,00</span>
     </div>
 </div>
+<form action="" id="form">
+    <input type="text" placeholder="Buscar...">
+    <img src="../../../assets/iconos/lupa.svg" alt="Buscar">
+</form>

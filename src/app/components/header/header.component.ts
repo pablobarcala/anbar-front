@@ -14,4 +14,13 @@ export class HeaderComponent {
     "FAQ",
     "Contacto"
   ]
+
+  mostrarBuscar(){
+    const form = document.querySelector("#form")
+    if(form?.classList.contains("mostrar")){
+      form.classList.remove("mostrar")
+    } else {
+      form?.classList.add("mostrar")
+    }
+  }
 }
