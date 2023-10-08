@@ -9,7 +9,7 @@
             <h3>{{producto.nombre}}</h3>
             <p>${{producto.precio}}</p>
             <div class="categorias">
-                <div *ngFor="let categoria of producto.categorias">{{categoria}}</div>
+                <div *ngFor="let categoria of producto.categorias">{{categoria.nombre}}</div>
             </div>
         </div>
     </div>

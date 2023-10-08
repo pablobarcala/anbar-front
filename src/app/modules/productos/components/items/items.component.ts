@@ -1,10 +1,14 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ProductosService } from 'src/app/services/productos.service';
 
+interface Categoria {
+  nombre: string
+}
+
 interface Producto {
   nombre: string,
   precio: number,
-  categorias: string[],
+  categorias: Categoria[],
   imagen: string
 }
 
@@ -17,24 +21,24 @@ export class ItemsComponent {
   @Input() navOpcion: string = ""
 
   productos: Producto[] = [
-    {
-      nombre: "Combo zig zag gris",
-      precio: 1700,
-      categorias: ["Almohadones", "Gris"],
-      imagen: "../../../../../assets/iconos/almohadones.png"
-    },
-    {
-      nombre: "Combo b/n",
-      precio: 1500,
-      categorias: ["Almohadones", "B / N", "Living"],
-      imagen: "../../../../../assets/iconos/almohadones.png"
-    },
-    {
-      nombre: "Combo rosa",
-      precio: 1700,
-      categorias: ["Almohadones", "Rosa"],
-      imagen: "../../../../../assets/iconos/almohadones.png"
-    }
+    // {
+    //   nombre: "Combo zig zag gris",
+    //   precio: 1700,
+    //   categorias: ["Almohadones", "Gris"],
+    //   imagen: "../../../../../assets/iconos/almohadones.png"
+    // },
+    // {
+    //   nombre: "Combo b/n",
+    //   precio: 1500,
+    //   categorias: ["Almohadones", "B / N", "Living"],
+    //   imagen: "../../../../../assets/iconos/almohadones.png"
+    // },
+    // {
+    //   nombre: "Combo rosa",
+    //   precio: 1700,
+    //   categorias: ["Almohadones", "Rosa"],
+    //   imagen: "../../../../../assets/iconos/almohadones.png"
+    // }
   ]
 
   productosFiltrados: Producto[] = []
@@ -48,7 +52,8 @@ export class ItemsComponent {
 
     this.productos.forEach(producto => {
       producto.categorias.forEach(categoria => {
-        if(categoria == this.navOpcion){
+        if(categoria.nombre == this.navOpcion){
+          console.log(categoria)
           this.productosFiltrados.push(producto)
         }
       })
