@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ProductosService } from 'src/app/services/productos.service';
 
 interface Producto {
   nombre: string,
@@ -7,13 +8,14 @@ interface Producto {
   imagen: string
 }
 
-
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent {
+  @Input() navOpcion: string = ""
+
   productos: Producto[] = [
     {
       nombre: "Combo zig zag gris",
@@ -32,18 +34,14 @@ export class ItemsComponent {
       precio: 1700,
       categorias: ["Almohadones", "Rosa"],
       imagen: "../../../../../assets/iconos/almohadones.png"
-    },
-    {
-      nombre: "Mesa ratona",
-      precio: 3000,
-      categorias: ["Muebles", "Gris"],
-      imagen: "https://drive.google.com/uc?export=view&id=10BCmPfRcQolhRQzOBD_ksysnkTnMnNdE"
     }
   ]
 
   productosFiltrados: Producto[] = []
 
-  @Input() navOpcion: string = ""
+  constructor(private productosService: ProductosService){
+    productosService.getProductos().subscribe((productos: any) => this.productos = productos);
+  }
   
   filtro(){
     this.productosFiltrados = []

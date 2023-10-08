@@ -5,6 +5,7 @@ import { RoutingModule } from './modules/routing/routing.module';
 import { ProductosModule } from './modules/productos/productos.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { AcercaDeModule } from './modules/acerca-de/acerca-de.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -20,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RoutingModule,
     InicioModule,
     ProductosModule,
