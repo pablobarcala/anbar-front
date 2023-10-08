@@ -33,6 +33,7 @@ input:focus {
 }
 
 button {
+    font-family: "Maven Pro";
     cursor: pointer;
     border: none;
     border-radius: 15px;
