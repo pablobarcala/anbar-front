@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { ProductosService } from 'src/app/services/productos.service';
 
 interface Categoria {
@@ -44,7 +44,10 @@ export class ItemsComponent {
   productosFiltrados: Producto[] = []
 
   constructor(private productosService: ProductosService){
-    productosService.getProductos().subscribe((productos: any) => this.productos = productos);
+    productosService.getProductos().subscribe((productos: any) => {
+      this.productos = productos
+      this.filtro()
+    });
   }
   
   filtro(){
@@ -53,7 +56,6 @@ export class ItemsComponent {
     this.productos.forEach(producto => {
       producto.categorias.forEach(categoria => {
         if(categoria.nombre == this.navOpcion){
-          console.log(categoria)
           this.productosFiltrados.push(producto)
         }
       })
