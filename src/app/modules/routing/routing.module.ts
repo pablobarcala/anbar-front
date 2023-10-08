@@ -8,6 +8,8 @@ import { LoginComponent } from '../admin/components/login/login.component';
 import { DashboardComponent } from '../admin/components/dashboard/dashboard.component';
 import { AdminComponent } from '../admin/components/admin/admin.component';
 import { AcercaDeComponent } from '../acerca-de/components/acerca-de/acerca-de.component';
+import { AdminProductosComponent } from '../admin/components/admin-productos/admin-productos.component';
+import { AdminCategoriasComponent } from '../admin/components/admin-categorias/admin-categorias.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
@@ -19,7 +21,10 @@ const routes: Route[] = [
   {path: 'admin', component: AdminComponent, children: [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'login', component: LoginComponent},
-    {path: 'dashboard', component: DashboardComponent}
+    {path: 'dashboard', component: DashboardComponent, children: [
+      {path: 'admin-productos', component: AdminProductosComponent},
+      {path: 'admin-categorias', component: AdminCategoriasComponent}
+    ]}
   ]}
 ]
 

@@ -1,1 +1,9 @@
-<div>dashboard</div>
+<div class="container">
+    <div class="aside">
+        <ul>
+            <li routerLink="admin-productos" [routerLinkActive]="'selected'">Productos</li>
+            <li routerLink="admin-categorias" [routerLinkActive]="'selected'">Categorias</li>
+        </ul>
+    </div>
+    <router-outlet></router-outlet>
+</div>
