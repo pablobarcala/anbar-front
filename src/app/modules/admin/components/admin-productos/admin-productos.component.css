@@ -2,6 +2,28 @@
     padding: 0 30px;
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.title > .filtros {
+    display: flex;
+    gap: 20px;
+}
+
+.filtros > div {
+    background-color: #ccc;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.filtros > div.selected {
+    background-color: var(--main-color);
+    font-weight: 600;
+}
+
 h2 {
     padding: 20px 0;
 }

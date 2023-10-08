@@ -12,6 +12,7 @@ import { AdminProductosComponent } from '../admin/components/admin-productos/adm
 import { AdminCategoriasComponent } from '../admin/components/admin-categorias/admin-categorias.component';
 import { FaqComponent } from '../faq/components/faq/faq.component';
 import { ContactoComponent } from '../contacto/components/contacto/contacto.component';
+import { EditProductosComponent } from '../admin/components/edit-productos/edit-productos.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
@@ -26,8 +27,10 @@ const routes: Route[] = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'login', component: LoginComponent},
     {path: 'dashboard', component: DashboardComponent, children: [
-      {path: 'admin-productos', component: AdminProductosComponent},
-      {path: 'admin-categorias', component: AdminCategoriasComponent}
+      {path: 'admin-productos', component: AdminProductosComponent, children: [
+        {path: 'edit-producto', component: EditProductosComponent}
+      ]},
+      {path: 'admin-categorias', component: AdminCategoriasComponent},
     ]}
   ]}
 ]

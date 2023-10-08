@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminProductosComponent } from './components/admin-productos/admin-productos.component';
 import { AdminCategoriasComponent } from './components/admin-categorias/admin-categorias.component';
+import { EditProductosComponent } from './components/edit-productos/edit-productos.component';
 
 
 
@@ -15,7 +16,8 @@ import { AdminCategoriasComponent } from './components/admin-categorias/admin-ca
     DashboardComponent,
     AdminComponent,
     AdminProductosComponent,
-    AdminCategoriasComponent
+    AdminCategoriasComponent,
+    EditProductosComponent
   ],
   imports: [
     CommonModule,

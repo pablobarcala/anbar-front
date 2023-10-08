@@ -35,6 +35,18 @@ export class AdminProductosComponent {
       ],
       imagen: "link",
       descripcion: ""
+    },
+    {
+      nombre: "Combo zig zag gris",
+      precio: 1500,
+      cantidad: 5,
+      categorias: [
+        {
+          nombre: "Almohadones"
+        }
+      ],
+      imagen: "link",
+      descripcion: ""
     }
   ]
 

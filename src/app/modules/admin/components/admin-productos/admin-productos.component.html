@@ -1,5 +1,13 @@
 <div class="container">
-    <h2>Productos</h2>
+    <div class="title">
+        <h2>Productos</h2>
+        <div class="filtros">
+            <div class="selected">Almohadones</div>
+            <div>Muebles</div>
+            <div>Mesas</div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
     <table>
         <tr>
             <th>Nombre</th>
@@ -24,7 +32,7 @@
             <td>{{producto.descripcion}}</td>
             <td>{{producto.imagen}}</td>
             <td>
-                <button>Editar</button>
+                <button routerLink="edit-producto">Editar</button>
                 <button>Eliminar</button>
             </td>
         </tr>   
