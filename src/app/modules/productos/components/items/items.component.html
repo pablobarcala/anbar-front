@@ -1,5 +1,11 @@
 <div class="container">
-    <h2>{{navOpcion}}</h2>
+    <div class="title">
+        <h2>{{navOpcion}}</h2>
+        <form action="">
+            <input type="text" placeholder="Buscar...">
+            <img src="../../../../../assets/iconos/lupa.svg" alt="">
+        </form>
+    </div>
     <div 
         class="item"
         *ngFor="let producto of productosFiltrados" 

@@ -20,6 +20,8 @@ li,
 
 h1 {
     font-size: 2.25rem;
+    font-weight: 200;
+    letter-spacing: 5px;
     margin-right: 20px;
 }
 
@@ -63,7 +65,7 @@ img {
     font-size: 0.9rem;
     padding: 3px 6px;
     position: relative;
-    right: 8%;
+    right: 10%;
     top: -10px;
 }
 
@@ -71,42 +73,4 @@ img {
     padding-left: 20px;
     font-weight: 500;
     font-size: 1.5rem;
-}
-
-form {
-    display: none;
-    padding: 1% 20%;
-}
-
-input {
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    font-size: 1rem;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-    margin-right: 10px;
-}
-
-input:focus {
-    outline: none;
-}
-
-form.mostrar {
-    display: flex;
-    justify-content: flex-end;
-    animation: mostrarBuscador 0.4s ease forwards;
-}
-
-@keyframes mostrarBuscador {
-    0% {
-        transform: translateX(50%);
-    }
-
-    70% {
-        transform: translateX(-1%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
 }

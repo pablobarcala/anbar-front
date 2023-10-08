@@ -2,8 +2,35 @@
     padding: 20px 0;
 }
 
+.title {
+    animation: mostrarTitle 0.4s ease forwards;
+    display: flex;
+    justify-content: space-between;
+}
+
 h2 {
     font-size: 2rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+form > img {
+    cursor: pointer;
+    transform: scale(0.6);
 }
 
 .item {
@@ -35,4 +62,18 @@ img {
 
 .categorias > div:hover {
     background-color: #e6e6e6;
+}
+
+@keyframes mostrarTitle {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    70% {
+        transform: translateX(2%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
