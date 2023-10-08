@@ -11,6 +11,7 @@ import { AcercaDeComponent } from '../acerca-de/components/acerca-de/acerca-de.c
 import { AdminProductosComponent } from '../admin/components/admin-productos/admin-productos.component';
 import { AdminCategoriasComponent } from '../admin/components/admin-categorias/admin-categorias.component';
 import { FaqComponent } from '../faq/components/faq/faq.component';
+import { ContactoComponent } from '../contacto/components/contacto/contacto.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
@@ -18,7 +19,8 @@ const routes: Route[] = [
     {path: 'Inicio', component: InicioComponent},
     {path: 'Productos', component: ProductosComponent},
     {path: 'Acerca de', component: AcercaDeComponent},
-    {path: 'FAQ', component: FaqComponent}
+    {path: 'FAQ', component: FaqComponent},
+    {path: 'Contacto', component: ContactoComponent}
   ]},
   {path: 'admin', component: AdminComponent, children: [
     {path: '', redirectTo: 'login', pathMatch: 'full'},

@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FaqModule } from './modules/faq/faq.module';
+import { ContactoModule } from './modules/contacto/contacto.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FaqModule } from './modules/faq/faq.module';
     ProductosModule,
     AdminModule,
     AcercaDeModule,
-    FaqModule
+    FaqModule,
+    ContactoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

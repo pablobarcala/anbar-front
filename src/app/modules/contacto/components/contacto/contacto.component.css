@@ -1,0 +1,12 @@
+.container {
+    padding: 20px 0;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.info > p > .title {
+    font-weight: 600;
+    font-size: 1.5;
+}
