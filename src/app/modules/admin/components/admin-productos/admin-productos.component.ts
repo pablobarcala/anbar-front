@@ -10,7 +10,8 @@ interface Producto {
   precio: number,
   cantidad: number,
   categorias: Categoria[],
-  imagen: string
+  imagen: string,
+  descripcion: string
 }
 
 @Component({
@@ -19,9 +20,25 @@ interface Producto {
   styleUrls: ['./admin-productos.component.css']
 })
 export class AdminProductosComponent {
-  productos: Producto[] = []
+  productos: Producto[] = [
+    {
+      nombre: "Mesa ratona",
+      precio: 3000,
+      cantidad: 5,
+      categorias: [
+        {
+          nombre: "Muebles"
+        }, 
+        {
+          nombre: "Mesa"
+        }
+      ],
+      imagen: "link",
+      descripcion: ""
+    }
+  ]
 
   constructor(private productosService: ProductosService){
-    productosService.getProductos().subscribe((productos: any) => this.productos = productos)
+    // productosService.getProductos().subscribe((productos: any) => this.productos = productos)
   }
 }

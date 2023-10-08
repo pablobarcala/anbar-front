@@ -5,6 +5,10 @@
             <th>Nombre</th>
             <th>Precio</th>
             <th>Cantidad</th>
+            <th>Categorias</th>
+            <th>Descripcion</th>
+            <th>Link de imagen</th>
+            <th>Botones</th>
         </tr>
         <tr
             *ngFor="let producto of productos"
@@ -12,6 +16,17 @@
             <td>{{producto.nombre}}</td>
             <td>{{producto.precio}}</td>
             <td>{{producto.cantidad}}</td>
-        </tr>
+            <td>
+                <p
+                    *ngFor="let categoria of producto.categorias"
+                >{{categoria.nombre}}</p>
+            </td>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.imagen}}</td>
+            <td>
+                <button>Editar</button>
+                <button>Eliminar</button>
+            </td>
+        </tr>   
     </table>
 </div>
