@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Categoria } from '../interfaces/Categoria';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +12,9 @@ export class CategoriasService {
 
   getCategorias() {
     return this.http.get(this.apiurl + "/traer")
+  }
+
+  addCategoria(categoria: Categoria){
+    return this.http.post(this.apiurl + "/crear", categoria)
   }
 }

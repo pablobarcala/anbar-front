@@ -1,0 +1,13 @@
+<div class="container">
+    <form action="" [formGroup]="form" (submit)="guardarCategoria($event)">
+        <input type="text" placeholder="Nombre" formControlName="nombre">
+        <p 
+            class="error"
+            *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched"
+        >Se necesita un nombre de categoría</p>
+        <div class="botones">
+            <button type="submit">Guardar</button>
+            <button type="button" routerLink="../">Cerrar</button>
+        </div>
+    </form>
+</div>

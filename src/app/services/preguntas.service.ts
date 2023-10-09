@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Pregunta } from '../interfaces/Pregunta';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +12,9 @@ export class PreguntasService {
 
   getPreguntas(){
     return this.http.get(this.apiurl + "/traer")
+  }
+
+  addPregunta(pregunta: Pregunta){
+    return this.http.post(this.apiurl + "/crear", pregunta)
   }
 }
