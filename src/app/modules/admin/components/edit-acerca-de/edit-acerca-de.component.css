@@ -9,21 +9,40 @@ button {
 }
 
 form {
-    display: grid;
-    grid-template-columns: repeat(2, 40%);
-    column-gap: 10%;
     padding: 20px 0;
 }
 
-input {
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    column-gap: 10%;
+}
+
+input,
+textarea {
     border: none;
     background-color: #eee;
     padding: 5px 10px;
     border-radius: 15px;
     margin-bottom: 10px;
+    width: 100%;
     font-size: 1rem;
+    font-family: "Trebuchet MS";
 }
 
-input:focus {
+input:focus,
+textarea:focus {
     outline: none;
+}
+
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.error {
+    color: red;
+    padding-bottom: 10px;
+    font-size: 0.8rem;
 }

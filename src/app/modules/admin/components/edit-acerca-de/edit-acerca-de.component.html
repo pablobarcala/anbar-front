@@ -1,13 +1,43 @@
 <div class="container">
-    <form action="" [formGroup]="form">
-        <input type="text" placeholder="Nombre" value="{{nosotros?.nombre}}" formControlName="nombre">
-        <input type="text" placeholder="Apellido" value="{{nosotros?.apellido}}" formControlName="apellido">
-        <input type="text" placeholder="Empresa" value="{{nosotros?.empresa}}" formControlName="empresa">
-        <input type="text" placeholder="Información" value="{{nosotros?.informacion}}" formControlName="informacion">
-        <input type="text" placeholder="Link de imagen" value="{{nosotros?.imagen}}" formControlName="imagen">
-        <input type="text" placeholder="Teléfono" value="{{nosotros?.telefono}}" formControlName="telefono">
-        <input type="text" placeholder="Mail" value="{{nosotros?.mail}}" formControlName="mail">
+    <form action="" [formGroup]="form" (submit)="editarNosotros($event)">
+        <div class="form">
+            <div class="input">
+                <input type="text" placeholder="Nombre" value="{{nosotros?.nombre}}" formControlName="nombre">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Apellido" value="{{nosotros?.apellido}}" formControlName="apellido">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Empresa" value="{{nosotros?.empresa}}" formControlName="empresa">
+                <p
+                    class="error"
+                    *ngIf="form.get('empresa')?.hasError('required') && form.get('empresa')?.touched"
+                >Se necesita el nombre de empresa</p>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Link de imagen" value="{{nosotros?.imagen}}" formControlName="imagen">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Teléfono" value="{{nosotros?.telefono}}" formControlName="telefono">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Mail" value="{{nosotros?.mail}}" formControlName="mail">
+                <p
+                    class="error"
+                    *ngIf="form.get('mail')?.hasError('required') && form.get('mail')?.touched"
+                >Se necesita un mail</p>
+            </div>
+            <div class="input">
+                <textarea type="text" placeholder="Información" value="{{nosotros?.informacion}}" formControlName="informacion"></textarea>
+                <p
+                    class="error"
+                    *ngIf="form.get('informacion')?.hasError('required') && form.get('informacion')?.touched"
+                >Se necesita información</p>
+            </div>
+        </div>
+        <div class="botones">
+            <button type="submit">Guardar</button>
+            <button type="button" routerLink="../../">Cerrar</button>
+        </div>
     </form>
-    <button>Guardar</button>
-    <button routerLink="../../">Cerrar</button>
 </div>

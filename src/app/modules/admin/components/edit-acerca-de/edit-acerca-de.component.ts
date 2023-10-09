@@ -43,4 +43,20 @@ export class EditAcercaDeComponent {
       this.nosotros = nosotros.find(nosotros => nosotros.idnosotros == id)
     })
   }
+
+  editarNosotros(event: Event) {
+    event.preventDefault()
+
+    if(this.form.valid) {
+      this.nosotrosService.editarNosotros(this.form.get('idnosotros')?.value, this.form.value).subscribe(resp => {
+        if(resp) {
+          alert("Se editó correctamente")
+        } else {
+          alert("Hubo un error")
+        }
+      })
+    } else {
+      this.form.markAllAsTouched()
+    }
+  }
 }
