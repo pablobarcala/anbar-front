@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PreguntasService } from 'src/app/services/preguntas.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class AddPreguntasComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private preguntaService: PreguntasService
+    private preguntaService: PreguntasService,
+    private router: Router
   ){
     this.form = formBuilder.group({
       pregunta: ['', Validators.required],
@@ -27,6 +29,8 @@ export class AddPreguntasComponent {
       this.preguntaService.addPregunta(this.form.value).subscribe(resp => {
         if(resp) {
           alert("Se creó correctamente")
+          this.router.navigate(['/admin/dashboard/admin-faq'])
+          .then(() => window.location.reload())
         } else {
           alert("Hubo un error")
         }

@@ -9,13 +9,13 @@ button {
 }
 
 form {
-    padding: 20px 0;
     display: flex;
     flex-direction: column;
 }
 
 .form {
     display: flex;
+    padding: 20px 0;
 }
 
 input {

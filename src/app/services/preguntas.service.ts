@@ -17,4 +17,8 @@ export class PreguntasService {
   addPregunta(pregunta: Pregunta){
     return this.http.post(this.apiurl + "/crear", pregunta)
   }
+
+  editPregunta(id: number, pregunta: Pregunta){
+    return this.http.put(this.apiurl + `/editar/${id}`, pregunta)
+  }
 }
