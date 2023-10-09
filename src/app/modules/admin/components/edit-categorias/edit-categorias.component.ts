@@ -24,6 +24,7 @@ export class EditCategoriasComponent {
       this.filtrar(this.id)
     })
     this.form = formBuilder.group({
+      idcategorias: [this.id, Validators.required],
       nombre: ['', Validators.required]
     })
   }

@@ -1,17 +1,16 @@
 <div class="container">
-    <h3>Producto x</h3>
-    <button routerLink="../../">Cerrar</button>
-    <button>Guardar</button>
-    <form action="">
-        <input type="text" placeholder="Nombre" value="{{producto?.nombre}}">
-        <input type="number" placeholder="Precio" value="{{producto?.precio}}">
-        <input type="number" placeholder="Cantidad" value="{{producto?.cantidad}}">
+    <form action="" [formGroup]="form">
+        <input type="text" placeholder="Nombre" value="{{producto?.nombre}}" formControlName="nombre">
+        <input type="number" placeholder="Precio" value="{{producto?.precio}}" formControlName="precio">
+        <input type="number" placeholder="Cantidad" value="{{producto?.cantidad}}" formControlName="cantidad">
         <select name="categorias" id="categorias" title="categorias">
             <option value="Muebles">Muebles</option>
             <option value="Mesa">Mesa</option>
             <option value="Almohadones">Almohadones</option>
         </select>
-        <input type="text" placeholder="Descripción">
-        <input type="text" placeholder="Link de imagen" value="{{producto?.imagen}}">
+        <input type="text" placeholder="Link de imagen" value="{{producto?.imagen}}" formControlName="imagen">
+        <input type="text" placeholder="Descripción" formControlName="descripcion">
     </form>
+    <button>Guardar</button>
+    <button routerLink="../../">Cerrar</button>
 </div>
