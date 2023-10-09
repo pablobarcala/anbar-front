@@ -7,6 +7,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminProductosComponent } from './components/admin-productos/admin-productos.component';
 import { AdminCategoriasComponent } from './components/admin-categorias/admin-categorias.component';
 import { EditProductosComponent } from './components/edit-productos/edit-productos.component';
+import { AdminAcercaDeComponent } from './components/admin-acerca-de/admin-acerca-de.component';
 
 
 
@@ -17,7 +18,8 @@ import { EditProductosComponent } from './components/edit-productos/edit-product
     AdminComponent,
     AdminProductosComponent,
     AdminCategoriasComponent,
-    EditProductosComponent
+    EditProductosComponent,
+    AdminAcercaDeComponent
   ],
   imports: [
     CommonModule,
