@@ -34,6 +34,15 @@ export class EditCategoriasComponent {
       let categorias: Categoria[] = resp
       
       this.categoria = categorias.find(categoria => categoria.idcategorias == id)
+      this.actualizarForm()
     })
+  }
+
+  actualizarForm(){
+    if(this.categoria){
+      this.form.patchValue({
+        nombre: this.categoria.nombre
+      })
+    }
   }
 }

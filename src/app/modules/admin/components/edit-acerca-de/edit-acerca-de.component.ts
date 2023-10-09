@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Nosotros } from 'src/app/interfaces/Nosotros';
 import { NosotrosService } from 'src/app/services/nosotros.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -17,7 +17,8 @@ export class EditAcercaDeComponent {
   constructor(
     private route: ActivatedRoute, 
     private nosotrosService: NosotrosService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ){
     route.params.subscribe(params => {
       this.id = params['id']
@@ -41,7 +42,22 @@ export class EditAcercaDeComponent {
       let nosotros: Nosotros[] = resp
   
       this.nosotros = nosotros.find(nosotros => nosotros.idnosotros == id)
+      this.actualizarForm()
     })
+  }
+
+  actualizarForm(){
+    if(this.nosotros){
+      this.form.patchValue({
+        nombre: this.nosotros.nombre,
+        apellido: this.nosotros.apellido,
+        empresa: this.nosotros.empresa,
+        informacion: this.nosotros.informacion,
+        imagen: this.nosotros.imagen,
+        telefono: this.nosotros.telefono,
+        mail: this.nosotros.mail,
+      })
+    }
   }
 
   editarNosotros(event: Event) {
@@ -51,6 +67,8 @@ export class EditAcercaDeComponent {
       this.nosotrosService.editarNosotros(this.form.get('idnosotros')?.value, this.form.value).subscribe(resp => {
         if(resp) {
           alert("Se editó correctamente")
+          this.router.navigate(['/admin/dashboard/admin-acerca-de'])
+          .then(() => window.location.reload());
         } else {
           alert("Hubo un error")
         }

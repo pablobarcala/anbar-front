@@ -39,6 +39,20 @@ export class EditProductosComponent {
       let productos: Producto[] = resp
   
       this.producto = productos.find(producto => producto.idproductos == id)
+      this.actualizarForm()
     })
+  }
+
+  actualizarForm(){
+    if(this.producto){
+      this.form.patchValue({
+        nombre: this.producto.nombre,
+        precio: this.producto.precio,
+        cantidad: this.producto.cantidad,
+        categorias: this.producto.categorias,
+        imagen: this.producto.imagen,
+        descripcion: this.producto.descripcion,
+      })
+    }
   }
 }
