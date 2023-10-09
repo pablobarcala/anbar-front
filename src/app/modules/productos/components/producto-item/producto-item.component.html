@@ -7,6 +7,8 @@
             <div class="categorias">
                 <div *ngFor="let categoria of producto?.categorias">{{categoria.nombre}}</div>
             </div>
+            <p *ngIf="producto && producto.cantidad > 5" class="stock">Stock disponible</p>
+            <p *ngIf="producto && producto.cantidad <= 5" class="stock">Últimas unidades!</p>
         </div>
         <div class="botones">
             <button>Ver más</button>

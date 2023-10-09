@@ -25,6 +25,12 @@ img {
     border-radius: 15px;
 }
 
+.stock {
+    font-size: 0.8rem;
+    color: var(--second-color);
+    font-weight: 700;
+}
+
 .info {
     width: 100%;
     display: flex;
