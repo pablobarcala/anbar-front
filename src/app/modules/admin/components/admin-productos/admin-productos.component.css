@@ -14,9 +14,14 @@
 }
 
 .filtros > div {
-    background-color: #ccc;
+    cursor: pointer;
+    background-color: #eee;
     padding: 5px 10px;
     border-radius: 15px;
+}
+
+.filtros > div:hover {
+    background-color: #e6e6e6;
 }
 
 .filtros > div.selected {
@@ -42,4 +47,25 @@ td {
 th {
     background-color: var(--main-color);
     padding: 15px 20px;
+}
+
+td.bajo-stock {
+    background-color: rgb(219, 135, 135);
+}
+
+.botones {
+    padding: 10px;
+}
+
+.botones > button {
+    cursor: pointer;
+    padding: 3%;
+    margin: 6%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+}
+
+.botones > button:hover {
+    background-color: #e6e6e6;
 }

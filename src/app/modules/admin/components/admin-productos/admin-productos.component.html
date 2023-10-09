@@ -2,7 +2,8 @@
     <div class="title">
         <h2>Productos</h2>
         <div class="filtros">
-            <div class="selected">Almohadones</div>
+            <div class="selected">Todo</div>
+            <div>Almohadones</div>
             <div>Muebles</div>
             <div>Mesas</div>
         </div>
@@ -23,7 +24,7 @@
         >
             <td>{{producto.nombre}}</td>
             <td>{{producto.precio}}</td>
-            <td>{{producto.cantidad}}</td>
+            <td [ngClass]="{'bajo-stock': producto.cantidad <= 5}">{{producto.cantidad}}</td>
             <td>
                 <p
                     *ngFor="let categoria of producto.categorias"
@@ -31,9 +32,13 @@
             </td>
             <td>{{producto.descripcion}}</td>
             <td>{{producto.imagen}}</td>
-            <td>
-                <button [routerLink]="['edit-producto', producto.idproductos]">Editar</button>
-                <button>Eliminar</button>
+            <td class="botones">
+                <button [routerLink]="['edit-producto', producto.idproductos]">
+                    <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
+                </button>
+                <button>
+                    <img src="../../../../../assets/iconos/delete.svg" alt="Eliminar">
+                </button>
             </td>
         </tr>   
     </table>
