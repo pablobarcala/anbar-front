@@ -2,8 +2,22 @@
     padding: 0 30px;
 }
 
+.title{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
 h2 {
     padding: 20px 0;
+}
+
+.title > button {
+    cursor: pointer;
+    background-color: var(--main-color);
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
 }
 
 table {
