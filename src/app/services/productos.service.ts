@@ -12,4 +12,8 @@ export class ProductosService {
   getProductos() {
     return this.http.get(this.apiurl + "/traer")
   }
+
+  deleteProducto(id: number){
+    return this.http.delete(this.apiurl + `/eliminar/${id}`)
+  }
 }

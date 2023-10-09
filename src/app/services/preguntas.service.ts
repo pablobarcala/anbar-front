@@ -21,4 +21,8 @@ export class PreguntasService {
   editPregunta(id: number, pregunta: Pregunta){
     return this.http.put(this.apiurl + `/editar/${id}`, pregunta)
   }
+
+  deletePregunta(id: number){
+    return this.http.delete(this.apiurl + `/eliminar/${id}`)
+  }
 }

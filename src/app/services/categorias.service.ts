@@ -17,4 +17,8 @@ export class CategoriasService {
   addCategoria(categoria: Categoria){
     return this.http.post(this.apiurl + "/crear", categoria)
   }
+
+  deleteCategoria(id: number){
+    return this.http.delete(this.apiurl + `/eliminar/${id}`)
+  }
 }
