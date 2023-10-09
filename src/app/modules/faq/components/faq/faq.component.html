@@ -1,27 +1,10 @@
 <div class="container">
     <h3>Preguntas frecuentes</h3>
-    <div class="pregunta">
-        <h4>Pregunta</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem ratione aut dignissimos sunt, fugit alias dolores ipsam culpa repellendus accusantium quasi veritatis, itaque aliquam perspiciatis, doloremque ea ducimus quam.</p>
-    </div>
-    <div class="pregunta">
-        <h4>Pregunta</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem ratione aut dignissimos sunt, fugit alias dolores ipsam culpa repellendus accusantium quasi veritatis, itaque aliquam perspiciatis, doloremque ea ducimus quam.</p>
-    </div>
-    <div class="pregunta">
-        <h4>Pregunta</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem ratione aut dignissimos sunt, fugit alias dolores ipsam culpa repellendus accusantium quasi veritatis, itaque aliquam perspiciatis, doloremque ea ducimus quam.</p>
-    </div>
-    <div class="pregunta">
-        <h4>Pregunta</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem ratione aut dignissimos sunt, fugit alias dolores ipsam culpa repellendus accusantium quasi veritatis, itaque aliquam perspiciatis, doloremque ea ducimus quam.</p>
-    </div>
-    <div class="pregunta">
-        <h4>Pregunta</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem ratione aut dignissimos sunt, fugit alias dolores ipsam culpa repellendus accusantium quasi veritatis, itaque aliquam perspiciatis, doloremque ea ducimus quam.</p>
-    </div>
-    <div class="pregunta">
-        <h4>Pregunta</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem ratione aut dignissimos sunt, fugit alias dolores ipsam culpa repellendus accusantium quasi veritatis, itaque aliquam perspiciatis, doloremque ea ducimus quam.</p>
+    <div 
+        class="pregunta"
+        *ngFor="let pregunta of preguntas"    
+    >
+        <h4>{{pregunta.pregunta}}</h4>
+        <p>{{pregunta.respuesta}}</p>
     </div>
 </div>
