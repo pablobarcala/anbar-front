@@ -8,6 +8,14 @@
     gap: 5%;
 }
 
+.title > button {
+    cursor: pointer;
+    background-color: var(--main-color);
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+}
+
 .title > .filtros {
     display: flex;
     gap: 20px;
