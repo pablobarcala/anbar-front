@@ -1,16 +1,6 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
+import { Producto } from 'src/app/interfaces/Producto';
 import { ProductosService } from 'src/app/services/productos.service';
-
-interface Categoria {
-  nombre: string
-}
-
-interface Producto {
-  nombre: string,
-  precio: number,
-  categorias: Categoria[],
-  imagen: string
-}
 
 @Component({
   selector: 'app-items',
@@ -20,26 +10,7 @@ interface Producto {
 export class ItemsComponent {
   @Input() navOpcion: string = ""
 
-  productos: Producto[] = [
-    // {
-    //   nombre: "Combo zig zag gris",
-    //   precio: 1700,
-    //   categorias: ["Almohadones", "Gris"],
-    //   imagen: "../../../../../assets/iconos/almohadones.png"
-    // },
-    // {
-    //   nombre: "Combo b/n",
-    //   precio: 1500,
-    //   categorias: ["Almohadones", "B / N", "Living"],
-    //   imagen: "../../../../../assets/iconos/almohadones.png"
-    // },
-    // {
-    //   nombre: "Combo rosa",
-    //   precio: 1700,
-    //   categorias: ["Almohadones", "Rosa"],
-    //   imagen: "../../../../../assets/iconos/almohadones.png"
-    // }
-  ]
+  productos: Producto[] = []
 
   productosFiltrados: Producto[] = []
 

@@ -1,20 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Producto } from 'src/app/interfaces/Producto';
 import { ProductosService } from 'src/app/services/productos.service';
-
-interface Categoria {
-  nombre: string
-}
-
-interface Producto {
-  idproductos?: number,
-  nombre?: string,
-  precio?: number,
-  cantidad?: number,
-  categorias?: Categoria[],
-  imagen?: string,
-  descripcion?: string
-}
 
 @Component({
   selector: 'app-edit-productos',
@@ -22,7 +9,7 @@ interface Producto {
   styleUrls: ['./edit-productos.component.css']
 })
 export class EditProductosComponent {
-  producto: Producto | undefined = {};
+  producto: Producto | undefined = undefined;
   id: number = 0
 
   constructor(private route: ActivatedRoute, private productoService: ProductosService){

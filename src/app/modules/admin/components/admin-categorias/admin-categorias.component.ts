@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-
-interface Categoria {
-  nombre: string
-}
+import { Categoria } from 'src/app/interfaces/Categoria';
 
 @Component({
   selector: 'app-admin-categorias',

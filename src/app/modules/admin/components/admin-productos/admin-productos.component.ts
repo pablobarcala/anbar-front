@@ -1,19 +1,6 @@
 import { Component } from '@angular/core';
+import { Producto } from 'src/app/interfaces/Producto';
 import { ProductosService } from 'src/app/services/productos.service';
-
-interface Categoria {
-  nombre: string
-}
-
-interface Producto {
-  idproductos?: number,
-  nombre: string,
-  precio: number,
-  cantidad: number,
-  categorias: Categoria[],
-  imagen: string,
-  descripcion: string
-}
 
 @Component({
   selector: 'app-admin-productos',
@@ -32,18 +19,6 @@ export class AdminProductosComponent {
         }, 
         {
           nombre: "Mesa"
-        }
-      ],
-      imagen: "link",
-      descripcion: ""
-    },
-    {
-      nombre: "Combo zig zag gris",
-      precio: 1500,
-      cantidad: 5,
-      categorias: [
-        {
-          nombre: "Almohadones"
         }
       ],
       imagen: "link",
