@@ -5,6 +5,7 @@
             <img src="../../../../../assets/iconos/add.svg" alt="Agregar">
         </button>
     </div>
+    <router-outlet></router-outlet>
     <table>
         <tr>
             <th>Nombre</th>
@@ -15,7 +16,7 @@
         >
             <td>{{categoria.nombre}}</td>
             <td class="botones">
-                <button>
+                <button [routerLink]="['edit-categorias', categoria.idcategorias]">
                     <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
                 </button>
                 <button>
