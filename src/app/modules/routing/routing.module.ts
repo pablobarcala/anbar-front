@@ -20,6 +20,7 @@ import { AdminFaqComponent } from '../admin/components/admin-faq/admin-faq.compo
 import { EditFaqComponent } from '../admin/components/edit-faq/edit-faq.component';
 import { AddCategoriasComponent } from '../admin/components/add-categorias/add-categorias.component';
 import { AddPreguntasComponent } from '../admin/components/add-preguntas/add-preguntas.component';
+import { AddProductosComponent } from '../admin/components/add-productos/add-productos.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
@@ -35,7 +36,8 @@ const routes: Route[] = [
     {path: 'login', component: LoginComponent},
     {path: 'dashboard', component: DashboardComponent, children: [
       {path: 'admin-productos', component: AdminProductosComponent, children: [
-        {path: 'edit-producto/:id', component: EditProductosComponent}
+        {path: 'edit-producto/:id', component: EditProductosComponent},
+        {path: 'add-producto', component: AddProductosComponent}
       ]},
       {path: 'admin-categorias', component: AdminCategoriasComponent, children: [
         {path: 'edit-categorias/:id', component: EditCategoriasComponent},
