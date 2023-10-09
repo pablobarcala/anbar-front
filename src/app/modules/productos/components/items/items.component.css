@@ -33,33 +33,6 @@ form > img {
     transform: scale(0.6);
 }
 
-.item {
-    background-color: #fff;
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-img {
-    border-radius: 15px;
-}
-
-.categorias {
-    display: flex;
-    gap: 10px;
-    padding: 10px 0;
-}
-
-.categorias > div {
-    cursor: default;
-    background-color: #eee;
-    padding: 5px 7px;
-    border-radius: 15px;
-}
-
 @keyframes mostrarTitle {
     0% {
         transform: translateX(-100%);

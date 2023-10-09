@@ -6,17 +6,8 @@
             <img src="../../../../../assets/iconos/lupa.svg" alt="">
         </form>
     </div>
-    <div 
-        class="item"
+    <app-producto-item
         *ngFor="let producto of productosFiltrados" 
-    >
-        <img src="{{producto.imagen}}" width="10%" alt="Almohadones">
-        <div class="info">
-            <h3>{{producto.nombre}}</h3>
-            <p>${{producto.precio}}</p>
-            <div class="categorias">
-                <div *ngFor="let categoria of producto.categorias">{{categoria.nombre}}</div>
-            </div>
-        </div>
-    </div>
+        [producto]="producto"
+    ></app-producto-item>
 </div>
