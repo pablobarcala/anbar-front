@@ -5,6 +5,7 @@
             <img src="../../../../../assets/iconos/add.svg" alt="Agregar">
         </button>
     </div>
+    <router-outlet></router-outlet>
     <table>
         <tr>
             <th>Nombre</th>
@@ -25,11 +26,8 @@
             <td>{{nosotros?.telefono}}</td>
             <td>{{nosotros?.mail}}</td>
             <td class="botones">
-                <button>
+                <button [routerLink]="['edit-acerca-de', nosotros?.idnosotros]">
                     <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
-                </button>
-                <button>
-                    <img src="../../../../../assets/iconos/delete.svg" alt="Eliminar">
                 </button>
             </td>
         </tr>

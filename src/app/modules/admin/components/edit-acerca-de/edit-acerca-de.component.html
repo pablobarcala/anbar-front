@@ -1,0 +1,13 @@
+<div class="container">
+    <form action="" [formGroup]="form">
+        <input type="text" placeholder="Nombre" value="{{nosotros?.nombre}}" formControlName="nombre">
+        <input type="text" placeholder="Apellido" value="{{nosotros?.apellido}}" formControlName="apellido">
+        <input type="text" placeholder="Empresa" value="{{nosotros?.empresa}}" formControlName="empresa">
+        <input type="text" placeholder="Información" value="{{nosotros?.informacion}}" formControlName="informacion">
+        <input type="text" placeholder="Link de imagen" value="{{nosotros?.imagen}}" formControlName="imagen">
+        <input type="text" placeholder="Teléfono" value="{{nosotros?.telefono}}" formControlName="telefono">
+        <input type="text" placeholder="Mail" value="{{nosotros?.mail}}" formControlName="mail">
+    </form>
+    <button>Guardar</button>
+    <button routerLink="../../">Cerrar</button>
+</div>

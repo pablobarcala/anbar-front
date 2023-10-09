@@ -14,6 +14,7 @@ import { FaqComponent } from '../faq/components/faq/faq.component';
 import { ContactoComponent } from '../contacto/components/contacto/contacto.component';
 import { EditProductosComponent } from '../admin/components/edit-productos/edit-productos.component';
 import { AdminAcercaDeComponent } from '../admin/components/admin-acerca-de/admin-acerca-de.component';
+import { EditAcercaDeComponent } from '../admin/components/edit-acerca-de/edit-acerca-de.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
@@ -32,7 +33,9 @@ const routes: Route[] = [
         {path: 'edit-producto/:id', component: EditProductosComponent}
       ]},
       {path: 'admin-categorias', component: AdminCategoriasComponent},
-      {path: 'admin-acerca-de', component: AdminAcercaDeComponent}
+      {path: 'admin-acerca-de', component: AdminAcercaDeComponent, children: [
+        {path: 'edit-acerca-de/:id', component: EditAcercaDeComponent}
+      ]}
     ]}
   ]}
 ]
