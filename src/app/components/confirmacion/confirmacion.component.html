@@ -1,0 +1,5 @@
+<h3 mat-dialog-title>¿Está seguro de eliminar el elemento {{data.elemento}}?</h3>
+<div mat-dialog-actions>
+    <button class="eliminar" [matDialogClose]="true">Eliminar</button>
+    <button (click)="onNoClick()">Cerrar</button>
+</div>
