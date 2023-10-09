@@ -2,10 +2,10 @@
     <div class="container-opciones">
         <div
             class="opcion"
-            *ngFor="let opcion of navegacion"
-            (click)="cambiarOpcion(opcion)"
-            [ngClass]="{'selected': opcion == navOpcion}"
-        >{{opcion}}</div>
+            *ngFor="let categoria of categorias"
+            (click)="cambiarOpcion(categoria.nombre)"
+            [ngClass]="{'selected': categoria.nombre == navOpcion}"
+        >{{categoria.nombre}}</div>
     </div>
     <app-items [navOpcion]="navOpcion"></app-items>
 </div>
