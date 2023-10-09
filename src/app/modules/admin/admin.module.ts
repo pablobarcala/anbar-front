@@ -12,6 +12,8 @@ import { EditProductosComponent } from './components/edit-productos/edit-product
 import { AdminAcercaDeComponent } from './components/admin-acerca-de/admin-acerca-de.component';
 import { EditAcercaDeComponent } from './components/edit-acerca-de/edit-acerca-de.component';
 import { EditCategoriasComponent } from './components/edit-categorias/edit-categorias.component';
+import { AdminFaqComponent } from './components/admin-faq/admin-faq.component';
+import { EditFaqComponent } from './components/edit-faq/edit-faq.component';
 
 
 
@@ -25,7 +27,9 @@ import { EditCategoriasComponent } from './components/edit-categorias/edit-categ
     EditProductosComponent,
     AdminAcercaDeComponent,
     EditAcercaDeComponent,
-    EditCategoriasComponent
+    EditCategoriasComponent,
+    AdminFaqComponent,
+    EditFaqComponent
   ],
   imports: [
     CommonModule,

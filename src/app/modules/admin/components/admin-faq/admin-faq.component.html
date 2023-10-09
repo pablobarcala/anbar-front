@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="title">
+        <h2>Preguntas frecuentes</h2>
+        <button>
+            <img src="../../../../../assets/iconos/add.svg" alt="Agregar">
+        </button>
+    </div>
+    <router-outlet></router-outlet>
+    <table>
+        <tr>
+            <th>Pregunta</th>
+            <th>Respuesta</th>
+            <th>Botones</th>
+        </tr>
+        <tr
+            *ngFor="let pregunta of preguntas"
+        >
+            <td>{{pregunta.pregunta}}</td>
+            <td>{{pregunta.respuesta}}</td>
+            <td class="botones">
+                <button [routerLink]="['edit-faq', pregunta.idpreguntas]">
+                    <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
+                </button>
+                <button>
+                    <img src="../../../../../assets/iconos/delete.svg" alt="Eliminar">
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

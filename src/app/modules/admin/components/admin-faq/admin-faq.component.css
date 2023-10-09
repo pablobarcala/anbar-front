@@ -1,0 +1,54 @@
+.container {
+    padding: 0 30px;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
+h2 {
+    padding: 20px 0;
+}
+
+.title > button {
+    cursor: pointer;
+    background-color: var(--main-color);
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 2px solid #ccc;
+    padding: 10px 20px;
+}
+
+th {
+    background-color: var(--main-color);
+    padding: 15px 20px;
+}
+
+.botones {
+    padding: 10px;
+}
+
+.botones > button {
+    cursor: pointer;
+    padding: 3%;
+    margin: 6%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+}
+
+.botones > button:hover {
+    background-color: #e6e6e6;
+}
