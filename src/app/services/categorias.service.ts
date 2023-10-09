@@ -18,6 +18,10 @@ export class CategoriasService {
     return this.http.post(this.apiurl + "/crear", categoria)
   }
 
+  editCategoria(id: number, categoria: Categoria){
+    return this.http.put(this.apiurl + `/editar/${id}`, categoria)
+  }
+
   deleteCategoria(id: number){
     return this.http.delete(this.apiurl + `/eliminar/${id}`)
   }
