@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Nosotros } from 'src/app/interfaces/Nosotros';
+import { CarritoService } from 'src/app/services/carrito.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { NosotrosService } from 'src/app/services/nosotros.service';
 
@@ -19,7 +20,13 @@ export class HeaderComponent {
   
   nosotros: Nosotros | undefined = undefined
 
-  constructor(private nosotrosService: NosotrosService){
+  precio: number = 0
+  cantidad: number = 0
+
+  constructor(
+    private nosotrosService: NosotrosService,
+    private carritoService: CarritoService  
+  ){
     nosotrosService.getNosotros().subscribe((nosotros: any) => {
       nosotros.find((nosotros: any) => {
         if(nosotros.idnosotros == 1){
@@ -27,5 +34,8 @@ export class HeaderComponent {
         }
       })
     })
+
+    carritoService.getPrecio().subscribe((precio: any) => this.precio = precio)
+    carritoService.getCantidad().subscribe((cantidad: any) => this.cantidad = cantidad)
   }
 }
