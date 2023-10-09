@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/interfaces/Producto';
 import { ProductosService } from 'src/app/services/productos.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmacionComponent } from 'src/app/components/confirmacion/confirmacion.component';
 
 @Component({
   selector: 'app-admin-productos',
@@ -29,19 +31,28 @@ export class AdminProductosComponent {
 
   constructor(
     private productosService: ProductosService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ){
     productosService.getProductos().subscribe((productos: any) => this.productos = productos)
   }
 
   deleteProducto(id: any){
-    this.productosService.deleteProducto(id).subscribe(resp => {
-      if(resp) {
-        alert("El producto se eliminó correctamente")
-        this.router.navigate(['/admin/dashboard/admin-productos'])
-        .then(() => window.location.reload());
-      } else {
-        alert("Hubo un error")
+    const dialogRef = this.dialog.open(ConfirmacionComponent, {
+      data: {elemento: "Producto"}
+    })
+
+    dialogRef.afterClosed().subscribe((response: any) => {
+      if(response) {
+        this.productosService.deleteProducto(id).subscribe(resp => {
+          if(resp) {
+            alert("El producto se eliminó correctamente")
+            this.router.navigate(['/admin/dashboard/admin-productos'])
+            .then(() => window.location.reload());
+          } else {
+            alert("Hubo un error")
+          }
+        })
       }
     })
   }
