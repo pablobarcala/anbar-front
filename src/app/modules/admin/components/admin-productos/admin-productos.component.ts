@@ -6,6 +6,7 @@ interface Categoria {
 }
 
 interface Producto {
+  idproductos?: number,
   nombre: string,
   precio: number,
   cantidad: number,
@@ -51,6 +52,6 @@ export class AdminProductosComponent {
   ]
 
   constructor(private productosService: ProductosService){
-    // productosService.getProductos().subscribe((productos: any) => this.productos = productos)
+    productosService.getProductos().subscribe((productos: any) => this.productos = productos)
   }
 }

@@ -32,7 +32,7 @@
             <td>{{producto.descripcion}}</td>
             <td>{{producto.imagen}}</td>
             <td>
-                <button routerLink="edit-producto">Editar</button>
+                <button [routerLink]="['edit-producto', producto.idproductos]">Editar</button>
                 <button>Eliminar</button>
             </td>
         </tr>   

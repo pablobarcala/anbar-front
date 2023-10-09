@@ -28,7 +28,7 @@ const routes: Route[] = [
     {path: 'login', component: LoginComponent},
     {path: 'dashboard', component: DashboardComponent, children: [
       {path: 'admin-productos', component: AdminProductosComponent, children: [
-        {path: 'edit-producto', component: EditProductosComponent}
+        {path: 'edit-producto/:id', component: EditProductosComponent}
       ]},
       {path: 'admin-categorias', component: AdminCategoriasComponent},
     ]}
