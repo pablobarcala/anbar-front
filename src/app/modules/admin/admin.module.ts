@@ -15,6 +15,7 @@ import { EditCategoriasComponent } from './components/edit-categorias/edit-categ
 import { AdminFaqComponent } from './components/admin-faq/admin-faq.component';
 import { EditFaqComponent } from './components/edit-faq/edit-faq.component';
 import { AddCategoriasComponent } from './components/add-categorias/add-categorias.component';
+import { AddPreguntasComponent } from './components/add-preguntas/add-preguntas.component';
 
 
 
@@ -31,7 +32,8 @@ import { AddCategoriasComponent } from './components/add-categorias/add-categori
     EditCategoriasComponent,
     AdminFaqComponent,
     EditFaqComponent,
-    AddCategoriasComponent
+    AddCategoriasComponent,
+    AddPreguntasComponent
   ],
   imports: [
     CommonModule,

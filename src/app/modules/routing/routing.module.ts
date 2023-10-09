@@ -19,6 +19,7 @@ import { EditCategoriasComponent } from '../admin/components/edit-categorias/edi
 import { AdminFaqComponent } from '../admin/components/admin-faq/admin-faq.component';
 import { EditFaqComponent } from '../admin/components/edit-faq/edit-faq.component';
 import { AddCategoriasComponent } from '../admin/components/add-categorias/add-categorias.component';
+import { AddPreguntasComponent } from '../admin/components/add-preguntas/add-preguntas.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
@@ -44,7 +45,8 @@ const routes: Route[] = [
         {path: 'edit-acerca-de/:id', component: EditAcercaDeComponent}
       ]},
       {path: 'admin-faq', component: AdminFaqComponent, children: [
-        {path: 'edit-faq/:id', component: EditFaqComponent}
+        {path: 'edit-faq/:id', component: EditFaqComponent},
+        {path: 'add-preguntas', component: AddPreguntasComponent}
       ]}
     ]}
   ]}
