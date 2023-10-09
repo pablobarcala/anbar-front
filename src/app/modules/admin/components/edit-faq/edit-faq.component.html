@@ -1,8 +1,24 @@
 <div class="container">
-    <form action="">
-        <input type="text" placeholder="Pregunta">
-        <input type="text" placeholder="Respuesta">
+    <form action="" [formGroup]="form" (submit)="editPregunta($event)">
+        <div class="form">
+            <div class="input">
+                <input type="text" placeholder="Pregunta" formControlName="pregunta">
+                <p 
+                    class="error"
+                    *ngIf="form.get('pregunta')?.hasError('required') && form.get('pregunta')?.touched"    
+                >Se necesita una pregunta</p>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Respuesta" formControlName="respuesta">
+                <p 
+                    class="error"
+                    *ngIf="form.get('respuesta')?.hasError('required') && form.get('respuesta')?.touched"
+                >Se necesita una respuesta</p>
+            </div>
+        </div>
+        <div class="botones">
+            <button type="submit">Guardar</button>
+            <button type="button" routerLink="../../">Cerrar</button>
+        </div>
     </form>
-    <button>Guardar</button>
-    <button routerLink="../../">Cerrar</button>
 </div>
