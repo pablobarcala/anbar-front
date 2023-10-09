@@ -39,7 +39,7 @@
                 <button [routerLink]="['edit-producto', producto.idproductos]">
                     <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
                 </button>
-                <button>
+                <button (click)="deleteProducto(producto.idproductos)">
                     <img src="../../../../../assets/iconos/delete.svg" alt="Eliminar">
                 </button>
             </td>

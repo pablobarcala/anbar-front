@@ -19,7 +19,7 @@
                 <button [routerLink]="['edit-categorias', categoria.idcategorias]">
                     <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
                 </button>
-                <button>
+                <button (click)="deleteCategoria(categoria.idcategorias)">
                     <img src="../../../../../assets/iconos/delete.svg" alt="Eliminar">
                 </button>
             </td>

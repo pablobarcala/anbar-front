@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Categoria } from 'src/app/interfaces/Categoria';
 import { CategoriasService } from 'src/app/services/categorias.service';
 
@@ -10,7 +11,22 @@ import { CategoriasService } from 'src/app/services/categorias.service';
 export class AdminCategoriasComponent {
   categorias: Categoria[] = []
 
-  constructor(private categoriaService: CategoriasService){
+  constructor(
+    private categoriaService: CategoriasService,
+    private router: Router
+  ){
     categoriaService.getCategorias().subscribe((categorias: any) => this.categorias = categorias)
+  }
+
+  deleteCategoria(id: any){
+    this.categoriaService.deleteCategoria(id).subscribe(resp => {
+      if(resp){
+        alert("La categoría se eliminó correctamente")
+        this.router.navigate(['/admin/dashboard/admin-categorias'])
+        .then(() => window.location.reload())
+      } else {
+        alert("Hubo un error")
+      }
+    })
   }
 }
