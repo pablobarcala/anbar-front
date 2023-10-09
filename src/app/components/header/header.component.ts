@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Nosotros } from 'src/app/interfaces/Nosotros';
 import { MenuService } from 'src/app/services/menu.service';
+import { NosotrosService } from 'src/app/services/nosotros.service';
 
 @Component({
   selector: 'app-header',
@@ -14,13 +16,16 @@ export class HeaderComponent {
     "FAQ",
     "Contacto"
   ]
+  
+  nosotros: Nosotros | undefined = undefined
 
-  mostrarBuscar(){
-    const form = document.querySelector("#form")
-    if(form?.classList.contains("mostrar")){
-      form.classList.remove("mostrar")
-    } else {
-      form?.classList.add("mostrar")
-    }
+  constructor(private nosotrosService: NosotrosService){
+    nosotrosService.getNosotros().subscribe((nosotros: any) => {
+      nosotros.find((nosotros: any) => {
+        if(nosotros.idnosotros == 1){
+          this.nosotros = nosotros
+        }
+      })
+    })
   }
 }
