@@ -1,7 +1,6 @@
 button {
     cursor: pointer;
     margin-right: 20px;
-    margin-bottom: 40px;
     border: none;
     background-color: var(--main-color);
     padding: 10px;
@@ -36,8 +35,9 @@ textarea:focus {
 }
 
 textarea {
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 90%;
+    max-width: 90%;
+    min-height: 100px;
     max-height: 500px;
 }
 

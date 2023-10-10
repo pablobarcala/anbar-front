@@ -27,13 +27,13 @@
                     *ngIf="form.get('mail')?.hasError('required') && form.get('mail')?.touched"
                 >Se necesita un mail</p>
             </div>
-            <div class="input">
-                <textarea type="text" placeholder="Información" formControlName="informacion"></textarea>
-                <p
-                    class="error"
-                    *ngIf="form.get('informacion')?.hasError('required') && form.get('informacion')?.touched"
-                >Se necesita información</p>
-            </div>
+        </div>
+        <div class="input">
+            <textarea type="text" placeholder="Información" formControlName="informacion"></textarea>
+            <p
+                class="error"
+                *ngIf="form.get('informacion')?.hasError('required') && form.get('informacion')?.touched"
+            >Se necesita información</p>
         </div>
         <div class="botones">
             <button type="submit">Guardar</button>

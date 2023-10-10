@@ -1,30 +1,39 @@
 <div class="container">
     <h2>Acerca de</h2>
     <router-outlet></router-outlet>
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Empresa</th>
-            <th>Información</th>
-            <th>Imagen</th>
-            <th>Telefono</th>
-            <th>Mail</th>
-            <th>Botones</th>
-        </tr>  
-        <tr>
-            <td>{{nosotros?.nombre}}</td>
-            <td>{{nosotros?.apellido}}</td>
-            <td>{{nosotros?.empresa}}</td>
-            <td>{{nosotros?.informacion}}</td>
-            <td>{{nosotros?.imagen}}</td>
-            <td>{{nosotros?.telefono}}</td>
-            <td>{{nosotros?.mail}}</td>
-            <td class="botones">
-                <button [routerLink]="['edit-acerca-de', nosotros?.idnosotros]">
-                    <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
-                </button>
-            </td>
-        </tr>
-    </table>
+    <div class="table">
+        <div class="botones">
+            <button [routerLink]="['edit-acerca-de', nosotros?.idnosotros]">
+                <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
+            </button>
+        </div>
+        <div class="item">
+            <h4>Nombre</h4>
+            <p>{{nosotros?.nombre}}</p>
+        </div>
+        <div class="item">
+            <h4>Apellido</h4>
+            <p>{{nosotros?.apellido}}</p>
+        </div>
+        <div class="item">
+            <h4>Empresa</h4>
+            <p>{{nosotros?.empresa}}</p>
+        </div>
+        <div class="item">
+            <h4>Información</h4>
+            <p>{{nosotros?.informacion}}</p>
+        </div>
+        <div class="item">
+            <h4>Imagen</h4>
+            <p>{{nosotros?.imagen}}</p>
+        </div>
+        <div class="item">
+            <h4>Teléfono</h4>
+            <p>{{nosotros?.telefono}}</p>
+        </div>
+        <div class="item">
+            <h4>mail</h4>
+            <p>{{nosotros?.mail}}</p>
+        </div>
+    </div>
 </div>

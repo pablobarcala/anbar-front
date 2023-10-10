@@ -2,48 +2,17 @@
     padding: 0 30px;
 }
 
-.title{
-    display: flex;
-    align-items: center;
-    gap: 10%;
-}
-
 h2 {
     padding: 20px 0;
 }
 
-.title > button {
-    cursor: pointer;
-    background-color: var(--main-color);
-    padding: 5px;
-    border-radius: 50%;
-    border: none;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    border: 2px solid #ccc;
-    padding: 10px 20px;
-}
-
-th {
-    background-color: var(--main-color);
-    padding: 15px 20px;
-}
-
 .botones {
-    padding: 10px;
+    margin: 15px 0;
 }
 
 .botones > button {
     cursor: pointer;
-    padding: 3%;
-    margin: 0 25%;
+    padding: 5px;
     border: none;
     background-color: transparent;
     border-bottom: 1px solid #000;
@@ -51,4 +20,14 @@ th {
 
 .botones > button:hover {
     background-color: #e6e6e6;
+}
+
+.item {
+    padding: 10px 0;
+}
+
+.item > h4 {
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--main-color);
+    margin-bottom: 10px;
 }
