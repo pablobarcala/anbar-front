@@ -4,6 +4,9 @@ import { Producto } from 'src/app/interfaces/Producto';
 import { ProductosService } from 'src/app/services/productos.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmacionComponent } from 'src/app/components/confirmacion/confirmacion.component';
+import { Categoria } from 'src/app/interfaces/Categoria';
+import { CategoriasService } from 'src/app/services/categorias.service';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-admin-productos',
@@ -28,12 +31,16 @@ export class AdminProductosComponent {
       descripcion: ""
     }
   ]
+  categorias: Categoria[] = []
 
   constructor(
     private productosService: ProductosService,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private categoriaService: CategoriasService,
+    private menuService: MenuService
   ){
+    categoriaService.getCategorias().subscribe((categorias: any) => this.categorias = categorias)
     productosService.getProductos().subscribe((productos: any) => this.productos = productos)
   }
 

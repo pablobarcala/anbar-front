@@ -3,9 +3,9 @@
         <h2>Productos</h2>
         <div class="filtros">
             <div class="selected">Todo</div>
-            <div>Almohadones</div>
-            <div>Muebles</div>
-            <div>Mesas</div>
+            <div
+                *ngFor="let categoria of categorias"
+            >{{categoria.nombre}}</div>
         </div>
         <button routerLink="add-producto">
             <img src="../../../../../assets/iconos/add.svg" alt="Agregar">
