@@ -10,7 +10,7 @@ import { CarritoService } from 'src/app/services/carrito.service';
 })
 export class ProductoItemComponent {
   @Input() producto: Producto | undefined = undefined
-  cantidadSeleccionada: number = 0
+  cantidadSeleccionada: number = 1
   cantidad: FormGroup
 
   constructor(
