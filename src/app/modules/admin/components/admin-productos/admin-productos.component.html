@@ -12,37 +12,47 @@
         </button>
     </div>
     <router-outlet></router-outlet>
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Categorias</th>
-            <th>Descripcion</th>
-            <th>Link de imagen</th>
-            <th>Botones</th>
-        </tr>
-        <tr
+    <div class="table">
+        <div 
+            class="elemento"
             *ngFor="let producto of productos"
         >
-            <td>{{producto.nombre}}</td>
-            <td>{{producto.precio}}</td>
-            <td [ngClass]="{'bajo-stock': producto.cantidad <= 5}">{{producto.cantidad}}</td>
-            <td>
-                <p
-                    *ngFor="let categoria of producto.categorias"
-                >{{categoria.nombre}}</p>
-            </td>
-            <td>{{producto.descripcion}}</td>
-            <td>{{producto.imagen}}</td>
-            <td class="botones">
-                <button [routerLink]="['edit-producto', producto.idproductos]">
-                    <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
-                </button>
-                <button (click)="deleteProducto(producto.idproductos)">
-                    <img src="../../../../../assets/iconos/delete.svg" alt="Eliminar">
-                </button>
-            </td>
-        </tr>   
-    </table>
+            <div class="head_item">
+                <img src="{{producto.imagen}}" width="50px" height="50px" alt="imagen">
+                <h4>{{producto.nombre}}</h4>
+                <div class="botones">
+                    <button [routerLink]="['edit-producto', producto.idproductos]">
+                        <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
+                    </button>
+                    <button (click)="deleteProducto(producto.idproductos)">
+                        <img src="../../../../../assets/iconos/delete.svg" alt="Eliminar">
+                    </button>
+                </div>
+            </div>
+            <div class="info">
+                <div class="item">
+                    <h4>Precio</h4>
+                    <p>{{producto.precio}}</p>
+                </div>
+                <div class="item" [ngClass]="{'bajo-stock': producto.cantidad <= 5}">
+                    <h4>Cantidad</h4>
+                    <p>{{producto.cantidad}}</p>
+                </div>
+                <div class="item">
+                    <h4>Categorias</h4>
+                    <p *ngFor="let categoria of producto.categorias">
+                        {{categoria.nombre}}
+                    </p>
+                </div>
+                <div class="item">
+                    <h4>Link de imagen</h4>
+                    <p>{{producto.imagen}}</p>
+                </div>
+            </div>
+            <div class="item">
+                <h4>Descripción</h4>
+                <p>{{producto.descripcion}}</p>
+            </div>
+        </div>
+    </div>
 </div>

@@ -2,11 +2,15 @@
     padding: 0 30px;
 }
 
+/* ----- TITULO DEL ADMIN PRODUCTOS ----- */
+
 .title {
     display: flex;
     align-items: center;
     gap: 5%;
 }
+
+/* BOTON DE AGREGAR */
 
 .title > button {
     cursor: pointer;
@@ -15,6 +19,8 @@
     border-radius: 50%;
     border: none;
 }
+
+/* --- FILTROS EN EL TITULO --- */
 
 .title > .filtros {
     display: flex;
@@ -41,39 +47,65 @@ h2 {
     padding: 20px 0;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* ---- ESTILOS DEL ELEMENTO ---- */
+
+.elemento {
+    border-bottom: 15px solid var(--second-color);
 }
 
-th,
-td {
-    border: 2px solid #ccc;
-    padding: 10px 20px;
+.elemento,
+.item {
+    padding: 10px 0;
 }
 
-th {
-    background-color: var(--main-color);
-    padding: 15px 20px;
-}
-
-td.bajo-stock {
-    background-color: rgb(219, 135, 135);
-}
+/* -- BOTONES DEL ELEMENTO -- */
 
 .botones {
-    padding: 10px;
+    margin: 15px 0;
 }
 
 .botones > button {
     cursor: pointer;
-    padding: 3%;
-    margin: 6%;
+    padding: 5px;
     border: none;
+    margin-right: 10px;
     background-color: transparent;
     border-bottom: 1px solid #000;
 }
 
 .botones > button:hover {
     background-color: #e6e6e6;
+}
+
+/* -- ENCABEZADO DEL ITEM -- */
+
+.head_item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.head_item > img {
+    border-radius: 50%;
+}
+
+.item > h4,
+.head_item {
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--main-color);
+    margin-bottom: 10px;
+}
+
+/* ESTILOS DE STOCK BAJO */
+
+.bajo-stock {
+    background-color: rgb(252, 131, 131);
+    border-radius: 10px;
+}
+
+/* SECCION DESDE PRECIO HASTA IMAGEN */
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
 }
