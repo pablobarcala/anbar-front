@@ -2,43 +2,49 @@
     <form action="" [formGroup]="form">
         <div class="form">
             <div class="input">
-                <input type="text" placeholder="Nombre" formControlName="nombre">
+                <label for="nombre">Nombre de producto</label>
+                <input type="text" id="nombre" formControlName="nombre">
                 <p 
                     *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched"
                     class="error"
                 >Se necesita un nombre</p>
             </div>
             <div class="input">
-                <input type="number" placeholder="Precio" formControlName="precio">
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" formControlName="precio">
                 <p 
                     *ngIf="form.get('precio')?.hasError('required') && form.get('precio')?.touched"
                     class="error"
                 >Se necesita un precio</p>
             </div>
             <div class="input">
-                <input type="number" placeholder="Cantidad" formControlName="cantidad">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" formControlName="cantidad">
                 <p 
                     *ngIf="form.get('cantidad')?.hasError('required') && form.get('cantidad')?.touched"
                     class="error"
                 >Se necesita una cantidad</p>
             </div>
             <div class="input">
-                <input type="text" placeholder="Categorias" formControlName="categorias">
+                <label for="categorias">Categoria</label>
+                <input type="text" id="categorias" formControlName="categorias">
                 <p 
                     *ngIf="form.get('categorias')?.hasError('required') && form.get('categorias')?.touched"
                     class="error"
                 >Se necesita al menos una categoría</p>
             </div>
-            <div class="input">
-                <input type="text" placeholder="Descripcion" formControlName="descripcion">
-            </div>
-            <div class="input">
-                <input type="text" placeholder="Link de imagen" formControlName="imagen">
-                <p 
-                    *ngIf="form.get('imagen')?.hasError('required') && form.get('imagen')?.touched"
-                    class="error"
-                >Se necesita una imagen</p>
-            </div>
+        </div>
+        <div class="link-input">
+            <label for="imagen">Link de imagen</label>
+            <input type="text" id="imagen" formControlName="imagen">
+            <p 
+            *ngIf="form.get('imagen')?.hasError('required') && form.get('imagen')?.touched"
+            class="error"
+            >Se necesita una imagen</p>
+        </div>
+        <div class="input">
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" formControlName="descripcion"></textarea>
         </div>
         <div class="botones">
             <button type="submit">Guardar</button>

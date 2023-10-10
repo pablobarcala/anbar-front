@@ -1,7 +1,6 @@
 button {
     cursor: pointer;
     margin-right: 20px;
-    margin-bottom: 40px;
     border: none;
     background-color: var(--main-color);
     padding: 10px;
@@ -9,34 +8,51 @@ button {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    padding: 20px 0;
 }
 
 .form {
     display: grid;
     grid-template-columns: repeat(2, 40%);
     column-gap: 10%;
-    padding: 20px 0;
 }
 
-input {
-    width: 100%;
+input,
+textarea {
     border: none;
     background-color: #eee;
     padding: 5px 10px;
     border-radius: 15px;
     margin-bottom: 10px;
-    margin-right: 10px;
+    width: 100%;
     font-size: 1rem;
+    font-family: "Trebuchet MS";
 }
 
-input:focus {
+input:focus,
+textarea:focus {
     outline: none;
+}
+
+textarea,
+.link-input {
+    min-width: 90%;
+    max-width: 90%;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 500px;
 }
 
 .error {
     color: red;
     padding-bottom: 10px;
     font-size: 0.8rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    padding: 5px 0;
 }
