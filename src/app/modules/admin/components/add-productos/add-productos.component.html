@@ -27,7 +27,12 @@
             </div>
             <div class="input">
                 <label for="categorias">Categoria</label>
-                <input type="text" id="categorias" formControlName="categorias">
+                <select name="categorias" id="categorias" title="categorias" formControlName="categorias">
+                    <option
+                        *ngFor="let categoria of categorias"
+                        value="{{categoria.nombre}}"
+                    >{{categoria.nombre}}</option>
+                </select>
                 <p 
                     *ngIf="form.get('categorias')?.hasError('required') && form.get('categorias')?.touched"
                     class="error"

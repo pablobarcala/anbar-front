@@ -15,10 +15,11 @@
             </div>
             <div class="input">
                 <label for="categorias">Categoria</label>
-                <select name="categorias" id="categorias" title="categorias">
-                    <option value="Muebles">Muebles</option>
-                    <option value="Mesa">Mesa</option>
-                    <option value="Almohadones">Almohadones</option>
+                <select name="categorias" id="categorias" title="categorias" formControlName="categorias">
+                    <option
+                        *ngFor="let categoria of categorias"
+                        value="{{categoria.nombre}}"
+                    >{{categoria.nombre}}</option>
                 </select>
             </div>
         </div>

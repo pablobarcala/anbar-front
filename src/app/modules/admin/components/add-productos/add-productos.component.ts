@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Categoria } from 'src/app/interfaces/Categoria';
+import { CategoriasService } from 'src/app/services/categorias.service';
 
 @Component({
   selector: 'app-add-productos',
@@ -8,10 +10,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AddProductosComponent {
   form: FormGroup
+  categorias: Categoria[] = []
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private categoriaService: CategoriasService
   ){
+    categoriaService.getCategorias().subscribe((categorias: any) => this.categorias = categorias)
     this.form = formBuilder.group({
       nombre: ['', Validators.required],
       precio: [0, Validators.required],

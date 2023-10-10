@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Categoria } from 'src/app/interfaces/Categoria';
 import { Producto } from 'src/app/interfaces/Producto';
+import { CategoriasService } from 'src/app/services/categorias.service';
 import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
@@ -11,14 +13,17 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class EditProductosComponent {
   producto: Producto | undefined = undefined;
+  categorias: Categoria[] = []
   id: number = 0
   form: FormGroup
 
   constructor(
     private route: ActivatedRoute, 
     private productoService: ProductosService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private categoriasService: CategoriasService
   ){
+    categoriasService.getCategorias().subscribe((categorias: any) => this.categorias = categorias)
     route.params.subscribe(params => {
       this.id = params['id']
       this.filtrar(this.id)
@@ -28,7 +33,7 @@ export class EditProductosComponent {
       nombre: ['', Validators.required],
       precio: [0, Validators.required],
       cantidad: [0, Validators.required],
-      categorias: [[], Validators.required],
+      categorias: [[''], Validators.required],
       imagen: ['', Validators.required],
       descripcion: ['']
     })
