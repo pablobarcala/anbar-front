@@ -1,4 +1,4 @@
-<div class="item" *ngIf="producto">
+<div class="item" *ngIf="producto && producto.cantidad > 0">
     <img src="{{producto.imagen}}" width="10%" alt="Almohadones">
     <div class="info">
         <div>
@@ -10,8 +10,18 @@
             <p *ngIf="producto.cantidad > 5" class="stock">Stock disponible</p>
             <p *ngIf="producto.cantidad <= 5" class="stock">Últimas unidades!</p>
         </div>
+        <p class="error" *ngIf="cantidad.get('cantidad')?.value == producto.cantidad">No se pueden seleccionar más unidades</p>
         <div class="botones">
             <button>Ver más</button>
+            <form action="" [formGroup]="cantidad">
+                <input 
+                    title="Cantidad" 
+                    type="number" 
+                    min="0" 
+                    max="{{producto.cantidad}}" 
+                    formControlName="cantidad"
+                >
+            </form>
             <button (click)="agregarCarrito(producto)">Agregar</button>
         </div>
     </div>

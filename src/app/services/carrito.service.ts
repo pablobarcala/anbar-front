@@ -19,9 +19,9 @@ export class CarritoService {
     return this.cantidad.asObservable()
   }
 
-  agregarCarrito(producto: Producto){
-    let nuevoPrecio = this.precio.value + producto.precio
-    let nuevaCantidad = this.cantidad.value + 1
+  agregarCarrito(cantidad: number, producto: Producto){
+    let nuevoPrecio = this.precio.value + (producto.precio * cantidad)
+    let nuevaCantidad = this.cantidad.value + cantidad
 
     this.precio.next(nuevoPrecio)
     this.cantidad.next(nuevaCantidad)

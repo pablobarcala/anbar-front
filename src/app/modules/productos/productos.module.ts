@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ItemsComponent } from './components/items/items.component';
 import { ProductoItemComponent } from './components/producto-item/producto-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { ProductoItemComponent } from './components/producto-item/producto-item.
     ProductoItemComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductosModule { }
