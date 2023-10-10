@@ -2,26 +2,32 @@
     <form action="" [formGroup]="form" (submit)="editarNosotros($event)">
         <div class="form">
             <div class="input">
-                <input type="text" placeholder="Nombre" formControlName="nombre">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" formControlName="nombre">
             </div>
             <div class="input">
-                <input type="text" placeholder="Apellido" formControlName="apellido">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" formControlName="apellido">
             </div>
             <div class="input">
-                <input type="text" placeholder="Empresa" formControlName="empresa">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" formControlName="empresa">
                 <p
                     class="error"
                     *ngIf="form.get('empresa')?.hasError('required') && form.get('empresa')?.touched"
                 >Se necesita el nombre de empresa</p>
             </div>
             <div class="input">
-                <input type="text" placeholder="Link de imagen" formControlName="imagen">
+                <label for="imagen">Link de imagen</label>
+                <input type="text" id="imagen" formControlName="imagen">
             </div>
             <div class="input">
-                <input type="text" placeholder="Teléfono" formControlName="telefono">
+                <label for="telefono">Teléfono de contacto</label>
+                <input type="text" id="telefono" formControlName="telefono">
             </div>
             <div class="input">
-                <input type="text" placeholder="Mail" formControlName="mail">
+                <label for="mail">Correo electrónico</label>
+                <input type="text" id="mail" formControlName="mail">
                 <p
                     class="error"
                     *ngIf="form.get('mail')?.hasError('required') && form.get('mail')?.touched"
@@ -29,7 +35,8 @@
             </div>
         </div>
         <div class="input">
-            <textarea type="text" placeholder="Información" formControlName="informacion"></textarea>
+            <label for="informacion">Información</label>
+            <textarea type="text" id="informacion" formControlName="informacion"></textarea>
             <p
                 class="error"
                 *ngIf="form.get('informacion')?.hasError('required') && form.get('informacion')?.touched"
