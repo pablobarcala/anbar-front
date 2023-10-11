@@ -9,6 +9,7 @@ export class CarritoService {
   precio : BehaviorSubject<number> = new BehaviorSubject<number>(0.00)
   cantidad: BehaviorSubject<number> = new BehaviorSubject<number>(0)
   productos: BehaviorSubject<Producto[]> = new BehaviorSubject<Producto[]>([])
+  carritoOpen: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
   constructor() { }
 
@@ -33,11 +34,15 @@ export class CarritoService {
     this.cantidad.next(nuevaCantidad)
   }
 
-  addProducto(producto: Producto){
-
-  }
-
   getProductos(){
     return this.productos.asObservable()
+  }
+
+  toggleCarrito(){
+    this.carritoOpen.next(!this.carritoOpen.value)
+  }
+
+  isCarritoOpen() {
+    return this.carritoOpen.asObservable()
   }
 }

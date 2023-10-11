@@ -38,4 +38,8 @@ export class HeaderComponent {
     carritoService.getPrecio().subscribe((precio: any) => this.precio = precio)
     carritoService.getCantidad().subscribe((cantidad: any) => this.cantidad = cantidad)
   }
+
+  abrirCarrito(){
+    this.carritoService.toggleCarrito()
+  }
 }

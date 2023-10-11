@@ -11,7 +11,7 @@
         >{{opcion}}</li>
     </ul>
     <div class="iconos">
-        <img src="../../../assets/iconos/bolsa.svg" alt="Bolsa">
+        <img (click)="abrirCarrito()" src="../../../assets/iconos/bolsa.svg" alt="Bolsa">
         <div class="cantidad">{{cantidad}}</div>
         <span class="precio">${{precio}}</span>
     </div>

@@ -17,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FaqModule } from './modules/faq/faq.module';
 import { ConfirmacionComponent } from './components/confirmacion/confirmacion.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ConfirmacionComponent } from './components/confirmacion/confirmacion.co
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    ConfirmacionComponent
+    ConfirmacionComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
