@@ -36,9 +36,9 @@ const routes: Route[] = [
     {path: 'login', component: LoginComponent},
     {path: 'dashboard', component: DashboardComponent, children: [
       {path: 'admin-productos', component: AdminProductosComponent, children: [
-        {path: 'edit-producto/:id', component: EditProductosComponent},
         {path: 'add-producto', component: AddProductosComponent}
       ]},
+      {path: 'edit-producto/:id', component: EditProductosComponent},
       {path: 'admin-categorias', component: AdminCategoriasComponent, children: [
         {path: 'edit-categorias/:id', component: EditCategoriasComponent},
         {path: 'add-categoria', component: AddCategoriasComponent}
@@ -47,9 +47,9 @@ const routes: Route[] = [
         {path: 'edit-acerca-de/:id', component: EditAcercaDeComponent}
       ]},
       {path: 'admin-faq', component: AdminFaqComponent, children: [
-        {path: 'edit-faq/:id', component: EditFaqComponent},
         {path: 'add-preguntas', component: AddPreguntasComponent}
-      ]}
+      ]},
+      {path: 'edit-faq/:id', component: EditFaqComponent}
     ]}
   ]}
 ]

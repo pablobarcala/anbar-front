@@ -18,7 +18,7 @@
             <td>{{pregunta.pregunta}}</td>
             <td>{{pregunta.respuesta}}</td>
             <td class="botones">
-                <button [routerLink]="['edit-faq', pregunta.idpreguntas]">
+                <button [routerLink]="['/admin/dashboard/edit-faq', pregunta.idpreguntas]">
                     <img src="../../../../../assets/iconos/edit.svg" alt="Editar">
                 </button>
                 <button (click)="deletePregunta(pregunta.idpreguntas)">
