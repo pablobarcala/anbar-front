@@ -1,10 +1,26 @@
 <div class="container">
-    <h5>Bolsa de compra</h5>
-    <div
-        class="item"
-        *ngFor="let producto of productos"    
-    >
-        {{producto.nombre}}
-        <h5>Cantidad:</h5>
+    <div>
+        <h5>Bolsa de compra</h5>
+        <div
+            class="item"
+            *ngFor="let producto of productos"    
+        >
+            <div class="icono"></div>
+            <div class="info">
+                <div>
+                    <h5>{{producto.nombre}}</h5>
+                    <h5>Cantidad: {{producto.cantidad}}</h5>
+                    <div class="categoria" *ngFor="let categoria of producto.categorias">{{categoria.nombre}}</div>
+                </div>
+                <div>
+                    <p>$ {{producto.precio * producto.cantidad}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button (click)="cerrarCarrito()">
+            <img src="../../../assets/iconos/back.svg" alt="Volver">
+        </button>
     </div>
 </div>

@@ -13,6 +13,12 @@ export class CarritoComponent {
   constructor(
     private carritoService: CarritoService
   ){
-    this.carritoService.getProductos().subscribe((productos: any) => this.productos = productos)
+    this.carritoService.getProductos().subscribe((productos: any) => {
+      this.productos = productos
+    })
+  }
+
+  cerrarCarrito() {
+    this.carritoService.toggleCarrito()
   }
 }

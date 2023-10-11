@@ -21,14 +21,24 @@ export class CarritoService {
     return this.cantidad.asObservable()
   }
 
+  // Funcion para agregar productos al carrito
   agregarCarrito(cantidad: number, producto: Producto){
     const productos = this.productos.value
-    let nuevoPrecio = this.precio.value + (producto.precio * cantidad)
-    let nuevaCantidad = this.cantidad.value + cantidad
+    let nuevoPrecio = this.precio.value
+    let nuevaCantidad = this.cantidad.value
 
-    for(let i = 1; i <= cantidad; i++){
-      productos.push(producto)
+    let productoExistente = productos.find(p => p.idproductos === producto.idproductos);
+
+    if(productoExistente){
+      productoExistente.cantidad += cantidad;
+    } else {
+      productoExistente = {...producto, cantidad: cantidad}
+      productos.push(productoExistente)
     }
+
+    nuevoPrecio += producto.precio * cantidad
+    nuevaCantidad += cantidad
+
     this.productos.next(productos)
     this.precio.next(nuevoPrecio)
     this.cantidad.next(nuevaCantidad)
