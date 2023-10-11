@@ -1,0 +1,15 @@
+.container {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    height: 50%;
+    width: 30%;
+    padding: 20px;
+    background-color: var(--main-color);
+    border-radius: 10px 0 0 10px;
+}
+
+h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
