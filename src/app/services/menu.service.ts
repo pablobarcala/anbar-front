@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class MenuService {
   navOpcion: BehaviorSubject<string> = new BehaviorSubject<string>("Almohadones")
+  adminNavOpcion: BehaviorSubject<string> = new BehaviorSubject<string>("Almohadones")
 
   constructor() { }
 
@@ -15,5 +16,13 @@ export class MenuService {
 
   getOpcion() {
     return this.navOpcion.asObservable()
+  }
+
+  adminOpcion(opcion: string) {
+    this.adminNavOpcion.next(opcion)
+  }
+
+  getAdminOpcion() {
+    return this.adminNavOpcion.asObservable()
   }
 }

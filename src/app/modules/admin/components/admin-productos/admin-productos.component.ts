@@ -14,23 +14,10 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./admin-productos.component.css']
 })
 export class AdminProductosComponent {
-  productos: Producto[] = [
-    {
-      nombre: "Mesa ratona",
-      precio: 3000,
-      cantidad: 5,
-      categorias: [
-        {
-          nombre: "Muebles"
-        }, 
-        {
-          nombre: "Mesa"
-        }
-      ],
-      imagen: "link",
-      descripcion: ""
-    }
-  ]
+  productos: Producto[] = []
+  productosFiltrados: Producto[] = []
+
+  adminNavOpcion: string = ''
   categorias: Categoria[] = []
 
   constructor(
@@ -40,8 +27,29 @@ export class AdminProductosComponent {
     private categoriaService: CategoriasService,
     private menuService: MenuService
   ){
+    menuService.getAdminOpcion().subscribe((adminNavOpcion: any) => this.adminNavOpcion = adminNavOpcion)
     categoriaService.getCategorias().subscribe((categorias: any) => this.categorias = categorias)
-    productosService.getProductos().subscribe((productos: any) => this.productos = productos)
+    productosService.getProductos().subscribe((productos: any) => {
+      this.productos = productos
+      this.filtro()
+    })
+  }
+  
+  filtro(){
+    this.productosFiltrados = []
+    
+    this.productos.forEach((producto: any) => {
+      producto.categorias.forEach((categoria: any) => {
+        if(categoria.nombre == this.adminNavOpcion){
+          this.productosFiltrados.push(producto)
+        }
+      })
+    });
+  }
+
+  cambiarOpcion(opcion: string){
+    this.menuService.adminOpcion(opcion)
+    this.filtro()
   }
 
   deleteProducto(id: any){
