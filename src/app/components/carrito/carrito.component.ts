@@ -9,12 +9,16 @@ import { CarritoService } from 'src/app/services/carrito.service';
 })
 export class CarritoComponent {
   productos: Producto[] = []
+  precio: number = 0
 
   constructor(
     private carritoService: CarritoService
   ){
     this.carritoService.getProductos().subscribe((productos: any) => {
       this.productos = productos
+    })
+    this.carritoService.getPrecio().subscribe((precio: number) => {
+      this.precio = precio
     })
   }
 
