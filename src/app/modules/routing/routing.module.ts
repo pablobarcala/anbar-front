@@ -21,12 +21,14 @@ import { EditFaqComponent } from '../admin/components/edit-faq/edit-faq.componen
 import { AddCategoriasComponent } from '../admin/components/add-categorias/add-categorias.component';
 import { AddPreguntasComponent } from '../admin/components/add-preguntas/add-preguntas.component';
 import { AddProductosComponent } from '../admin/components/add-productos/add-productos.component';
+import { ProductoPaginaComponent } from '../productos/components/producto-pagina/producto-pagina.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
   {path: 'main', component: HomeComponent, children: [
     {path: 'Inicio', component: InicioComponent},
     {path: 'Productos', component: ProductosComponent},
+    {path: 'Productos/:id', component: ProductoPaginaComponent},
     {path: 'Acerca de', component: AcercaDeComponent},
     {path: 'FAQ', component: FaqComponent},
     {path: 'Contacto', component: ContactoComponent}

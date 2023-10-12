@@ -1,5 +1,5 @@
 <div class="item" *ngIf="producto && producto.cantidad > 0">
-    <img src="{{producto.imagen}}" width="10%" alt="Almohadones">
+    <img src="{{producto.imagen}}" width="10%" height="10%" alt="Almohadones">
     <div class="info">
         <div>
             <h3>{{producto.nombre}}</h3>
@@ -12,7 +12,7 @@
         </div>
         <p class="error" *ngIf="cantidad.get('cantidad')?.value == producto.cantidad">No se pueden seleccionar más unidades</p>
         <div class="botones">
-            <button>Ver más</button>
+            <button [routerLink]="['/main/Productos', producto.idproductos]">Ver más</button>
             <form action="" [formGroup]="cantidad">
                 <input 
                     title="Cantidad" 

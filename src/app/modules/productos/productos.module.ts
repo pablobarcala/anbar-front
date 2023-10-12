@@ -4,6 +4,8 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { ItemsComponent } from './components/items/items.component';
 import { ProductoItemComponent } from './components/producto-item/producto-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductoPaginaComponent } from './components/producto-pagina/producto-pagina.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,11 +13,13 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     ProductosComponent,
     ItemsComponent,
-    ProductoItemComponent
+    ProductoItemComponent,
+    ProductoPaginaComponent
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class ProductosModule { }
