@@ -6,6 +6,7 @@
             <img src="../../../../../assets/iconos/lupa.svg" alt="">
         </form>
     </div>
+    <p *ngIf="productosFiltrados.length == 0">~ NO HAY PRODUCTOS DISPONIBLES ~</p>
     <app-producto-item
         *ngFor="let producto of productosFiltrados" 
         [producto]="producto"
