@@ -9,5 +9,9 @@ h3 {
 
 .info > p > .title {
     font-weight: 600;
-    font-size: 1.5;
+}
+
+.info > p {
+    font-size: 1.3rem;
+    padding: 10px 0;
 }
