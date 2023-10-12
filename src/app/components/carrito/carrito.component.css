@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 1;
     right: 0;
-    height: 50%;
+    min-height: 10%;
     width: 30%;
     padding: 20px;
     background-color: var(--main-color);
@@ -42,6 +42,7 @@ h5 {
 }
 
 .footer {
+    padding-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
