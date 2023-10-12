@@ -20,9 +20,13 @@
         </div>
     </div>
     <div class="footer">
-        <button (click)="cerrarCarrito()">
+        <button class="cerrar" (click)="cerrarCarrito()">
             <img src="../../../assets/iconos/back.svg" alt="Volver">
         </button>
-        <p>Compra total ${{precio}}</p>
+        <div>
+            <p>Compra total ${{precio}}</p>
+            <button class="comprar" *ngIf="productos.length > 0">Contactar con vendedor</button>
+        </div>
     </div>
+
 </div>
