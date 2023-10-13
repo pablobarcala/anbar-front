@@ -22,6 +22,7 @@ import { AddCategoriasComponent } from '../admin/components/add-categorias/add-c
 import { AddPreguntasComponent } from '../admin/components/add-preguntas/add-preguntas.component';
 import { AddProductosComponent } from '../admin/components/add-productos/add-productos.component';
 import { ProductoPaginaComponent } from '../productos/components/producto-pagina/producto-pagina.component';
+import { CompraComponent } from '../compra/components/compra/compra.component';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
@@ -33,6 +34,7 @@ const routes: Route[] = [
     {path: 'FAQ', component: FaqComponent},
     {path: 'Contacto', component: ContactoComponent}
   ]},
+  {path: 'comprar', component: CompraComponent},
   {path: 'admin', component: AdminComponent, children: [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'login', component: LoginComponent},

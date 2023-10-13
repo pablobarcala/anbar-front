@@ -24,6 +24,5 @@ export class ProductoItemComponent {
 
   agregarCarrito(producto: Producto){
     this.carritoService.agregarCarrito(this.cantidad.value.cantidad, producto)
-    this.carritoService.getProductos().subscribe((resp: any) => console.log(resp))
   }
 }
