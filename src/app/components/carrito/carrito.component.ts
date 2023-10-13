@@ -26,7 +26,7 @@ export class CarritoComponent {
     this.carritoService.toggleCarrito()
   }
 
-  eliminarDeCarrito(cantidad: number, producto: Producto) {
-    this.carritoService.eliminarDeCarrito(cantidad, producto)
+  eliminarDeCarrito(i: number, cantidad: number, producto: Producto) {
+    this.carritoService.eliminarDeCarrito(i, cantidad, producto)
   }
 }

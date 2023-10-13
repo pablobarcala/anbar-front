@@ -44,7 +44,7 @@ export class CarritoService {
     this.cantidad.next(nuevaCantidad)
   }
 
-  eliminarDeCarrito(cantidad: number, producto: Producto){
+  eliminarDeCarrito(i:number, cantidad: number, producto: Producto){
     const productos = this.productos.value
     let nuevoPrecio = this.precio.value
     let nuevaCantidad = this.cantidad.value
@@ -53,6 +53,9 @@ export class CarritoService {
 
     if(productoExistente){
       productoExistente.cantidad -= cantidad
+      if(productoExistente.cantidad == 0){
+        productos.splice(i, 1)
+      }
     }
     nuevoPrecio -= producto.precio * cantidad
     nuevaCantidad -= cantidad
