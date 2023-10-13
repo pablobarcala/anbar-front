@@ -14,6 +14,10 @@ export class ProductosService {
     return this.http.get(this.apiurl + "/traer")
   }
 
+  getProductosPorNombre(nombre: string){
+    return this.http.get(this.apiurl + `/traer/${nombre}`)
+  }
+
   addProducto(producto: Producto) {
     return this.http.post(this.apiurl + "/crear", producto)
   }

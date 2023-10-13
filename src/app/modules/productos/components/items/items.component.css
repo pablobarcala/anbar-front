@@ -28,9 +28,11 @@ input:focus {
     outline: none;
 }
 
-form > img {
+button {
     cursor: pointer;
+    border: none;
     transform: scale(0.6);
+    background-color: transparent;
 }
 
 p {

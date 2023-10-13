@@ -1,4 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Producto } from 'src/app/interfaces/Producto';
 import { ProductosService } from 'src/app/services/productos.service';
 
@@ -14,11 +15,18 @@ export class ItemsComponent {
 
   productosFiltrados: Producto[] = []
 
-  constructor(private productosService: ProductosService){
+  buscar: FormGroup
+  constructor(
+    private productosService: ProductosService,
+    private formBuilder: FormBuilder  
+  ){
     productosService.getProductos().subscribe((productos: any) => {
       this.productos = productos
       this.filtro()
     });
+    this.buscar = this.formBuilder.group({
+      nombre: ['']
+    })
   }
   
   filtro(){
@@ -30,6 +38,12 @@ export class ItemsComponent {
           this.productosFiltrados.push(producto)
         }
       })
+    })
+  }
+
+  buscarPorNombre(){
+    this.productosService.getProductosPorNombre(this.buscar.get('nombre')?.value).subscribe((productos: any) => {
+      this.productos = productos
     })
   }
 
