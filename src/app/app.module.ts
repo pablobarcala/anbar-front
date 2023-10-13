@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FaqModule } from './modules/faq/faq.module';
 import { ConfirmacionComponent } from './components/confirmacion/confirmacion.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { CompraModule } from './modules/compra/compra.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     FaqModule,
     ContactoModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    CompraModule
   ],
   providers: [],
   bootstrap: [AppComponent]
