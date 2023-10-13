@@ -16,6 +16,8 @@ export class ItemsComponent {
   productosFiltrados: Producto[] = []
 
   buscar: FormGroup
+  productoExiste: boolean = true
+  buscando: boolean = false
   constructor(
     private productosService: ProductosService,
     private formBuilder: FormBuilder  
@@ -29,6 +31,20 @@ export class ItemsComponent {
     })
   }
   
+  buscarPorNombre(){
+    this.productosService.getProductosPorNombre(this.buscar.get('nombre')?.value).subscribe((productos: any) => {
+      const productosBuscados = productos
+      if(productosBuscados > []){
+        this.productoExiste = true
+      } else {
+        this.productoExiste = false
+      }
+      this.productosFiltrados = productosBuscados
+
+      this.buscando = true
+    })
+  }
+
   filtro(){
     this.productosFiltrados = []
 
@@ -41,15 +57,10 @@ export class ItemsComponent {
     })
   }
 
-  buscarPorNombre(){
-    this.productosService.getProductosPorNombre(this.buscar.get('nombre')?.value).subscribe((productos: any) => {
-      this.productos = productos
-    })
-  }
-
   ngOnChanges(changes: SimpleChanges){
     if (changes["navOpcion"]) {
       this.filtro();
+      this.buscando = false
     }
   }
 }

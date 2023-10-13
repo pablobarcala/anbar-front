@@ -1,6 +1,7 @@
 <div class="container">
     <div class="title">
-        <h2>{{navOpcion}}</h2>
+        <h2 *ngIf="!buscando">{{navOpcion}}</h2>
+        <h2 *ngIf="buscando">Buscar: {{this.buscar.get('nombre')?.value}}</h2>
         <form action="" [formGroup]="buscar" (submit)="buscarPorNombre()">
             <input type="text" placeholder="Buscar..." formControlName="nombre">
             <button type="submit">
