@@ -25,4 +25,8 @@ export class CarritoComponent {
   cerrarCarrito() {
     this.carritoService.toggleCarrito()
   }
+
+  eliminarDeCarrito(cantidad: number, producto: Producto) {
+    this.carritoService.eliminarDeCarrito(cantidad, producto)
+  }
 }

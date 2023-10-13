@@ -15,6 +15,17 @@
                 </div>
                 <div>
                     <p>$ {{producto.precio * producto.cantidad}}</p>
+                    <div class="eliminar_container">
+                        <form action="">
+                            <input 
+                                title="Cantidad" 
+                                type="number" 
+                                min="0" 
+                                max="{{producto.cantidad}}"
+                            >
+                        </form>
+                        <button class="eliminar" (click)="eliminarDeCarrito(1, producto)">Eliminar</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -44,6 +44,24 @@ export class CarritoService {
     this.cantidad.next(nuevaCantidad)
   }
 
+  eliminarDeCarrito(cantidad: number, producto: Producto){
+    const productos = this.productos.value
+    let nuevoPrecio = this.precio.value
+    let nuevaCantidad = this.cantidad.value
+
+    let productoExistente = productos.find(p => p.idproductos === producto.idproductos)
+
+    if(productoExistente){
+      productoExistente.cantidad -= cantidad
+    }
+    nuevoPrecio -= producto.precio * cantidad
+    nuevaCantidad -= cantidad
+
+    this.productos.next(productos)
+    this.precio.next(nuevoPrecio)
+    this.cantidad.next(nuevaCantidad)
+  }
+
   getProductos(){
     return this.productos.asObservable()
   }
