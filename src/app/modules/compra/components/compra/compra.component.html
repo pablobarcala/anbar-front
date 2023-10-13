@@ -17,8 +17,12 @@
     <div class="productos">
         <h4>Productos</h4>
         <div class="producto" *ngFor="let producto of productos">
-            <p>{{producto.nombre}}</p>
-            <p>{{producto.cantidad}}</p>
+            <span>{{producto.nombre}} - {{producto.cantidad}} <span *ngIf="producto.cantidad > 1">unidades</span><span *ngIf="producto.cantidad == 1">unidad</span></span>
+            <p>${{producto.precio * producto.cantidad}}</p>
+        </div>
+        <div class="total">
+            <span>Total:</span>
+            <p>${{precio}}</p>
         </div>
     </div>
 </div>

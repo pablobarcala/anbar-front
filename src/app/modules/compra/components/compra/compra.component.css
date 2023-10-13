@@ -44,3 +44,19 @@ h4 {
     border-radius: 15px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
 }
+
+.producto,
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total {
+    padding: 20px 0;
+    border-top: 0.5px solid #000;
+}
+
+.total > span {
+    font-weight: 600;
+}
