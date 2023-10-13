@@ -40,6 +40,7 @@ import { CompraModule } from './modules/compra/compra.module';
     FaqModule,
     ContactoModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     CompraModule
   ],

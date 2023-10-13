@@ -16,15 +16,16 @@
                 <div>
                     <p>$ {{producto.precio * producto.cantidad}}</p>
                     <div class="eliminar_container">
-                        <form action="">
+                        <form action="" [formGroup]="form">
                             <input 
                                 title="Cantidad" 
                                 type="number" 
                                 min="0" 
                                 max="{{producto.cantidad}}"
+                                formControlName="cantidad"
                             >
                         </form>
-                        <button class="eliminar" (click)="eliminarDeCarrito(i, 1, producto)">Eliminar</button>
+                        <button class="eliminar" (click)="eliminarDeCarrito(i, producto)">Eliminar</button>
                     </div>
                 </div>
             </div>
