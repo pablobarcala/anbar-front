@@ -1,5 +1,6 @@
 .container {
     padding: 20px 0;
+    min-height: 70vh;
 }
 
 h3 {
