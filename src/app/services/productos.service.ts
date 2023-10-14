@@ -22,8 +22,8 @@ export class ProductosService {
     return this.http.post(this.apiurl + `/crear/${id}`, producto)
   }
 
-  editarProducto(id: number, producto: Producto) {
-    return this.http.put(this.apiurl + `/editar/${id}`, producto)
+  editarProducto(id: number, idcategorias: number, producto: Producto) {
+    return this.http.put(this.apiurl + `/editar/${id}/${idcategorias}`, producto)
   }
 
   deleteProducto(id: number){

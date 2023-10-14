@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/interfaces/Categoria';
 import { Producto } from 'src/app/interfaces/Producto';
 import { CategoriasService } from 'src/app/services/categorias.service';
@@ -21,7 +21,8 @@ export class EditProductosComponent {
     private route: ActivatedRoute, 
     private productoService: ProductosService,
     private formBuilder: FormBuilder,
-    private categoriasService: CategoriasService
+    private categoriasService: CategoriasService,
+    private router: Router
   ){
     categoriasService.getCategorias().subscribe((categorias: any) => this.categorias = categorias)
     route.params.subscribe(params => {
@@ -33,7 +34,7 @@ export class EditProductosComponent {
       nombre: ['', Validators.required],
       precio: [0, Validators.required],
       cantidad: [0, Validators.required],
-      categorias: ['', Validators.required],
+      categoria: [0, Validators.required],
       imagen: ['', Validators.required],
       descripcion: ['']
     })
@@ -54,10 +55,28 @@ export class EditProductosComponent {
         nombre: this.producto.nombre,
         precio: this.producto.precio,
         cantidad: this.producto.cantidad,
-        categorias: this.producto.categoria,
+        categoria: this.producto.categoria.idcategorias,
         imagen: this.producto.imagen,
         descripcion: this.producto.descripcion,
       })
+    }
+  }
+
+  editarProducto(event: Event){
+    event.preventDefault()
+
+    if(this.form.valid){
+      this.productoService.editarProducto(this.form.get('idproductos')?.value, this.form.get('categoria')?.value, this.form.value).subscribe((resp:any) => {
+        if(resp){
+          alert("Se editó correctamente")
+          this.router.navigate(['/admin/dashboard/admin-productos'])
+          .then(() => window.location.reload());
+        } else {
+          alert("Hubo un error")
+        }
+      })
+    } else {
+      this.form.markAllAsTouched()
     }
   }
 }
