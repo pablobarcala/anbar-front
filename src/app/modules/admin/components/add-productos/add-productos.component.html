@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="" [formGroup]="form">
+    <form action="" [formGroup]="form" (submit)="guardarProducto($event)">
         <div class="form">
             <div class="input">
                 <label for="nombre">Nombre de producto</label>
@@ -36,7 +36,7 @@
                 <p 
                     *ngIf="form.get('categorias')?.hasError('required') && form.get('categorias')?.touched"
                     class="error"
-                >Se necesita al menos una categoría</p>
+                >Se necesita una categoría</p>
             </div>
         </div>
         <div class="link-input">

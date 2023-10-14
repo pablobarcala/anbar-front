@@ -18,7 +18,8 @@ form {
 }
 
 input,
-textarea {
+textarea,
+select {
     border: none;
     background-color: #eee;
     padding: 5px 10px;
@@ -30,7 +31,8 @@ textarea {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus ,
+select:focus {
     outline: none;
 }
 
