@@ -14,7 +14,8 @@
                     <div class="categoria">{{producto.categoria.nombre}}</div>
                 </div>
                 <div>
-                    <p>$ {{producto.precio * producto.cantidad}}</p>
+                    <p *ngIf="!producto.oferta">$ {{producto.precio * producto.cantidad}}</p>
+                    <p *ngIf="producto.oferta">$ {{(producto.precio * (1 - producto.oferta / 100)) * producto.cantidad}}</p>
                     <div class="eliminar_container">
                         <form action="" [formGroup]="form">
                             <input 
