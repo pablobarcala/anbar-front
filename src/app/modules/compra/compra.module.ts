@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompraComponent } from './components/compra/compra.component';
 import { RoutingModule } from '../routing/routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,8 @@ import { RoutingModule } from '../routing/routing.module';
   ],
   imports: [
     CommonModule,
-    RoutingModule
+    RoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CompraModule { }

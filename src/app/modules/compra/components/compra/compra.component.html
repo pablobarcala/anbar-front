@@ -2,15 +2,15 @@
     <div class="compra">
         <h4>Compra</h4>
         <p>Elegir una opción para el pago. El envío se debe arreglar con el vendedor</p>
-        <form action="">
-            <div>
-                <input type="radio" name="pago" id="pagina">
-                <label for="pagina">Pagar en la página</label>
-            </div>
-            <div>
-                <input type="radio" name="pago" id="acordar">
-                <label for="acordar">Acordar con vendedor</label>
-            </div>
+        <form action="" [formGroup]="compraForm">
+            <label>
+                <input type="radio" formControlName="opcion" value="pagina">
+                <span>Pagar en la página</span>
+            </label>
+            <label>
+                <input type="radio" formControlName="opcion" value="acordar">
+                <span>Acordar con el vendedor</span>
+            </label>
         </form>
         <button (click)="comprar()">Avanzar</button>
     </div>
