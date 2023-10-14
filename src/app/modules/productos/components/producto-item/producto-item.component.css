@@ -48,6 +48,14 @@ span.anterior {
     color: var(--second-color);
 }
 
+.oferta {
+    color: var(--second-color);
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+}
+
 .botones {
     display: flex;
     flex-direction: column;

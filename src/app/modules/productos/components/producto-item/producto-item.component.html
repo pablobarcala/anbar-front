@@ -2,7 +2,7 @@
     <img src="{{producto.imagen}}" width="10%" height="10%" alt="Almohadones">
     <div class="info">
         <div>
-            <h3>{{producto.nombre}}</h3>
+            <h3>{{producto.nombre}} <span class="oferta" *ngIf="producto.oferta > 0">OFERTA</span></h3>
             <span><span [ngClass]="{'anterior': producto.oferta > 0}">${{producto.precio}}</span><span *ngIf="producto.oferta > 0">${{producto.precio * (1 - (producto.oferta / 100))}} (-{{producto.oferta}}%)</span></span>
             <div class="categorias">
                 <div>{{producto.categoria.nombre}}</div>
