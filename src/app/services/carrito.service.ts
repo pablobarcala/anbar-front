@@ -36,7 +36,11 @@ export class CarritoService {
       productos.push(productoExistente)
     }
 
-    nuevoPrecio += producto.precio * cantidad
+    if(producto.oferta > 0){
+      nuevoPrecio += (producto.precio * (1 - producto.oferta / 100)) * cantidad
+    } else {
+      nuevoPrecio += producto.precio * cantidad
+    }
     nuevaCantidad += cantidad
 
     this.productos.next(productos)

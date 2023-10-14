@@ -38,6 +38,16 @@ img {
     justify-content: space-between;
 }
 
+.info > div > h3 {
+    padding-bottom: 10px;
+}
+
+span.anterior {
+    text-decoration: line-through;
+    margin-right: 10px;
+    color: var(--second-color);
+}
+
 .botones {
     display: flex;
     flex-direction: column;

@@ -3,7 +3,7 @@
     <div class="info">
         <div>
             <h3>{{producto.nombre}}</h3>
-            <p>${{producto.precio}}</p>
+            <span><span [ngClass]="{'anterior': producto.oferta > 0}">${{producto.precio}}</span><span *ngIf="producto.oferta > 0">${{producto.precio * (1 - (producto.oferta / 100))}} (-{{producto.oferta}}%)</span></span>
             <div class="categorias">
                 <div>{{producto.categoria.nombre}}</div>
             </div>
