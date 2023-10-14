@@ -27,3 +27,27 @@
         </div>
     </div>
 </div>
+<table id="pdfTable">
+    <h3>ANBAR</h3>
+    <p>Orden de compra</p>
+
+    <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Total</th>
+    </tr>
+    <tr *ngFor="let producto of productos">
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td *ngIf="!producto.oferta">${{producto.precio * producto.cantidad}}</td>
+        <td *ngIf="producto.oferta">${{(producto.precio * (1 - producto.oferta / 100)) * producto.cantidad}}</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>${{precio}}</td>
+    </tr>
+</table>

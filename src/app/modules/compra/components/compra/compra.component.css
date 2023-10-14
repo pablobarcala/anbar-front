@@ -60,3 +60,7 @@ h4 {
 .total > span {
     font-weight: 600;
 }
+
+table {
+    display: none;
+}

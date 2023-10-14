@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Producto } from 'src/app/interfaces/Producto';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { MercadopagoService } from 'src/app/services/mercadopago.service';
+import { jsPDF } from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 @Component({
   selector: 'app-compra',
@@ -27,6 +29,22 @@ export class CompraComponent {
   }
 
   comprar(){
+    const doc = new jsPDF()
+    const img = new Image()
+    img.src = "assets/iconos/almohadones.png"
+
+    doc.setFontSize(14)
+    doc.setFont("Helvetica", 'bold')
+    doc.addImage(img, 'png', 10, 20, 30, 30)
+    doc.text("ANBAR - Orden de compra", 50, 30)
+    doc.text("Enviar este PDF al WhatsApp +543815465017", 50, 40)
+
+    autoTable(doc, {
+      html: '#pdfTable',
+      startY: 60    
+    })
+    doc.save("ordenCompra.pdf")
+
     if(this.compraForm.get('opcion')?.value == 'pagina'){
       this.mercadopagoService.createPreference().subscribe((resp: any) => {
         window.location.href = resp.mensaje
