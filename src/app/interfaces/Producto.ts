@@ -4,6 +4,7 @@ export interface Producto {
     idproductos?: number,
     nombre: string,
     precio: number,
+    oferta: number,
     cantidad: number,
     categoria: Categoria,
     imagen: string,

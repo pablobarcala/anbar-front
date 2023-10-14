@@ -38,6 +38,10 @@
                     <h4>Precio</h4>
                     <p>{{producto.precio}}</p>
                 </div>
+                <div class="item" *ngIf="producto.oferta">
+                    <h4>Oferta</h4>
+                    <p>{{producto.oferta}}%</p>
+                </div>
                 <div class="item" [ngClass]="{'bajo-stock': producto.cantidad <= 5}">
                     <h4>Cantidad</h4>
                     <p>{{producto.cantidad}}</p>

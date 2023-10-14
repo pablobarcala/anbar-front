@@ -24,6 +24,7 @@ export class AddProductosComponent {
     this.form = formBuilder.group({
       nombre: ['', Validators.required],
       precio: [0, Validators.required],
+      oferta: [],
       cantidad: [0, Validators.required],
       categoria: [0, Validators.required],
       imagen: ['', Validators.required],

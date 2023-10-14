@@ -33,6 +33,7 @@ export class EditProductosComponent {
       idproductos: [this.id, Validators.required],
       nombre: ['', Validators.required],
       precio: [0, Validators.required],
+      oferta: [],
       cantidad: [0, Validators.required],
       categoria: [0, Validators.required],
       imagen: ['', Validators.required],
@@ -54,6 +55,7 @@ export class EditProductosComponent {
       this.form.patchValue({
         nombre: this.producto.nombre,
         precio: this.producto.precio,
+        oferta: this.producto.oferta,
         cantidad: this.producto.cantidad,
         categoria: this.producto.categoria.idcategorias,
         imagen: this.producto.imagen,
