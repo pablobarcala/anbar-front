@@ -49,13 +49,12 @@ export class ItemsComponent {
     this.productosFiltrados = []
 
     this.productos.forEach(producto => {
-      producto.categorias.forEach(categoria => {
-        if(categoria.nombre == this.navOpcion){
-          this.productosFiltrados.push(producto)
-        }
-      })
+      if(producto.categoria.nombre == this.navOpcion){
+        this.productosFiltrados.push(producto)
+      }
     })
   }
+
 
   ngOnChanges(changes: SimpleChanges){
     if (changes["navOpcion"]) {

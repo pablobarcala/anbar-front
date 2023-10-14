@@ -39,12 +39,10 @@ export class AdminProductosComponent {
     this.productosFiltrados = []
     
     this.productos.forEach((producto: any) => {
-      producto.categorias.forEach((categoria: any) => {
-        if(categoria.nombre == this.adminNavOpcion){
-          this.productosFiltrados.push(producto)
-        }
-      })
-    });
+      if(producto.categoria.nombre == this.adminNavOpcion){
+        this.productosFiltrados.push(producto)
+      }
+    })
   }
 
   cambiarOpcion(opcion: string){

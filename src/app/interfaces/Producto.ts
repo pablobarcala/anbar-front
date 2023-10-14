@@ -5,7 +5,7 @@ export interface Producto {
     nombre: string,
     precio: number,
     cantidad: number,
-    categorias: Categoria[],
+    categoria: Categoria,
     imagen: string,
     descripcion?: string
   }

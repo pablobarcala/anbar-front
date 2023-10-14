@@ -5,7 +5,7 @@
             <h3>{{producto.nombre}}</h3>
             <p>${{producto.precio}}</p>
             <div class="categorias">
-                <div *ngFor="let categoria of producto.categorias">{{categoria.nombre}}</div>
+                <div>{{producto.categoria.nombre}}</div>
             </div>
             <p *ngIf="producto.cantidad > 5" class="stock">Stock disponible</p>
             <p *ngIf="producto.cantidad <= 5" class="stock">Últimas unidades!</p>

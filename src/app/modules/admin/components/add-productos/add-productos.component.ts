@@ -25,7 +25,7 @@ export class AddProductosComponent {
       nombre: ['', Validators.required],
       precio: [0, Validators.required],
       cantidad: [0, Validators.required],
-      categorias: [[], Validators.required],
+      categoria: [0, Validators.required],
       imagen: ['', Validators.required],
       descripcion: ['']
     })
@@ -35,7 +35,7 @@ export class AddProductosComponent {
     event.preventDefault()
 
     if(this.form.valid){
-      this.productosService.addProducto(this.form.value).subscribe(resp => {
+      this.productosService.addProducto(this.form.value, this.form.get('categoria')?.value).subscribe(resp => {
         if(resp){
           alert("Se creó correctamente")
           this.router.navigate(['/admin/dashboard/admin-productos'])

@@ -18,8 +18,8 @@ export class ProductosService {
     return this.http.get(this.apiurl + `/traer/${nombre}`)
   }
 
-  addProducto(producto: Producto) {
-    return this.http.post(this.apiurl + "/crear", producto)
+  addProducto(producto: Producto, id: number) {
+    return this.http.post(this.apiurl + `/crear/${id}`, producto)
   }
 
   editarProducto(id: number, producto: Producto) {

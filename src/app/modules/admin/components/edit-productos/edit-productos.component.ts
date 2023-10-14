@@ -33,7 +33,7 @@ export class EditProductosComponent {
       nombre: ['', Validators.required],
       precio: [0, Validators.required],
       cantidad: [0, Validators.required],
-      categorias: [[''], Validators.required],
+      categorias: ['', Validators.required],
       imagen: ['', Validators.required],
       descripcion: ['']
     })
@@ -54,7 +54,7 @@ export class EditProductosComponent {
         nombre: this.producto.nombre,
         precio: this.producto.precio,
         cantidad: this.producto.cantidad,
-        categorias: this.producto.categorias,
+        categorias: this.producto.categoria,
         imagen: this.producto.imagen,
         descripcion: this.producto.descripcion,
       })

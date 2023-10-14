@@ -11,7 +11,7 @@
                 <div>
                     <h5>{{producto.nombre}}</h5>
                     <h5>Cantidad: {{producto.cantidad}}</h5>
-                    <div class="categoria" *ngFor="let categoria of producto.categorias">{{categoria.nombre}}</div>
+                    <div class="categoria">{{producto.categoria.nombre}}</div>
                 </div>
                 <div>
                     <p>$ {{producto.precio * producto.cantidad}}</p>
