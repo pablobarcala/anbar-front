@@ -23,21 +23,9 @@ export class CarritoService {
     return this.cantidad.asObservable()
   }
 
-  // Funcion para agregar productos al carrito
-  agregarCarrito(cantidad: number, producto: Producto){
-    const productos = this.productos.value
+  actualizarPrecioCantidad(cantidad: number, producto: Producto) {
     let nuevoPrecio = this.precio.value
     let nuevaCantidad = this.cantidad.value
-
-    let productoExistente = productos.find(p => p.idproductos === producto.idproductos);
-
-    if(productoExistente){
-      productoExistente.cantidad += cantidad;
-    } else {
-      productoExistente = {...producto, cantidad: cantidad}
-      productos.push(productoExistente)
-      this.productosLocal.push(productoExistente)
-    }
 
     if(producto.oferta > 0){
       nuevoPrecio += (producto.precio * (1 - producto.oferta / 100)) * cantidad
@@ -48,10 +36,33 @@ export class CarritoService {
     }
     nuevaCantidad += cantidad
 
-    this.productos.next(productos)
     this.precio.next(nuevoPrecio)
     this.cantidad.next(nuevaCantidad)
+  }
 
+  // Funcion para agregar productos al carrito
+  agregarCarrito(cantidad: number, producto: Producto){
+    const productos = this.productos.value
+    const stock = producto.cantidad
+
+    let productoExistente = productos.find(p => p.idproductos === producto.idproductos);
+
+    if(productoExistente){
+      if(productoExistente.cantidad < stock){
+        productoExistente.cantidad += cantidad;
+        this.actualizarPrecioCantidad(cantidad, producto)
+      } else {
+        alert("No se puede agregar más cantidad de este producto")
+      }
+    } else {
+      productoExistente = {...producto, cantidad: cantidad}
+      this.actualizarPrecioCantidad(cantidad, producto)
+      productos.push(productoExistente)
+      this.productosLocal.push(productoExistente)
+    }
+
+    this.productos.next(productos)
+    
     localStorage.setItem('productos', JSON.stringify(this.productosLocal))
     localStorage.setItem('precio', JSON.stringify(this.precioLocal))
   }
