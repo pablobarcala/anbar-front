@@ -1,7 +1,7 @@
 <div class="container">
     <div class="compra">
         <h4>Compra</h4>
-        <p>Elegir una opción para el pago. El envío se debe arreglar con el vendedor</p>
+        <p>Elegir una opción para el pago. El envío se arreglará con el vendedor. Si paga en la página, luego del pago haga click en "Volver al sitio"</p>
         <form action="" [formGroup]="compraForm">
             <label>
                 <input type="radio" formControlName="opcion" value="pagina">
@@ -12,7 +12,7 @@
                 <span>Acordar con el vendedor</span>
             </label>
         </form>
-        <button routerLink="/finalizacion">Avanzar</button>
+        <button (click)="comprar()">Avanzar</button>
     </div>
     <div class="productos">
         <h4>Productos</h4>

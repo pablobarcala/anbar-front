@@ -1,5 +1,6 @@
 import { Component, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Producto } from 'src/app/interfaces/Producto';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { CompraService } from 'src/app/services/compra.service';
@@ -19,7 +20,8 @@ export class CompraComponent {
     private carritoService: CarritoService,
     private mercadopagoService: MercadopagoService,
     private formBuilder: FormBuilder,
-    private compraService: CompraService
+    private compraService: CompraService,
+    private router: Router
   ){
     carritoService.getProductos().subscribe((productos: any) => this.productos = productos)
     carritoService.getPrecio().subscribe((precio: number) => this.precio = precio)
@@ -32,11 +34,13 @@ export class CompraComponent {
     })
   }
 
-  // comprar(){
-  //   if(this.compraForm.get('opcion')?.value == 'pagina'){
-  //     this.mercadopagoService.createPreference().subscribe((resp: any) => {
-  //       window.location.href = resp.mensaje
-  //     })
-  //   }
-  // }
+  comprar(){
+    if(this.compraForm.get('opcion')?.value == 'pagina'){
+      this.mercadopagoService.createPreference().subscribe((resp: any) => {
+        window.open(resp.mensaje, '_blank')
+      })
+    } else {
+      this.router.navigate(['/finalizacion'])
+    }
+  }
 }
