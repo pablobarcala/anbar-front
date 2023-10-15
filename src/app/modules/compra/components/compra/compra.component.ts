@@ -26,20 +26,17 @@ export class CompraComponent {
     this.compraForm = formBuilder.group({
       opcion: new FormControl('pagina')
     })
+    this.compraForm.valueChanges.subscribe((resp: any) => {
+      console.log(resp.opcion)
+      this.compraService.cambiarOpcion(resp.opcion)
+    })
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    if(changes['opcion']){
-      this.compraService.cambiarOpcion(this.compraForm.get('opcion')?.value)
-      this.compraService.getOpcion().subscribe(resp => console.log(resp))
-    }
-  }
-
-  comprar(){
-    if(this.compraForm.get('opcion')?.value == 'pagina'){
-      this.mercadopagoService.createPreference().subscribe((resp: any) => {
-        window.location.href = resp.mensaje
-      })
-    }
-  }
+  // comprar(){
+  //   if(this.compraForm.get('opcion')?.value == 'pagina'){
+  //     this.mercadopagoService.createPreference().subscribe((resp: any) => {
+  //       window.location.href = resp.mensaje
+  //     })
+  //   }
+  // }
 }

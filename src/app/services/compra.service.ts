@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CompraService {
-  opcionCompra: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  opcionCompra: BehaviorSubject<string> = new BehaviorSubject<string>('pagina');
 
   constructor() { }
 
@@ -29,6 +29,7 @@ export class CompraService {
     doc.addImage(img, 'png', 10, 20, 30, 30)
     doc.text("ANBAR - Orden de compra", 50, 30)
     doc.text("Enviar este PDF al WhatsApp +543815465017", 50, 40)
+    doc.text("PAGADO", 50, 50)
 
     autoTable(doc, {
       html: '#pdfTable',
@@ -38,6 +39,20 @@ export class CompraService {
   }
 
   comprarEnVendedor(){
+    const doc = new jsPDF()
+    const img = new Image()
+    img.src = "assets/iconos/almohadones.png"
 
+    doc.setFontSize(14)
+    doc.setFont("Helvetica", 'bold')
+    doc.addImage(img, 'png', 10, 20, 30, 30)
+    doc.text("ANBAR - Orden de compra", 50, 30)
+    doc.text("Enviar este PDF al WhatsApp +543815465017", 50, 40)
+
+    autoTable(doc, {
+      html: '#pdfTable',
+      startY: 60    
+    })
+    doc.save("ordenCompra.pdf")
   }
 }

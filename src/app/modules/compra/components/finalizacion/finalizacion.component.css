@@ -1,0 +1,21 @@
+.container {
+    background-color: var(--main-color);
+    border-radius: 15px;
+    width: 30%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 5%;
+}
+
+p {
+    margin: 20px 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: var(--second-color);
+}
