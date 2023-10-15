@@ -2,13 +2,5 @@
     <app-carousel></app-carousel>
     <app-beneficios></app-beneficios>
     <app-destacados></app-destacados>
-    <div class="container-opciones">
-        <div
-            class="opcion"
-            *ngFor="let opcion of navegacion"
-            (click)="cambiarOpcion(opcion)"
-            [ngClass]="{'selected': opcion == navOpcion}"
-        >{{opcion}}</div>
-    </div>
-    <app-ultimos></app-ultimos>
+    <!-- <app-ultimos></app-ultimos> -->
 </div>

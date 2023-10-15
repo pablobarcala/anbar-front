@@ -17,7 +17,7 @@ export class DestacadosComponent {
       const productosFiltrados = productos
       
       productosFiltrados.forEach((producto: any) => {
-        if(producto.oferta == 20){
+        if(producto.oferta > 0){
           this.productos = []
           this.productos?.push(producto)
         }
