@@ -37,6 +37,7 @@ h4 {
     padding: 5px 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     background-color: var(--second-color);
+    margin-right: 20px;
 }
 
 .productos {
@@ -59,8 +60,4 @@ h4 {
 
 .total > span {
     font-weight: 600;
-}
-
-table {
-    display: none;
 }

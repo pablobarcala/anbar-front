@@ -10,8 +10,9 @@ export class CarritoService {
   cantidad: BehaviorSubject<number> = new BehaviorSubject<number>(0)
   productos: BehaviorSubject<Producto[]> = new BehaviorSubject<Producto[]>([])
   carritoOpen: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+  productosLocal: Producto[] = []
 
-  constructor() { }
+  constructor() {}
 
   getPrecio() {
     return this.precio.asObservable()
@@ -34,6 +35,7 @@ export class CarritoService {
     } else {
       productoExistente = {...producto, cantidad: cantidad}
       productos.push(productoExistente)
+      this.productosLocal.push(productoExistente)
     }
 
     if(producto.oferta > 0){
@@ -46,6 +48,8 @@ export class CarritoService {
     this.productos.next(productos)
     this.precio.next(nuevoPrecio)
     this.cantidad.next(nuevaCantidad)
+
+    localStorage.setItem('productos', JSON.stringify(this.productosLocal))
   }
 
   eliminarDeCarrito(i:number, cantidad: number, producto: Producto){

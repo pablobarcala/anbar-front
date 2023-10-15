@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Producto } from '../interfaces/Producto';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class MercadopagoService {
 
   constructor(private http: HttpClient) { }
 
-  createPreference(){
-    return this.http.get(this.apiurl + "/createAndRedirect")
+  createPreference(productos: Producto[]){
+    return this.http.post(this.apiurl + "/createAndRedirect", productos)
   }
 }

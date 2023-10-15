@@ -12,7 +12,7 @@ import { MercadopagoService } from 'src/app/services/mercadopago.service';
   styleUrls: ['./compra.component.css']
 })
 export class CompraComponent {
-  productos: Producto[] | undefined = undefined;
+  productos: Producto[] = [];
   precio: number = 0;
   compraForm: FormGroup
 
@@ -36,7 +36,7 @@ export class CompraComponent {
 
   comprar(){
     if(this.compraForm.get('opcion')?.value == 'pagina'){
-      this.mercadopagoService.createPreference().subscribe((resp: any) => {
+      this.mercadopagoService.createPreference(this.productos).subscribe((resp: any) => {
         window.open(resp.mensaje, '_blank')
       })
     } else {
