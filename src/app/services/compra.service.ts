@@ -22,13 +22,13 @@ export class CompraService {
   comprarEnPagina(){
     const doc = new jsPDF()
     const img = new Image()
-    img.src = "assets/iconos/almohadones.png"
+    img.src = "assets/iconos/logo-aqua-2.png"
 
     doc.setFontSize(14)
     doc.setFont("Helvetica", 'bold')
     doc.addImage(img, 'png', 10, 20, 30, 30)
     doc.text("ANBAR - Orden de compra", 50, 30)
-    doc.text("Enviar este PDF al WhatsApp +543815465017", 50, 40)
+    doc.text("Enviar este PDF al WhatsApp +5400000", 50, 40)
     doc.text("PAGADO", 50, 50)
 
     autoTable(doc, {
@@ -41,13 +41,14 @@ export class CompraService {
   comprarEnVendedor(){
     const doc = new jsPDF()
     const img = new Image()
-    img.src = "assets/iconos/almohadones.png"
+    img.src = "assets/iconos/logo-aqua-2.png"
 
     doc.setFontSize(14)
     doc.setFont("Helvetica", 'bold')
     doc.addImage(img, 'png', 10, 20, 30, 30)
     doc.text("ANBAR - Orden de compra", 50, 30)
-    doc.text("Enviar este PDF al WhatsApp +543815465017", 50, 40)
+    doc.text("Enviar este PDF al WhatsApp +5400000", 50, 40)
+    doc.text("ACORDAR PAGO", 50, 50)
 
     autoTable(doc, {
       html: '#pdfTable',
