@@ -5,6 +5,7 @@ import { Producto } from 'src/app/interfaces/Producto';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { CompraService } from 'src/app/services/compra.service';
 import { MercadopagoService } from 'src/app/services/mercadopago.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-compra',
@@ -21,6 +22,7 @@ export class CompraComponent {
     private mercadopagoService: MercadopagoService,
     private formBuilder: FormBuilder,
     private compraService: CompraService,
+    private productoService: ProductosService,
     private router: Router
   ){
     carritoService.getProductos().subscribe((productos: any) => this.productos = productos)
@@ -29,12 +31,15 @@ export class CompraComponent {
       opcion: new FormControl('pagina')
     })
     this.compraForm.valueChanges.subscribe((resp: any) => {
-      console.log(resp.opcion)
       this.compraService.cambiarOpcion(resp.opcion)
     })
   }
 
   comprar(){
+    this.productos.forEach((producto: any) => {
+      console.log(producto)
+      this.productoService.bajarStock(producto.idproductos, producto).subscribe()
+    })
     if(this.compraForm.get('opcion')?.value == 'pagina'){
       this.mercadopagoService.createPreference(this.productos).subscribe((resp: any) => {
         window.open(resp.mensaje, '_blank')

@@ -26,6 +26,10 @@ export class ProductosService {
     return this.http.put(this.apiurl + `/editar/${id}/${idcategorias}`, producto)
   }
 
+  bajarStock(id: number, producto: Producto) {
+    return this.http.put(this.apiurl + `/bajarStock/${id}`, producto)
+  }
+
   deleteProducto(id: number){
     return this.http.delete(this.apiurl + `/eliminar/${id}`)
   }
