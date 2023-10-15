@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container" *ngIf="productos">
     <div class="subtitulo">
-        <h3>Productos destacados</h3>
+        <h3>Productos en oferta</h3>
         <app-subrayado></app-subrayado>
     </div>
     <div class="recomendados">
-        <app-destacado-item></app-destacado-item>
-        <app-destacado-item></app-destacado-item>
-        <app-destacado-item></app-destacado-item>
-        <app-destacado-item></app-destacado-item>
+        <app-destacado-item
+            *ngFor="let producto of productos"
+            [producto]="producto"
+        ></app-destacado-item>
     </div>
 </div>

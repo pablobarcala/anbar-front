@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Producto } from 'src/app/interfaces/Producto';
 
 @Component({
   selector: 'app-destacado-item',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./destacado-item.component.css']
 })
 export class DestacadoItemComponent {
-
+  @Input() producto: Producto | undefined = undefined;
 }

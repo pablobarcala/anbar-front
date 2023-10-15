@@ -1,9 +1,9 @@
-<div class="item">
-    <div class="img"></div>
-    <!-- <img src="../../../assets/iconos/almohadones.png" alt="Almohadones" width="190"> -->
+<div class="item" *ngIf="producto">
+    <!-- <div class="img"></div> -->
+    <img src="{{producto.imagen}}" alt="Almohadones" width="190" height="190">
     <div class="info">
-        <p class="nombre">Combo zig zag grises</p>
-        <p class="precio">$1.700</p>
+        <p class="nombre">{{producto.nombre}}</p>
+        <span><span [ngClass]="{'anterior': producto.oferta > 0}">${{producto.precio}}</span><span *ngIf="producto.oferta > 0">${{producto.precio * (1 - (producto.oferta / 100))}} (-{{producto.oferta}}%)</span></span>
         <button>Ver</button>
     </div>
 </div>
