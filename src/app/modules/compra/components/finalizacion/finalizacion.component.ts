@@ -1,6 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Producto } from 'src/app/interfaces/Producto';
-import { CarritoService } from 'src/app/services/carrito.service';
 import { CompraService } from 'src/app/services/compra.service';
 
 @Component({
@@ -10,17 +9,19 @@ import { CompraService } from 'src/app/services/compra.service';
 })
 export class FinalizacionComponent implements AfterViewInit {
   opcion: string = ''
-  localstorage = localStorage.getItem('productos')
+  productosLocal = localStorage.getItem('productos')
   productos: Producto[] = []
+  precioLocal = localStorage.getItem('precio')
   precio: number = 0
 
   constructor(
-    private compraService: CompraService,
-    private carritoService: CarritoService
+    private compraService: CompraService
   ){
-    carritoService.getPrecio().subscribe((precio: number) => this.precio = precio)
-    if(this.localstorage != null){
-      this.productos = JSON.parse(this.localstorage)
+    if(this.productosLocal != null){
+      this.productos = JSON.parse(this.productosLocal)
+    }
+    if(this.precioLocal != null){
+      this.precio = JSON.parse(this.precioLocal)
     }
   }
   
