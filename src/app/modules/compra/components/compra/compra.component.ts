@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Producto } from 'src/app/interfaces/Producto';
 import { CarritoService } from 'src/app/services/carrito.service';
+import { CompraService } from 'src/app/services/compra.service';
 import { MercadopagoService } from 'src/app/services/mercadopago.service';
-import { jsPDF } from 'jspdf';
-import autoTable from 'jspdf-autotable';
 
 @Component({
   selector: 'app-compra',
@@ -19,7 +18,8 @@ export class CompraComponent {
   constructor(
     private carritoService: CarritoService,
     private mercadopagoService: MercadopagoService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private compraService: CompraService
   ){
     carritoService.getProductos().subscribe((productos: any) => this.productos = productos)
     carritoService.getPrecio().subscribe((precio: number) => this.precio = precio)
@@ -28,23 +28,14 @@ export class CompraComponent {
     })
   }
 
+  ngOnChanges(changes: SimpleChanges){
+    if(changes['opcion']){
+      this.compraService.cambiarOpcion(this.compraForm.get('opcion')?.value)
+      this.compraService.getOpcion().subscribe(resp => console.log(resp))
+    }
+  }
+
   comprar(){
-    const doc = new jsPDF()
-    const img = new Image()
-    img.src = "assets/iconos/almohadones.png"
-
-    doc.setFontSize(14)
-    doc.setFont("Helvetica", 'bold')
-    doc.addImage(img, 'png', 10, 20, 30, 30)
-    doc.text("ANBAR - Orden de compra", 50, 30)
-    doc.text("Enviar este PDF al WhatsApp +543815465017", 50, 40)
-
-    autoTable(doc, {
-      html: '#pdfTable',
-      startY: 60    
-    })
-    doc.save("ordenCompra.pdf")
-
     if(this.compraForm.get('opcion')?.value == 'pagina'){
       this.mercadopagoService.createPreference().subscribe((resp: any) => {
         window.location.href = resp.mensaje
