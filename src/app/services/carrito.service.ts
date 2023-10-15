@@ -79,13 +79,25 @@ export class CarritoService {
       if(productoExistente.cantidad == 0){
         productos.splice(i, 1)
       }
+      
+      this.productosLocal.splice(i, 1)
+      this.productosLocal.push(productoExistente)
+      localStorage.setItem('productos', JSON.stringify(this.productosLocal))
     }
-    nuevoPrecio -= producto.precio * cantidad
+
+    if(producto.oferta > 0){
+      nuevoPrecio -= (producto.precio * (1 - producto.oferta / 100)) * cantidad
+      this.precioLocal -= (producto.precio * (1 - producto.oferta / 100)) * cantidad
+    } else {
+      nuevoPrecio -= producto.precio * cantidad
+      this.precioLocal -= producto.precio * cantidad
+    }
     nuevaCantidad -= cantidad
 
     this.productos.next(productos)
     this.precio.next(nuevoPrecio)
     this.cantidad.next(nuevaCantidad)
+    localStorage.setItem('precio', JSON.stringify(this.precioLocal))
   }
 
   getProductos(){
