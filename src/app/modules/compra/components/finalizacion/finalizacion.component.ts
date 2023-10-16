@@ -3,6 +3,7 @@ import { Nosotros } from 'src/app/interfaces/Nosotros';
 import { Producto } from 'src/app/interfaces/Producto';
 import { CompraService } from 'src/app/services/compra.service';
 import { NosotrosService } from 'src/app/services/nosotros.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-finalizacion',
@@ -19,7 +20,8 @@ export class FinalizacionComponent implements AfterViewInit {
 
   constructor(
     private compraService: CompraService,
-    private nosotrosService: NosotrosService
+    private nosotrosService: NosotrosService,
+    private productoService: ProductosService
   ){
     if(this.productosLocal != null){
       this.productos = JSON.parse(this.productosLocal)
@@ -40,6 +42,9 @@ export class FinalizacionComponent implements AfterViewInit {
   
   ngAfterViewInit(): void {
     this.descargar()
+    this.productos.forEach((producto: any) => {
+      this.productoService.bajarStock(producto.idproductos, producto).subscribe()
+    })
   }
 
   descargar(){
