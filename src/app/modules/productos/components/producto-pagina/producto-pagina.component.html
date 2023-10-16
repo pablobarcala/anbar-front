@@ -1,19 +1,35 @@
-<div class="container">
+<div class="container" *ngIf="producto">
     <div class="title">
         <button routerLink="../">
             <img src="../../../../../assets/iconos/back.svg" alt="Volver atrás">
         </button>
-        <h4>{{producto?.nombre}}</h4>
+        <h4>{{producto.nombre}}</h4>
     </div>
     <div class="info">
-        <img src="{{producto?.imagen}}" alt="Imagen del producto" width="40%" height="40%">
+        <img src="{{producto.imagen}}" alt="Imagen del producto" width="22%" height="22%">
         <div class="detalles">
             <div class="precio">
                 <h4>Precio:</h4>
-                <p>${{producto?.precio}}</p>
+                <p>${{producto.precio}}</p>
             </div>
-            <h4>Descripción</h4>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam, rem iste esse soluta dignissimos repudiandae, incidunt suscipit corrupti voluptas amet qui! Necessitatibus ad repudiandae quia perspiciatis reprehenderit suscipit nobis.</p>
+            <div class="descripcion">
+                <h4>Descripción:</h4>
+                <p>{{producto.descripcion}}</p>
+                <p *ngIf="!producto.descripcion">~ NO HAY INFORMACIÓN DEL PRODUCTO ~</p>
+            </div>
+            <div class="compra">
+                <form action="" [formGroup]="cantidad">
+                    <input 
+                    title="Cantidad" 
+                    type="number" 
+                    min="0" 
+                    max="{{producto.cantidad}}" 
+                    formControlName="cantidad"
+                    >
+                </form>
+                <button (click)="agregarCarrito(producto)">Agregar</button>
+                <p *ngIf="cantidad.get('cantidad')?.value == producto.cantidad">No se pueden seleccionar más unidades</p>
+            </div>
         </div>
     </div>
 </div>
