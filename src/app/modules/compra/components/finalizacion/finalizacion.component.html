@@ -1,7 +1,8 @@
 <div class="container">
     <h3>Felicidades por la compra!</h3>
-    <p>Para continuar con el envío, enviar el pdf descargado por <a rel="noopener" href="https://wa.link/xb40k7" target="_blank">WhatsApp</a></p>
+    <p>Para continuar con el envío, enviar el pdf descargado por <a rel="noopener" href="https://wa.me/{{nosotros?.telefono}}" target="_blank">WhatsApp</a></p>
     <button routerLink="/">Volver a inicio</button>
+    <button (click)="descargar()">Descargar PDF</button>
 </div>
 <!-- ---------- TABLA OCULTA PARA PDF ----------- -->
 <table id="pdfTable">

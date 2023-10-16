@@ -1,6 +1,8 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { Nosotros } from 'src/app/interfaces/Nosotros';
 import { Producto } from 'src/app/interfaces/Producto';
 import { CompraService } from 'src/app/services/compra.service';
+import { NosotrosService } from 'src/app/services/nosotros.service';
 
 @Component({
   selector: 'app-finalizacion',
@@ -13,9 +15,11 @@ export class FinalizacionComponent implements AfterViewInit {
   productos: Producto[] = []
   precioLocal = localStorage.getItem('precio')
   precio: number = 0
+  nosotros: Nosotros | undefined = undefined
 
   constructor(
-    private compraService: CompraService
+    private compraService: CompraService,
+    private nosotrosService: NosotrosService
   ){
     if(this.productosLocal != null){
       this.productos = JSON.parse(this.productosLocal)
@@ -23,9 +27,22 @@ export class FinalizacionComponent implements AfterViewInit {
     if(this.precioLocal != null){
       this.precio = JSON.parse(this.precioLocal)
     }
+    nosotrosService.getNosotros().subscribe((resp: any) => {
+      let nosotros: Nosotros[] = resp
+
+      nosotros.find(n => {
+        if(n.idnosotros == 1){
+          this.nosotros = n
+        }
+      })
+    })
   }
   
   ngAfterViewInit(): void {
+    this.descargar()
+  }
+
+  descargar(){
     this.compraService.getOpcion().subscribe((resp: any) => this.opcion = resp)
     if(this.opcion == 'pagina'){
       this.compraService.comprarEnPagina()
