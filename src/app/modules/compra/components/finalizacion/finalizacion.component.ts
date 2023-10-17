@@ -1,4 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Nosotros } from 'src/app/interfaces/Nosotros';
 import { Producto } from 'src/app/interfaces/Producto';
 import { CompraService } from 'src/app/services/compra.service';
@@ -21,7 +22,8 @@ export class FinalizacionComponent implements AfterViewInit {
   constructor(
     private compraService: CompraService,
     private nosotrosService: NosotrosService,
-    private productoService: ProductosService
+    private productoService: ProductosService,
+    private router: Router
   ){
     if(this.productosLocal != null){
       this.productos = JSON.parse(this.productosLocal)
@@ -45,6 +47,10 @@ export class FinalizacionComponent implements AfterViewInit {
     this.productos.forEach((producto: any) => {
       this.productoService.bajarStock(producto.idproductos, producto).subscribe()
     })
+  }
+
+  volver(){
+    this.router.navigate(['/']).then(() => window.location.reload())
   }
 
   descargar(){
