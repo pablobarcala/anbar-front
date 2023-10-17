@@ -19,7 +19,7 @@ export class CompraService {
     return this.opcionCompra.asObservable()
   }
 
-  comprarEnPagina(){
+  comprarEnPagina(telefono: string | undefined){
     const doc = new jsPDF()
     const img = new Image()
     img.src = "assets/iconos/logo-aqua-2.png"
@@ -28,7 +28,7 @@ export class CompraService {
     doc.setFont("Helvetica", 'bold')
     doc.addImage(img, 'png', 10, 20, 30, 30)
     doc.text("ANBAR - Orden de compra", 50, 30)
-    doc.text("Enviar este PDF al WhatsApp +5400000", 50, 40)
+    doc.text(`Enviar este PDF al WhatsApp +54${telefono}`, 50, 40)
     doc.text("PAGADO", 50, 50)
 
     autoTable(doc, {
@@ -38,7 +38,7 @@ export class CompraService {
     doc.save("ordenCompra.pdf")
   }
 
-  comprarEnVendedor(){
+  comprarEnVendedor(telefono: string | undefined){
     const doc = new jsPDF()
     const img = new Image()
     img.src = "assets/iconos/logo-aqua-2.png"
@@ -47,7 +47,7 @@ export class CompraService {
     doc.setFont("Helvetica", 'bold')
     doc.addImage(img, 'png', 10, 20, 30, 30)
     doc.text("ANBAR - Orden de compra", 50, 30)
-    doc.text("Enviar este PDF al WhatsApp +5400000", 50, 40)
+    doc.text(`Enviar este PDF al WhatsApp +54${telefono}`, 50, 40)
     doc.text("ACORDAR PAGO", 50, 50)
 
     autoTable(doc, {

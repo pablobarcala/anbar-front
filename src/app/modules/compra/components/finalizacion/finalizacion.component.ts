@@ -35,13 +35,13 @@ export class FinalizacionComponent implements AfterViewInit {
       nosotros.find(n => {
         if(n.idnosotros == 1){
           this.nosotros = n
+          this.descargar()
         }
       })
     })
   }
   
   ngAfterViewInit(): void {
-    this.descargar()
     this.productos.forEach((producto: any) => {
       this.productoService.bajarStock(producto.idproductos, producto).subscribe()
     })
@@ -50,9 +50,9 @@ export class FinalizacionComponent implements AfterViewInit {
   descargar(){
     this.compraService.getOpcion().subscribe((resp: any) => this.opcion = resp)
     if(this.opcion == 'pagina'){
-      this.compraService.comprarEnPagina()
+      this.compraService.comprarEnPagina(this.nosotros?.telefono)
     } else {
-      this.compraService.comprarEnVendedor()
+      this.compraService.comprarEnVendedor(this.nosotros?.telefono)
     }
   }
 }
