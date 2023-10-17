@@ -12,7 +12,13 @@ export class ContactoComponent {
 
   constructor(private nosotrosService: NosotrosService){
     nosotrosService.getNosotros().subscribe((resp: any) => {
-      this.nosotros = resp
+      let nosotrosList = resp
+
+      nosotrosList.find((nosotros: any) => {
+        if(nosotros.idnosotros == 1){
+          this.nosotros = nosotros
+        }
+      })
     })
   }
 }
