@@ -5,9 +5,12 @@
     --bg-color: #eee;
     /* --main-color: #adc5b7; */
     /* --second-color: #c7c1b5; */
-     --main-color: #9CAFA0;
-     --second-color: #AD8888;
-    /* font-family: "Maven Pro", sans-serif; */
+    --main-light-color: #c1cec3;
+    --main-color: #9CAFA0;
+    --main-dark-color: #758c7a;
+    --second-light-color: #c3a6a6;
+    --second-color: #AD8888;
+    --second-dark-color: #956d6d;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
 }
