@@ -39,8 +39,9 @@
 }
 
 .filtros > div.selected {
-    background-color: var(--main-color);
+    background-color: var(--main-dark-color);
     font-weight: 600;
+    color: #fff;
 }
 
 h2 {
@@ -50,7 +51,7 @@ h2 {
 /* ---- ESTILOS DEL ELEMENTO ---- */
 
 .elemento {
-    border-bottom: 15px solid var(--second-color);
+    border-bottom: 15px solid var(--second-dark-color);
 }
 
 .elemento,
@@ -92,14 +93,14 @@ h2 {
 .item > h4,
 .head_item {
     font-size: 1.2rem;
-    border-bottom: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-light-color);
     margin-bottom: 10px;
 }
 
 /* ESTILOS DE STOCK BAJO */
 
 .bajo-stock {
-    background-color: rgb(252, 131, 131);
+    background-color: var(--second-light-color);
     border-radius: 10px;
 }
 

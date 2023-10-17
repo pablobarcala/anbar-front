@@ -39,11 +39,12 @@ p.nombre {
 span.anterior {
     text-decoration: line-through;
     margin-right: 10px;
-    color: var(--second-color);
+    color: var(--second-dark-color);
 }
 
 .info > button {
-    background-color: var(--main-color);
+    cursor: pointer;
+    background-color: var(--main-dark-color);
     border: none;
     padding: 5px 15px;
     border-radius: 15px;

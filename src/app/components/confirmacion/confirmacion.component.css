@@ -6,10 +6,8 @@ button {
     padding: 10px;
     margin-right: 10px;
     font-size: 1rem;
-    font-weight: 600;
 }
 
 .eliminar {
-    background-color: var(--second-color);
-    color: #fff;
+    background-color: var(--second-light-color);
 }

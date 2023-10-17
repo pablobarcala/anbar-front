@@ -27,7 +27,7 @@ img {
 
 .stock {
     font-size: 0.8rem;
-    color: var(--second-color);
+    color: var(--second-dark-color);
     font-weight: 700;
 }
 
@@ -45,7 +45,7 @@ img {
 span.anterior {
     text-decoration: line-through;
     margin-right: 10px;
-    color: var(--second-color);
+    color: var(--second-dark-color);
 }
 
 .oferta {
@@ -65,9 +65,10 @@ span.anterior {
 button {
     cursor: pointer;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 15px;
-    background-color: var(--main-color);
+    background-color: var(--main-dark-color);
+    color: #fff;
 }
 
 .botones > form > input {

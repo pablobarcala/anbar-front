@@ -2,8 +2,9 @@ button {
     cursor: pointer;
     margin-right: 20px;
     border: none;
-    background-color: var(--main-color);
-    padding: 10px;
+    background-color: var(--main-dark-color);
+    padding: 5px 15px;
+    color: #fff;
     border-radius: 10px;
 }
 

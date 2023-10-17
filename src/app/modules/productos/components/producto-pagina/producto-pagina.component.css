@@ -14,7 +14,7 @@
     cursor: pointer;
     border: none;
     border-radius: 50%;
-    background-color: var(--second-color);
+    background-color: var(--second-light-color);
     padding: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -84,7 +84,8 @@ input:focus {
 .compra > button {
     cursor: pointer;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 15px;
-    background-color: var(--main-color);
+    background-color: var(--main-dark-color);
+    color: #fff;
 }

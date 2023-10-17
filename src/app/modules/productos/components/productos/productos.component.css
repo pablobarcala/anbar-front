@@ -12,11 +12,15 @@
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 15px;
-    color: #fff;
-    font-weight: 600;
-    background-color: #777777;
+    background-color: #dbdbdb;
+}
+
+.opcion:hover {
+    background-color: #cecece;
 }
 
 .opcion.selected {
-    background-color: var(--main-color);
+    background-color: var(--main-dark-color);
+    font-weight: 600;
+    color: #fff;
 }

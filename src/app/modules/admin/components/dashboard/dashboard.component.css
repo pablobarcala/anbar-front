@@ -32,7 +32,8 @@
     font-family: "Trebuchet MS";
     font-size: 1rem;
     border: none;
-    background-color: var(--main-color);
+    background-color: var(--main-dark-color);
+    color: #fff;
     padding: 5px 15px;
     border-radius: 15px;
 }
