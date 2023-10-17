@@ -14,6 +14,10 @@ img {
     height: 10%;
 }
 
+.img_cel {
+    display: none;
+}
+
 .categorias {
     display: flex;
     gap: 10px;
@@ -70,6 +74,7 @@ span.anterior {
 
 .botones_cel {
     margin: auto;
+    display: none;
 }
 
 button {
