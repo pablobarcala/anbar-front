@@ -14,6 +14,15 @@ h3 {
 }
 
 .recomendados {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    gap: 6.66%;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .recomendados {
+        grid-template-columns: repeat(2, 45%);
+        column-gap: 10%;
+    }
 }

@@ -5,3 +5,10 @@ div {
 div.main {
     padding: 0 130px;
 }
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    div.main {
+        padding: 0 30px;
+    }
+}

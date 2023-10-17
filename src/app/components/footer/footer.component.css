@@ -1,5 +1,6 @@
 .container {
     background-color: var(--main-color);
+    margin-top: 50px;
     height: 7%;
     border-radius: 15px 15px 0 0;
     display: flex;
@@ -34,4 +35,19 @@ p > a {
     text-decoration: none;
     font-weight: 600;
     color: var(--second-dark-color);
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .container {
+        padding: 20px 30px;
+    }
+
+    .redes {
+        gap: 5px;
+    }
+
+    .redes img {
+        transform: scale(0.5);
+    }
 }

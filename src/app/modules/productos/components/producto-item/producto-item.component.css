@@ -10,6 +10,8 @@
 
 img {
     border-radius: 15px;
+    width: 10%;
+    height: 10%;
 }
 
 .categorias {
@@ -38,7 +40,7 @@ img {
     justify-content: space-between;
 }
 
-.info > div > h3 {
+.info > .info_completa > h3 {
     padding-bottom: 10px;
 }
 
@@ -56,10 +58,18 @@ span.anterior {
     background-color: #eeeeee;
 }
 
-.botones {
+.botones,
+.botones_cel {
     display: flex;
-    flex-direction: column;
     gap: 20px;
+}
+
+.botones {
+    flex-direction: column;
+}
+
+.botones_cel {
+    margin: auto;
 }
 
 button {
@@ -71,7 +81,8 @@ button {
     color: #fff;
 }
 
-.botones > form > input {
+.botones > form > input,
+.botones_cel > form > input {
     font-size: 1rem;
     border: #ccc 1px solid;
     border-radius: 10px;
@@ -88,4 +99,29 @@ input:focus {
     min-width: 20%;
     max-width: 20%;
     font-weight: 600;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    img {
+        width: 30%;
+        height: 30%;
+    }
+
+    .img_pc {
+        display: none;
+    }
+
+    .info_completa {
+        width: 60%;
+    }
+
+    .botones {
+        display: none;
+    }
 }

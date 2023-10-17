@@ -1,6 +1,7 @@
 div {
     background-image: url(../../../../../assets/iconos/main.png);
-    height: 386px;
+    background-size: cover;
+    height: 380px;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -12,4 +13,17 @@ h3 {
     font-family: 'Helvetica';
     font-size: 2rem;
     padding: 0 20px;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    div {
+        background-size: cover;
+        height: 150px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
 }

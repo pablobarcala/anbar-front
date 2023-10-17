@@ -1,7 +1,8 @@
 <div class="item" *ngIf="producto && producto.cantidad > 0">
-    <img src="{{producto.imagen}}" width="10%" height="10%" alt="Almohadones">
+    <img class="img_pc" src="{{producto.imagen}}" alt="Almohadones">
     <div class="info">
-        <div>
+        <img class="img_cel" src="{{producto.imagen}}" alt="Almohadones">
+        <div class="info_completa">
             <h3>{{producto.nombre}} <span class="oferta" *ngIf="producto.oferta > 0">OFERTA</span></h3>
             <span><span [ngClass]="{'anterior': producto.oferta > 0}">${{producto.precio}}</span><span *ngIf="producto.oferta > 0">${{producto.precio * (1 - (producto.oferta / 100))}} (-{{producto.oferta}}%)</span></span>
             <div class="categorias">
@@ -24,5 +25,18 @@
             </form>
             <button (click)="agregarCarrito(producto)">Agregar</button>
         </div>
+    </div>
+    <div class="botones_cel">
+        <button [routerLink]="['/main/Productos', producto.idproductos]">Ver más</button>
+        <form action="" [formGroup]="cantidad">
+            <input 
+                title="Cantidad" 
+                type="number" 
+                min="0" 
+                max="{{producto.cantidad}}" 
+                formControlName="cantidad"
+            >
+        </form>
+        <button (click)="agregarCarrito(producto)">Agregar</button>
     </div>
 </div>

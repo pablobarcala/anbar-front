@@ -16,9 +16,9 @@ export class DestacadosComponent {
     productosService.getProductos().subscribe((productos: any) => {
       const productosFiltrados = productos
       
+      this.productos = []
       productosFiltrados.forEach((producto: any) => {
         if(producto.oferta > 0){
-          this.productos = []
           this.productos?.push(producto)
         }
       })
