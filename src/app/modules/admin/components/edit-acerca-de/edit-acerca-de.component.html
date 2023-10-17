@@ -27,11 +27,19 @@
             </div>
             <div class="input">
                 <label for="mail">Correo electrónico</label>
-                <input type="text" id="mail" formControlName="mail">
+                <input type="mail" id="mail" formControlName="mail">
                 <p
                     class="error"
                     *ngIf="form.get('mail')?.hasError('required') && form.get('mail')?.touched"
                 >Se necesita un mail</p>
+            </div>
+            <div class="input">
+                <label for="instagram">Instagram</label>
+                <input type="text" id="instagram" formControlName="instagram">
+            </div>
+            <div class="input">
+                <label for="linkContacto">Link de contacto</label>
+                <input type="text" id="linkContacto" formControlName="linkContacto">
             </div>
         </div>
         <div class="input">

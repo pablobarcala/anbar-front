@@ -6,5 +6,7 @@ export interface Nosotros {
     informacion: string,
     imagen: string,
     telefono: string,
-    mail: string
+    mail: string,
+    linkContacto: string,
+    instagram: string
 }

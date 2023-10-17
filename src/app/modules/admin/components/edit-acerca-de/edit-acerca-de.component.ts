@@ -33,7 +33,9 @@ export class EditAcercaDeComponent {
       informacion: ['', Validators.required],
       imagen: [''],
       telefono: [''],
-      mail: ['', Validators.required]
+      mail: ['', Validators.required],
+      instagram: [''],
+      linkContacto: ['']
     })
   }
   
@@ -56,6 +58,8 @@ export class EditAcercaDeComponent {
         imagen: this.nosotros.imagen,
         telefono: this.nosotros.telefono,
         mail: this.nosotros.mail,
+        instagram: this.nosotros.instagram,
+        linkContacto: this.nosotros.linkContacto
       })
     }
   }
