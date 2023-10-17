@@ -78,9 +78,9 @@ export class CarritoService {
       productoExistente.cantidad -= cantidad
       if(productoExistente.cantidad == 0){
         productos.splice(i, 1)
+        this.productosLocal.splice(i, 1)
       }
       
-      this.productosLocal.splice(i, 1)
       this.productosLocal.push(productoExistente)
       localStorage.setItem('productos', JSON.stringify(this.productosLocal))
     }

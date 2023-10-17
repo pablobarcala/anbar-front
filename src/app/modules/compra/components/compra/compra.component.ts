@@ -36,6 +36,9 @@ export class CompraComponent {
   }
 
   comprar(){
+    this.productos.forEach((producto: any) => {
+      this.productoService.bajarStock(producto.idproductos, producto).subscribe()
+    })
     if(this.compraForm.get('opcion')?.value == 'pagina'){
       this.mercadopagoService.createPreference(this.productos).subscribe((resp: any) => {
         window.open(resp.mensaje, '_blank')

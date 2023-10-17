@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Nosotros } from 'src/app/interfaces/Nosotros';
 import { Producto } from 'src/app/interfaces/Producto';
@@ -11,7 +11,7 @@ import { ProductosService } from 'src/app/services/productos.service';
   templateUrl: './finalizacion.component.html',
   styleUrls: ['./finalizacion.component.css']
 })
-export class FinalizacionComponent implements AfterViewInit {
+export class FinalizacionComponent {
   opcion: string = ''
   productosLocal = localStorage.getItem('productos')
   productos: Producto[] = []
@@ -40,12 +40,6 @@ export class FinalizacionComponent implements AfterViewInit {
           this.descargar()
         }
       })
-    })
-  }
-  
-  ngAfterViewInit(): void {
-    this.productos.forEach((producto: any) => {
-      this.productoService.bajarStock(producto.idproductos, producto).subscribe()
     })
   }
 
