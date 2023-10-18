@@ -6,7 +6,7 @@ import { Nosotros } from '../interfaces/Nosotros';
   providedIn: 'root'
 })
 export class NosotrosService {
-  apiurl: string = 'http://localhost:8080/nosotros'
+  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/nosotros'
 
   constructor(private http: HttpClient) {}
 

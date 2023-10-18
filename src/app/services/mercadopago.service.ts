@@ -6,7 +6,7 @@ import { Producto } from '../interfaces/Producto';
   providedIn: 'root'
 })
 export class MercadopagoService {
-  apiurl: string = 'http://localhost:8080/mp'
+  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/mp'
 
   constructor(private http: HttpClient) { }
 

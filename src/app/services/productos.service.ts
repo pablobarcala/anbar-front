@@ -6,7 +6,7 @@ import { Producto } from '../interfaces/Producto';
   providedIn: 'root'
 })
 export class ProductosService {
-  apiurl: string = 'http://localhost:8080/productos'
+  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/productos'
 
   constructor(private http: HttpClient) { }
 

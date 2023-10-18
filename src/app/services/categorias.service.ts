@@ -6,7 +6,7 @@ import { Categoria } from '../interfaces/Categoria';
   providedIn: 'root'
 })
 export class CategoriasService {
-  apiurl: string = 'http://localhost:8080/categorias'
+  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/categorias'
 
   constructor(private http: HttpClient) {}
 

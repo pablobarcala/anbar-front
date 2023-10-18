@@ -6,7 +6,7 @@ import { Pregunta } from '../interfaces/Pregunta';
   providedIn: 'root'
 })
 export class PreguntasService {
-  apiurl: string = 'http://localhost:8080/preguntas'
+  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/preguntas'
 
   constructor(private http: HttpClient) {}
 
