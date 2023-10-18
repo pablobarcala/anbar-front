@@ -6,6 +6,11 @@
     display: flex;
     padding: 20px 0;
     gap: 10px;
+    overflow: auto;
+}
+
+.container-opciones::-webkit-scrollbar {
+    display: none;
 }
 
 .opcion {

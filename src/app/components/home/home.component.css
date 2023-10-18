@@ -1,5 +1,6 @@
 div {
     background-color: var(--bg-color);
+    overflow: hidden;
 }
 
 div.main {
