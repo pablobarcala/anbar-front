@@ -33,12 +33,18 @@ input:focus {
 }
 
 button {
-    font-family: "Maven Pro";
     cursor: pointer;
     border: none;
     border-radius: 15px;
     padding: 5px 10px;
     font-size: 1.2rem;
-    background-color: var(--second-color);
+    background-color: var(--second-dark-color);
     color: #fff;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .container {
+        width: 80%;
+    }
 }

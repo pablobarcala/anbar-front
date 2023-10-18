@@ -22,23 +22,30 @@
 
 /* --- FILTROS EN EL TITULO --- */
 
-.title > .filtros {
+.filtros_cel {
+    display: none;
+}
+
+.title > .filtros_pc {
     display: flex;
     gap: 20px;
 }
 
-.filtros > div {
+.filtros_pc > div,
+.filtros_cel > div {
     cursor: pointer;
     background-color: #eee;
     padding: 5px 10px;
     border-radius: 15px;
 }
 
-.filtros > div:hover {
+.filtros_pc > div:hover,
+.filtros_cel > div:hover {
     background-color: #e6e6e6;
 }
 
-.filtros > div.selected {
+.filtros_pc > div.selected,
+.filtros_cel > div.selected {
     background-color: var(--main-dark-color);
     font-weight: 600;
     color: #fff;
@@ -109,4 +116,22 @@ h2 {
 .info {
     display: grid;
     grid-template-columns: repeat(2, 50%);
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .filtros_pc {
+        display: none !important;
+    }
+
+    .filtros_cel {
+        display: flex;
+        gap: 10px;
+        overflow: auto;
+        padding-bottom: 10px;
+    }
+
+    .filtros_cel::-webkit-scrollbar {
+        display: none;
+    }
 }

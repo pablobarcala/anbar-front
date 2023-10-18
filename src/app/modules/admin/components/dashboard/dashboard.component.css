@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .aside {
@@ -43,6 +44,10 @@ ul {
     display: flex;
 }
 
+.list_cel {
+    display: none;
+}
+
 li {
     text-align: center;
     cursor: pointer;
@@ -57,4 +62,22 @@ li.selected {
     cursor: pointer;
     background-color: var(--main-color);
     color: #000;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .list_pc {
+        display: none;
+    }
+    
+    .list_cel {
+        display: flex;
+        background-color: #000;
+        color: #fff;
+        justify-content: center;
+    }
+
+    .list_cel > li {
+        padding: 10px;
+    }
 }

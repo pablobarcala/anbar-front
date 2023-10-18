@@ -105,3 +105,10 @@ input:focus {
     flex-direction: column;
     align-items: center;
 }
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .container {
+        width: 60%;
+    }
+}

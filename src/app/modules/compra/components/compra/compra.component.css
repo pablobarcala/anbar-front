@@ -38,10 +38,11 @@ h4 {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     background-color: var(--second-color);
     margin-right: 20px;
+    font-size: 1rem;
 }
 
 .productos {
-    background-color: var(--main-color);
+    background-color: var(--main-light-color);
     border-radius: 15px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -60,4 +61,16 @@ h4 {
 
 .total > span {
     font-weight: 600;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .container {
+        width: 90%;
+    }
+
+    .producto > p {
+        width: 30%;
+        text-align: end;
+    }
 }

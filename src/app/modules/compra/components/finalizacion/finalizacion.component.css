@@ -1,5 +1,5 @@
 .container {
-    background-color: var(--main-color);
+    background-color: var(--main-light-color);
     border-radius: 15px;
     width: 30%;
     padding: 20px;
@@ -23,4 +23,11 @@ button {
 
 table {
     display: none;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 550px) {
+    .container {
+        width: 80%;
+    }
 }

@@ -62,8 +62,7 @@ span.anterior {
     background-color: #eeeeee;
 }
 
-.botones,
-.botones_cel {
+.botones {
     display: flex;
     gap: 20px;
 }
@@ -118,6 +117,10 @@ input:focus {
         height: 30%;
     }
 
+    .img_cel {
+        display: block;
+    }
+
     .img_pc {
         display: none;
     }
@@ -128,5 +131,10 @@ input:focus {
 
     .botones {
         display: none;
+    }
+
+    .botones_cel {
+        display: flex;
+        gap: 10px;
     }
 }
