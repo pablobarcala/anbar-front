@@ -73,4 +73,8 @@ h4 {
         width: 30%;
         text-align: end;
     }
+
+    .compra > button {
+        margin-right: 5px;
+    }
 }
