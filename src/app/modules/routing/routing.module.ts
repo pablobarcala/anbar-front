@@ -29,6 +29,7 @@ import { AuthGuardService } from 'src/app/services/auth-guard.service';
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
   {path: 'main', component: HomeComponent, children: [
+    {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
     {path: 'Inicio', component: InicioComponent},
     {path: 'Productos', component: ProductosComponent},
     {path: 'Productos/:id', component: ProductoPaginaComponent},

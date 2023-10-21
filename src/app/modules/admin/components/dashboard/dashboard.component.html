@@ -7,7 +7,10 @@
             <li routerLink="admin-acerca-de" [routerLinkActive]="'selected'">Acerca de</li>
             <li routerLink="admin-faq" [routerLinkActive]="'selected'">Preguntas frecuentes</li>
         </ul>
-        <button routerLink="">Ir a la página</button>
+        <div>
+            <button routerLink="">Ir a la página</button>
+            <button (click)="logout()">Logout</button>
+        </div>
     </div>
     <ul class="list_cel">
         <li routerLink="admin-productos" [routerLinkActive]="'selected'">Productos</li>

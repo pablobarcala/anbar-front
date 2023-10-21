@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -7,14 +10,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  user: string = "anbaradmin"
-  password: string = "12345"
+  form: FormGroup
 
-  constructor(private router: Router){
-
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private tokenService: TokenService
+  ){
+    this.form = formBuilder.group({
+      nombreUsuario: ['', Validators.required],
+      password: ['', Validators.required]
+    })
   }
 
-  login(){
-    this.router.navigate(['/admin/dashboard']);
+  login(event: Event){
+    event.preventDefault()
+
+    if(this.form.valid){
+      this.authService.iniciarSesion(this.form.value).subscribe((data: any) => {
+        this.tokenService.setToken(data.token)
+        this.router.navigate(['/admin/dashboard'])
+        .then(() => window.location.reload())
+      }, err => {
+        alert("Usuario o contraseña incorrectos")
+      })
+    } else {
+      this.form.markAllAsTouched()
+    }
   }
 }
