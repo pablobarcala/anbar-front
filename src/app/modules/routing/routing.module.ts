@@ -24,6 +24,7 @@ import { AddProductosComponent } from '../admin/components/add-productos/add-pro
 import { ProductoPaginaComponent } from '../productos/components/producto-pagina/producto-pagina.component';
 import { CompraComponent } from '../compra/components/compra/compra.component';
 import { FinalizacionComponent } from '../compra/components/finalizacion/finalizacion.component';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 
 const routes: Route[] = [
   {path: '', redirectTo: '/main/Inicio', pathMatch: 'full'},
@@ -40,7 +41,7 @@ const routes: Route[] = [
   {path: 'admin', component: AdminComponent, children: [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'login', component: LoginComponent},
-    {path: 'dashboard', component: DashboardComponent, children: [
+    {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuardService], children: [
       {path: 'admin-productos', component: AdminProductosComponent, children: [
         {path: 'add-producto', component: AddProductosComponent}
       ]},
