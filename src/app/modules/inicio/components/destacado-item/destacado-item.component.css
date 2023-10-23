@@ -56,7 +56,7 @@ span.anterior {
 
 /* -------- MEDIA QUERIES -------- */
 @media (max-width: 550px) {
-    img {
+    /* img {
         height: 190px;
-    }
+    } */
 }
