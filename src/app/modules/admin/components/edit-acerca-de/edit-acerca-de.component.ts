@@ -72,7 +72,7 @@ export class EditAcercaDeComponent {
     this.editarFoto = true
     const file = event.target.files[0]
 
-    const imgRef = ref(this.storage, `productos/${file.name}`)
+    const imgRef = ref(this.storage, `logos/${file.name}`)
 
     uploadBytes(imgRef, file)
     .then(async () => {
