@@ -29,7 +29,7 @@
             *ngFor="let producto of productosFiltrados"
         >
             <div class="head_item">
-                <img src="{{producto.imagen}}" width="50px" height="50px" alt="imagen">
+                <img src="{{producto.imagen}}" alt="imagen">
                 <h4>{{producto.nombre}}</h4>
                 <div class="botones">
                     <button [routerLink]="['/admin/dashboard/edit-producto', producto.idproductos]">

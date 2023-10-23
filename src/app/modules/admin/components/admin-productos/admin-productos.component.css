@@ -94,7 +94,9 @@ h2 {
 }
 
 .head_item > img {
-    border-radius: 50%;
+    border-radius: 15px;
+    width: 5%;
+    margin-bottom: 10px;
 }
 
 .item > h4,
@@ -133,5 +135,9 @@ h2 {
 
     .filtros_cel::-webkit-scrollbar {
         display: none;
+    }
+
+    .head_item > img {
+        width: 10%;
     }
 }
