@@ -23,6 +23,10 @@ export class ProductoItemComponent {
   }
 
   agregarCarrito(producto: Producto){
-    this.carritoService.agregarCarrito(this.cantidad.value.cantidad, producto)
+    if(this.cantidad.value.cantidad <= producto.cantidad){
+      this.carritoService.agregarCarrito(this.cantidad.value.cantidad, producto)
+    } else {
+      alert("No se pueden agregar mas de " + producto.cantidad + " unidades del producto")
+    }
   }
 }
