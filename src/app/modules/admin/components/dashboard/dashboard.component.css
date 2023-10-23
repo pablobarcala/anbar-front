@@ -27,7 +27,8 @@
     letter-spacing: 5px;
 }
 
-.aside > div > button {
+.aside button,
+.aside a {
     cursor: pointer;
     align-self: center;
     font-family: "Trebuchet MS";

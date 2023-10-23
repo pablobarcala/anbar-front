@@ -1,4 +1,13 @@
 {
+  "targets": {
+    "anbar-c05c2": {
+      "hosting": {
+        "frontend": [
+          "anbar-c05c2"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "anbar-c05c2"
   }

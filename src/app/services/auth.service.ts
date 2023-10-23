@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { LoginUsuario } from '../interfaces/LoginUsuario';
 import { JwtDto } from '../interfaces/JwtDto';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/auth'
+  apiurl: string = environment.apiUrl + '/auth'
 
   constructor(
     private http: HttpClient

@@ -42,14 +42,14 @@
                     class="error"
                 >Se necesita una categoría</p>
             </div>
-        </div>
-        <div class="link-input">
-            <label for="imagen">Link de imagen</label>
-            <input type="text" id="imagen" formControlName="imagen">
-            <p 
-            *ngIf="form.get('imagen')?.hasError('required') && form.get('imagen')?.touched"
-            class="error"
-            >Se necesita una imagen</p>
+            <div class="input">
+                <label for="image">Subir imagen</label>
+                <input type="file" id="image" (change)="getImage($event)">
+                <p 
+                    *ngIf="form.get('imagen')?.hasError('required') && form.get('imagen')?.touched"
+                    class="error"
+                >Se necesita una imagen</p>
+            </div>
         </div>
         <div class="input">
             <label for="descripcion">Descripción</label>

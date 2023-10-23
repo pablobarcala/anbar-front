@@ -8,11 +8,16 @@ h3 {
     padding-bottom: 20px;
 }
 
+.info > a {
+    color: #000;
+}
+
 .info > p > .title {
     font-weight: 600;
 }
 
-.info > p {
+.info > p,
+.info > a {
     font-size: 1.3rem;
     padding: 10px 0;
 }

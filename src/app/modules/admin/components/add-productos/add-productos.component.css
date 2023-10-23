@@ -37,13 +37,9 @@ select:focus {
     outline: none;
 }
 
-textarea,
-.link-input {
+textarea {
     min-width: 90%;
     max-width: 90%;
-}
-
-textarea {
     min-height: 100px;
     max-height: 500px;
 }

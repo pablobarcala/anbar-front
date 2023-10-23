@@ -20,6 +20,9 @@ import { FaqModule } from './modules/faq/faq.module';
 import { ConfirmacionComponent } from './components/confirmacion/confirmacion.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { InterceptorService } from './services/interceptor.service';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ import { InterceptorService } from './services/interceptor.service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
-    CompraModule
+    CompraModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}

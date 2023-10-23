@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage, getDownloadURL, ref, uploadBytes } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/interfaces/Categoria';
@@ -16,13 +17,16 @@ export class EditProductosComponent {
   categorias: Categoria[] = []
   id: number = 0
   form: FormGroup
+  editarFoto: boolean = false
+  imagenUrl: string = ''
 
   constructor(
     private route: ActivatedRoute, 
     private productoService: ProductosService,
     private formBuilder: FormBuilder,
     private categoriasService: CategoriasService,
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ){
     categoriasService.getCategorias().subscribe((categorias: any) => this.categorias = categorias)
     route.params.subscribe(params => {
@@ -36,7 +40,7 @@ export class EditProductosComponent {
       oferta: [],
       cantidad: [0, Validators.required],
       categoria: [0, Validators.required],
-      imagen: ['', Validators.required],
+      imagen: [''],
       descripcion: ['']
     })
   }
@@ -64,19 +68,49 @@ export class EditProductosComponent {
     }
   }
 
+  getImage(event: any){
+    this.editarFoto = true
+    const file = event.target.files[0]
+
+    const imgRef = ref(this.storage, `productos/${file.name}`)
+
+    uploadBytes(imgRef, file)
+    .then(async () => {
+      this.imagenUrl = await getDownloadURL(imgRef)
+      alert("Imagen guardada")
+    })
+  }
+
   editarProducto(event: Event){
     event.preventDefault()
 
     if(this.form.valid){
-      this.productoService.editarProducto(this.form.get('idproductos')?.value, this.form.get('categoria')?.value, this.form.value).subscribe((resp:any) => {
-        if(resp){
-          alert("Se editó correctamente")
-          this.router.navigate(['/admin/dashboard/admin-productos'])
-          .then(() => window.location.reload());
-        } else {
-          alert("Hubo un error")
-        }
-      })
+      if(this.imagenUrl != '' && this.editarFoto){
+        this.form.patchValue({
+          imagen: this.imagenUrl
+        })
+        this.productoService.editarProducto(this.form.get('idproductos')?.value, this.form.get('categoria')?.value, this.form.value).subscribe((resp:any) => {
+          if(resp){
+            alert("Se editó correctamente")
+            this.router.navigate(['/admin/dashboard/admin-productos'])
+            .then(() => window.location.reload());
+          } else {
+            alert("Hubo un error")
+          }
+        })
+      } else if(!this.editarFoto) {
+        this.productoService.editarProducto(this.form.get('idproductos')?.value, this.form.get('categoria')?.value, this.form.value).subscribe((resp:any) => {
+          if(resp){
+            alert("Se editó correctamente")
+            this.router.navigate(['/admin/dashboard/admin-productos'])
+            .then(() => window.location.reload());
+          } else {
+            alert("Hubo un error")
+          }
+        })
+      } else {
+        alert("Espere")
+      }
     } else {
       this.form.markAllAsTouched()
     }

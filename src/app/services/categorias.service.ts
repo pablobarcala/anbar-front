@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Categoria } from '../interfaces/Categoria';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriasService {
-  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/categorias'
+  apiurl: string = environment.apiUrl + '/categorias'
 
   constructor(private http: HttpClient) {}
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage, getDownloadURL, ref, uploadBytes } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Categoria } from 'src/app/interfaces/Categoria';
@@ -13,12 +14,14 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class AddProductosComponent {
   form: FormGroup
   categorias: Categoria[] = []
+  imagenUrl: string = ''
 
   constructor(
     private formBuilder: FormBuilder,
     private categoriaService: CategoriasService,
     private productosService: ProductosService,
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ){
     categoriaService.getCategorias().subscribe((categorias: any) => this.categorias = categorias)
     this.form = formBuilder.group({
@@ -27,8 +30,20 @@ export class AddProductosComponent {
       oferta: [],
       cantidad: [0, Validators.required],
       categoria: [0, Validators.required],
-      imagen: ['', Validators.required],
+      imagen: [''],
       descripcion: ['']
+    })
+  }
+
+  getImage(event: any){
+    const file = event.target.files[0]
+
+    const imgRef = ref(this.storage, `productos/${file.name}`)
+
+    uploadBytes(imgRef, file)
+    .then(async () => {
+      this.imagenUrl = await getDownloadURL(imgRef)
+      alert("Imagen guardada")
     })
   }
 
@@ -36,15 +51,22 @@ export class AddProductosComponent {
     event.preventDefault()
 
     if(this.form.valid){
-      this.productosService.addProducto(this.form.value, this.form.get('categoria')?.value).subscribe(resp => {
-        if(resp){
-          alert("Se creó correctamente")
-          this.router.navigate(['/admin/dashboard/admin-productos'])
-          .then(() => window.location.reload());
-        } else {
-          alert("Hubo un error")
-        }
-      })
+      if(this.imagenUrl != ''){
+        this.form.patchValue({
+          imagen: this.imagenUrl
+        })
+        this.productosService.addProducto(this.form.value, this.form.get('categoria')?.value).subscribe(resp => {
+          if(resp){
+            alert("Se creó correctamente")
+            this.router.navigate(['/admin/dashboard/admin-productos'])
+            .then(() => window.location.reload());
+          } else {
+            alert("Hubo un error")
+          }
+        })
+      } else {
+        alert("Espere")
+      }
     } else {
       this.form.markAllAsTouched()
     }

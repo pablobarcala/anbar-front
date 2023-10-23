@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Producto } from '../interfaces/Producto';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
-  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/productos'
+  apiurl: string = environment.apiUrl + '/productos'
+  imageUrl: string = ''
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getProductos() {
     return this.http.get(this.apiurl + "/traer")

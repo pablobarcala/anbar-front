@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Producto } from '../interfaces/Producto';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MercadopagoService {
-  apiurl: string = 'https://vps-3631176-x.dattaweb.com:8443/mp'
+  apiurl: string = environment.apiUrl + '/mp'
 
   constructor(private http: HttpClient) { }
 
