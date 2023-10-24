@@ -107,6 +107,12 @@ input:focus {
 }
 
 /* -------- MEDIA QUERIES -------- */
+@media (max-width: 770px) {
+    .container {
+        width: 45%;
+    }
+}
+
 @media (max-width: 550px) {
     .container {
         width: 60%;

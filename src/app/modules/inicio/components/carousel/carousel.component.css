@@ -17,9 +17,14 @@ h3 {
 }
 
 /* -------- MEDIA QUERIES -------- */
+@media (max-width: 770px) {
+    div {
+        height: 250px;
+    }
+}
+
 @media (max-width: 550px) {
     div {
-        background-size: cover;
         height: 150px;
     }
 

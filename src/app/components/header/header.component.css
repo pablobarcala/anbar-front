@@ -88,7 +88,8 @@ img {
 }
 
 /* -------- MEDIA QUERIES -------- */
-@media (max-width: 550px) {
+
+@media (max-width: 770px) {
     .header {
         padding: 0 15px;
     }

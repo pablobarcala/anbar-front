@@ -21,7 +21,7 @@
 }
 
 /* -------- MEDIA QUERIES -------- */
-@media (max-width: 550px) {
+@media (max-width: 770px) {
     .beneficios {
         padding: 10px 15px;
     }

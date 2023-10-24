@@ -99,14 +99,21 @@ input:focus {
 }
 
 /* -------- MEDIA QUERIES -------- */
-@media (max-width: 550px) {
+@media (max-width: 770px) {
     .info {
         flex-direction: column;
     }
 
     .info > img {
+        width: 50%;
+        height: 50%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .info > img {
         width: 70%;
         height: 70%;
-        margin: auto;
     }
 }

@@ -8,7 +8,7 @@ div.main {
 }
 
 /* -------- MEDIA QUERIES -------- */
-@media (max-width: 550px) {
+@media (max-width: 770px) {
     div.main {
         padding: 0 30px;
     }

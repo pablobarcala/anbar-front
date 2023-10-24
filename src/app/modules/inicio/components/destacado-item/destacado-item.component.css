@@ -54,10 +54,3 @@ span.anterior {
     border-radius: 15px;
     color: #fff;
 }
-
-/* -------- MEDIA QUERIES -------- */
-@media (max-width: 550px) {
-    /* img {
-        height: 190px;
-    } */
-}

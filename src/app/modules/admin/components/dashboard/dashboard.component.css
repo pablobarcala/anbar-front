@@ -67,7 +67,7 @@ li.selected {
 }
 
 /* -------- MEDIA QUERIES -------- */
-@media (max-width: 550px) {
+@media (max-width: 770px) {
     .list_pc {
         display: none;
     }
@@ -81,5 +81,9 @@ li.selected {
 
     .list_cel > li {
         padding: 10px;
+    }
+
+    .aside {
+        padding: 20px 15px;
     }
 }

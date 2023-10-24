@@ -121,7 +121,7 @@ h2 {
 }
 
 /* -------- MEDIA QUERIES -------- */
-@media (max-width: 550px) {
+@media (max-width: 770px) {
     .filtros_pc {
         display: none !important;
     }

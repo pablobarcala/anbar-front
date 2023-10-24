@@ -106,6 +106,13 @@ input:focus {
 }
 
 /* -------- MEDIA QUERIES -------- */
+@media (max-width: 770px) {
+    img {
+        width: 20%;
+        height: 20%;
+    }
+}
+
 @media (max-width: 550px) {
     .item {
         flex-direction: column;
