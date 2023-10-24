@@ -10,6 +10,6 @@ div.main {
 /* -------- MEDIA QUERIES -------- */
 @media (max-width: 770px) {
     div.main {
-        padding: 0 30px;
+        padding: 0 15px;
     }
 }

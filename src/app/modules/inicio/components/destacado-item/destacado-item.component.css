@@ -54,3 +54,10 @@ span.anterior {
     border-radius: 15px;
     color: #fff;
 }
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 770px) {
+    p.nombre {
+        font-size: 1rem;
+    }
+}

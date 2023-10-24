@@ -21,6 +21,10 @@ h3 {
 
 /* -------- MEDIA QUERIES -------- */
 @media (max-width: 770px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+    
     .recomendados {
         grid-template-columns: repeat(2, 45%);
         column-gap: 10%;

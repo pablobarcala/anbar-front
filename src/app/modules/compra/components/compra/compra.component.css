@@ -66,11 +66,11 @@ h4 {
 /* -------- MEDIA QUERIES -------- */
 @media (max-width: 550px) {
     .container {
-        width: 90%;
+        width: 95%;
     }
 
     .producto > p {
-        width: 30%;
+        width: 50%;
         text-align: end;
     }
 
