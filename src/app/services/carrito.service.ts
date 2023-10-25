@@ -49,10 +49,14 @@ export class CarritoService {
 
     if(productoExistente){
       if(productoExistente.cantidad < stock){
-        productoExistente.cantidad += cantidad;
-        this.actualizarPrecioCantidad(cantidad, producto)
+        if(cantidad <= stock - productoExistente.cantidad){
+          productoExistente.cantidad += cantidad;
+          this.actualizarPrecioCantidad(cantidad, producto)
+        } else {
+          alert(`No se puede agregar más de ${stock - productoExistente.cantidad} unidades de este producto`)
+        }
       } else {
-        alert("No se puede agregar más cantidad de este producto")
+        alert("No se puede agregar más unidades de este producto")
       }
     } else {
       productoExistente = {...producto, cantidad: cantidad}
