@@ -70,6 +70,10 @@ span.anterior {
     padding-bottom: 20px;
 }
 
+.descripcion > p {
+    white-space: pre-line;
+}
+
 .compra {
     display: flex;
     align-items: center;
