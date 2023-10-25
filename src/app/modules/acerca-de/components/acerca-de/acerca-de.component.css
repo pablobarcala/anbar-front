@@ -10,3 +10,7 @@
 h3 {
     font-size: 2rem;
 }
+
+.info p {
+    white-space: pre-line;
+}

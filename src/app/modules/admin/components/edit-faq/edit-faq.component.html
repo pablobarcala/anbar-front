@@ -9,7 +9,7 @@
                 >Se necesita una pregunta</p>
             </div>
             <div class="input">
-                <input type="text" placeholder="Respuesta" formControlName="respuesta">
+                <textarea placeholder="Respuesta" formControlName="respuesta"></textarea>
                 <p 
                     class="error"
                     *ngIf="form.get('respuesta')?.hasError('required') && form.get('respuesta')?.touched"
