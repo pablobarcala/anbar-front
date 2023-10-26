@@ -15,6 +15,7 @@ export class AddProductosComponent {
   form: FormGroup
   categorias: Categoria[] = []
   imagenUrl: string = ''
+  cargarFoto: boolean = false
 
   constructor(
     private formBuilder: FormBuilder,
@@ -36,6 +37,7 @@ export class AddProductosComponent {
   }
 
   getImage(event: any){
+    this.cargarFoto = true
     const file = event.target.files[0]
 
     const imgRef = ref(this.storage, `productos/${file.name}`)
@@ -51,7 +53,7 @@ export class AddProductosComponent {
     event.preventDefault()
 
     if(this.form.valid){
-      if(this.imagenUrl != ''){
+      if(this.imagenUrl != '' && this.cargarFoto){
         this.form.patchValue({
           imagen: this.imagenUrl
         })
@@ -64,7 +66,16 @@ export class AddProductosComponent {
             alert("Hubo un error")
           }
         })
-      } else {
+      } else if (!this.cargarFoto){
+        this.productosService.addProducto(this.form.value, this.form.get('categoria')?.value).subscribe(resp => {
+          if(resp) {
+            alert("Se creó correctamente")
+            this.router.navigate(['/admin/dashboard/admin-productos'])
+            .then(() => window.location.reload())
+          } else {
+            alert("Hubo un error")
+          }
+        })
         alert("Espere")
       }
     } else {
