@@ -39,7 +39,7 @@ export class EditProductosComponent {
       precio: [0, Validators.required],
       oferta: [],
       cantidad: [0, Validators.required],
-      categoria: [0, Validators.required],
+      categoria: ['', Validators.required],
       imagen: [''],
       descripcion: ['']
     })

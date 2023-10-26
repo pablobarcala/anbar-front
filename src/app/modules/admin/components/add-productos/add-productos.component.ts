@@ -30,7 +30,7 @@ export class AddProductosComponent {
       precio: [0, Validators.required],
       oferta: [],
       cantidad: [0, Validators.required],
-      categoria: [0, Validators.required],
+      categoria: ['', Validators.required],
       imagen: [''],
       descripcion: ['']
     })
@@ -76,6 +76,7 @@ export class AddProductosComponent {
             alert("Hubo un error")
           }
         })
+      } else {
         alert("Espere")
       }
     } else {

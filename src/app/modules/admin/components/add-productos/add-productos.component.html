@@ -38,7 +38,7 @@
                     >{{categoria.nombre}}</option>
                 </select>
                 <p 
-                    *ngIf="form.get('categorias')?.hasError('required') && form.get('categorias')?.touched"
+                    *ngIf="form.get('categoria')?.hasError('required') && form.get('categoria')?.touched"
                     class="error"
                 >Se necesita una categoría</p>
             </div>
