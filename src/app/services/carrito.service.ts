@@ -79,24 +79,28 @@ export class CarritoService {
     let productoExistente = productos.find(p => p.idproductos === producto.idproductos)
 
     if(productoExistente){
-      productoExistente.cantidad -= cantidad
-      if(productoExistente.cantidad == 0){
-        productos.splice(i, 1)
-        this.productosLocal.splice(i, 1)
+      if(cantidad <= productoExistente.cantidad){
+        productoExistente.cantidad -= cantidad
+        if(productoExistente.cantidad == 0){
+          productos.splice(i, 1)
+          this.productosLocal.splice(i, 1)
+        }
+        if(producto.oferta > 0){
+          nuevoPrecio -= (producto.precio * (1 - producto.oferta / 100)) * cantidad
+          this.precioLocal -= (producto.precio * (1 - producto.oferta / 100)) * cantidad
+        } else {
+          nuevoPrecio -= producto.precio * cantidad
+          this.precioLocal -= producto.precio * cantidad
+        }
+        nuevaCantidad -= cantidad
+      } else {
+        alert(`Solo tiene ${productoExistente.cantidad} elementos del producto`)
       }
       
       this.productosLocal.push(productoExistente)
       localStorage.setItem('productos', JSON.stringify(this.productosLocal))
     }
 
-    if(producto.oferta > 0){
-      nuevoPrecio -= (producto.precio * (1 - producto.oferta / 100)) * cantidad
-      this.precioLocal -= (producto.precio * (1 - producto.oferta / 100)) * cantidad
-    } else {
-      nuevoPrecio -= producto.precio * cantidad
-      this.precioLocal -= producto.precio * cantidad
-    }
-    nuevaCantidad -= cantidad
 
     this.productos.next(productos)
     this.precio.next(nuevoPrecio)
