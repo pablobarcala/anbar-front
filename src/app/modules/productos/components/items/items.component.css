@@ -41,6 +41,16 @@ p {
     padding: 20px 0;
 }
 
+@media (max-width: 550px) {
+    .title {
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
 @keyframes mostrarTitle {
     0% {
         transform: translateX(-100%);

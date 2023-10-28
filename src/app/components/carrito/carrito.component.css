@@ -111,10 +111,20 @@ input:focus {
     .container {
         width: 45%;
     }
+    
+    #cantidad {
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
+    
+    .categoria {
+        font-size: 0.7rem;
+    }
 }
 
 @media (max-width: 550px) {
     .container {
-        width: 60%;
+        width: 70%;
     }
+
 }
