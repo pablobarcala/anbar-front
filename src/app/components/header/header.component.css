@@ -66,6 +66,10 @@ img {
     transform: scale(0.7);
 }
 
+#carrito {
+    transform: scale(1.2);
+}
+
 .iconos > img {
     cursor: pointer;
 }
@@ -77,8 +81,8 @@ img {
     font-size: 0.9rem;
     padding: 3px 6px;
     position: relative;
-    right: 10%;
-    top: -10px;
+    right: 15%;
+    top: -15px;
 }
 
 .precio {
@@ -118,5 +122,9 @@ img {
 
     .iconos {
         gap: 5px;
+    }
+
+    .iconos > .cantidad {
+        right: 5%;
     }
 }
