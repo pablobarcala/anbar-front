@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 100px;
+    /* gap: 100px; */
     padding: 60px 70px;
 }
 
@@ -24,11 +24,20 @@
 }
 
 .redes img {
-    transform: scale(0.6);
+    transform: scale(1.1);
 }
 
 .container > p {
     font-size: 0.8rem;
+}
+
+.firma a {
+    display: flex;
+    align-items: center;
+}
+
+a > img {
+    margin: 0 3%;
 }
 
 p > a {
@@ -41,6 +50,8 @@ p > a {
 @media (max-width: 770px) {
     .container {
         padding: 20px 30px;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .redes {
@@ -48,6 +59,7 @@ p > a {
     }
 
     .redes img {
-        transform: scale(0.5);
+        transform: scale(1);
+        margin-left: 10px;
     }
 }

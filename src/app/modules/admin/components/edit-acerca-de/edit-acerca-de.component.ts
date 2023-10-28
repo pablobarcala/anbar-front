@@ -36,8 +36,8 @@ export class EditAcercaDeComponent {
       empresa: ['', Validators.required],
       informacion: ['', Validators.required],
       imagen: [''],
-      telefono: [''],
-      mail: ['', Validators.required],
+      telefono: ['', Validators.required],
+      mail: [''],
       instagram: [''],
       linkContacto: ['']
     })

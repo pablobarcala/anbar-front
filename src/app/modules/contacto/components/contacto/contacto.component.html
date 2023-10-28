@@ -1,9 +1,18 @@
 <div class="container">
     <h3>Contacto</h3>
     <div class="info">
-        <a *ngIf="nosotros?.instagram" href="{{nosotros?.instagram}}">Instagram</a>
+        <div *ngIf="nosotros?.instagram" class="link">
+            <img src="../../../assets/iconos/instagram.svg" alt="Instagram">
+            <a rel="noopener" href="https://www.instagram.com/{{nosotros?.instagram}}" target="_blank">@{{nosotros?.instagram}}</a>
+        </div>
+        <div *ngIf="nosotros?.telefono" class="link">
+            <img src="../../../assets/iconos/whatsapp.svg" alt="Whatsapp">
+            <p>{{nosotros?.telefono}}</p>
+        </div>
+        <div *ngIf="nosotros?.mail" class="link">
+            <img src="../../../assets/iconos/mail.svg" alt="Mail">
+            <p>{{nosotros?.mail}}</p>
+        </div>
         <a *ngIf="nosotros?.linkContacto" href="{{nosotros?.linkContacto}}">Link de contacto</a>
-        <p *ngIf="nosotros?.telefono"><span class="title">Teléfono:</span> {{nosotros?.telefono}}</p>
-        <p *ngIf="nosotros?.mail"><span class="title">Mail:</span> {{nosotros?.mail}}</p>
     </div>
 </div>
