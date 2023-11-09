@@ -1,11 +1,12 @@
 <div class="container">
     <div class="compra">
         <h4>Compra</h4>
-        <p>Elegir una opción para el pago. El envío se arreglará con el vendedor. Si paga en la página, luego del pago haga click en "Volver al sitio"</p>
+        <p>El envío se arreglará con el vendedor.</p>
+        <p>Elegir una opción para el pago:</p>
         <form action="" [formGroup]="compraForm">
             <label>
                 <input type="radio" formControlName="opcion" value="pagina">
-                <span>Pagar en la página</span>
+                <span>Pagar en Mercado Pago (débito o crédito)</span>
             </label>
             <label>
                 <input type="radio" formControlName="opcion" value="acordar">
