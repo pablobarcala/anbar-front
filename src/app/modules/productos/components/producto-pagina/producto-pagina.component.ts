@@ -30,6 +30,19 @@ export class ProductoPaginaComponent {
     })
   }
 
+  stockProducto(): number[] {
+    let i: number
+    let cantidadProducto: number[] = []
+
+    if(this.producto?.cantidad){
+      for(i = 1; i <= this.producto?.cantidad; i++){
+        cantidadProducto.push(i)
+      }
+    }
+
+    return cantidadProducto
+  }
+
   tomarProducto(id: number){
     this.productoService.getProductos().subscribe((productos: any) => {
       let productosFiltrar = productos
@@ -39,8 +52,9 @@ export class ProductoPaginaComponent {
   }
 
   agregarCarrito(producto: Producto){
-    if(this.cantidad.value.cantidad <= producto.cantidad){
-      this.carritoService.agregarCarrito(this.cantidad.value.cantidad, producto)
+    let cantidadCargar = parseInt(this.cantidad.get('cantidad')?.value)
+    if(cantidadCargar <= producto.cantidad){
+      this.carritoService.agregarCarrito(cantidadCargar, producto)
     } else {
       alert("No se pueden agregar mas de " + producto.cantidad + " unidades del producto")
     }

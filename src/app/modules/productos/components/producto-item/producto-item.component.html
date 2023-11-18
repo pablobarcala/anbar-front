@@ -14,7 +14,7 @@
         <div class="botones">
             <button [routerLink]="['/main/Productos', producto.idproductos]">Ver más</button>
             <form action="" [formGroup]="cantidad">
-                <select title="Cantidad" formControlName="cantidad" id="cantidad">
+                <select title="Cantidad" formControlName="cantidad">
                     <option *ngFor="let i of stockProducto()" [value]="i">{{i}}</option>
                 </select>
             </form>
@@ -24,7 +24,7 @@
     <div class="botones_cel">
         <button [routerLink]="['/main/Productos', producto.idproductos]">Ver más</button>
         <form action="" [formGroup]="cantidad">
-            <select title="Cantidad" formControlName="cantidad" id="cantidad">
+            <select title="Cantidad" formControlName="cantidad">
                 <option *ngFor="let i of stockProducto()" [value]="i">{{i}}</option>
             </select>
         </form>

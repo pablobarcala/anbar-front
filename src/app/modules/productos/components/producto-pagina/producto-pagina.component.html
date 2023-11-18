@@ -19,13 +19,9 @@
             </div>
             <div class="compra">
                 <form action="" [formGroup]="cantidad">
-                    <input 
-                    title="Cantidad" 
-                    type="number" 
-                    min="0" 
-                    max="{{producto.cantidad}}" 
-                    formControlName="cantidad"
-                    >
+                    <select title="Cantidad" formControlName="cantidad">
+                        <option *ngFor="let i of stockProducto()" [value]="i">{{i}}</option>
+                    </select>
                 </form>
                 <button (click)="agregarCarrito(producto)">Agregar</button>
                 <p *ngIf="cantidad.get('cantidad')?.value == producto.cantidad">No se pueden seleccionar más unidades</p>

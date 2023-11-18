@@ -81,15 +81,16 @@ span.anterior {
     margin-top: 20px;
 }
 
-.compra > form > input {
+select {
     font-size: 1rem;
     border: #ccc 1px solid;
     border-radius: 10px;
     text-align: center;
     padding: 10px;
+    width: 100%;
 }
 
-input:focus {
+select:focus {
     outline: none;
 }
 
