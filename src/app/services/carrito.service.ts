@@ -26,14 +26,30 @@ export class CarritoService {
   actualizarPrecioCantidad(cantidad: number, producto: Producto) {
     let nuevoPrecio = this.precio.value
     let nuevaCantidad = this.cantidad.value
+    const productos = this.productos.value
 
-    if(producto.oferta > 0){
-      nuevoPrecio += (producto.precio * (1 - producto.oferta / 100)) * cantidad
-      this.precioLocal += (producto.precio * (1 - producto.oferta / 100)) * cantidad
+    let productoExistente = productos.find(p => p.idproductos === producto.idproductos);
+
+    if(productoExistente){
+      nuevoPrecio = 0
+      nuevaCantidad = 0
+      if(producto.oferta > 0){
+        nuevoPrecio += (producto.precio * (1 - producto.oferta / 100)) * cantidad
+        this.precioLocal += (producto.precio * (1 - producto.oferta / 100)) * cantidad
+      } else {
+        nuevoPrecio += producto.precio * cantidad
+        this.precioLocal += producto.precio * cantidad
+      }
     } else {
-      nuevoPrecio += producto.precio * cantidad
-      this.precioLocal += producto.precio * cantidad
+      if(producto.oferta > 0){
+        nuevoPrecio += (producto.precio * (1 - producto.oferta / 100)) * cantidad
+        this.precioLocal += (producto.precio * (1 - producto.oferta / 100)) * cantidad
+      } else {
+        nuevoPrecio += producto.precio * cantidad
+        this.precioLocal += producto.precio * cantidad
+      }
     }
+    
     nuevaCantidad += cantidad
 
     this.precio.next(nuevoPrecio)
@@ -47,17 +63,32 @@ export class CarritoService {
 
     let productoExistente = productos.find(p => p.idproductos === producto.idproductos);
 
+    // if(productoExistente){
+    //   // if(productoExistente.cantidad < stock){
+    //   //   if(cantidad <= stock - productoExistente.cantidad){
+    //   //     productoExistente.cantidad = 0
+    //   //     productoExistente.cantidad += cantidad;
+    //   //     this.actualizarPrecioCantidad(cantidad, producto)
+    //   //   } else {
+    //   //     alert(`No se puede agregar más de ${stock - productoExistente.cantidad} unidades de este producto`)
+    //   //   }
+    //   // } else {
+    //   //   alert("No se puede agregar más unidades de este producto")
+    //   // }
+    //   productoExistente.cantidad = 0
+    //   productoExistente.cantidad += cantidad;
+    //   this.actualizarPrecioCantidad(cantidad, producto)
+    // } else {
+    //   productoExistente = {...producto, cantidad: cantidad}
+    //   this.actualizarPrecioCantidad(cantidad, producto)
+    //   productos.push(productoExistente)
+    //   this.productosLocal.push(productoExistente)
+    // }
+
     if(productoExistente){
-      if(productoExistente.cantidad < stock){
-        if(cantidad <= stock - productoExistente.cantidad){
-          productoExistente.cantidad += cantidad;
-          this.actualizarPrecioCantidad(cantidad, producto)
-        } else {
-          alert(`No se puede agregar más de ${stock - productoExistente.cantidad} unidades de este producto`)
-        }
-      } else {
-        alert("No se puede agregar más unidades de este producto")
-      }
+      productoExistente.cantidad = 0
+      productoExistente.cantidad += cantidad;
+      this.actualizarPrecioCantidad(cantidad, producto)
     } else {
       productoExistente = {...producto, cantidad: cantidad}
       this.actualizarPrecioCantidad(cantidad, producto)

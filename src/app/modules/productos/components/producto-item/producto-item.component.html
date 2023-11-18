@@ -11,17 +11,12 @@
             <p *ngIf="producto.cantidad > 5" class="stock">Stock disponible</p>
             <p *ngIf="producto.cantidad <= 5" class="stock">Últimas unidades!</p>
         </div>
-        <p class="error" *ngIf="cantidad.get('cantidad')?.value == producto.cantidad">No se pueden seleccionar más unidades</p>
         <div class="botones">
             <button [routerLink]="['/main/Productos', producto.idproductos]">Ver más</button>
             <form action="" [formGroup]="cantidad">
-                <input 
-                    title="Cantidad" 
-                    type="number" 
-                    min="0" 
-                    max="{{producto.cantidad}}" 
-                    formControlName="cantidad"
-                >
+                <select title="Cantidad" formControlName="cantidad" id="cantidad">
+                    <option *ngFor="let i of stockProducto()" [value]="i">{{i}}</option>
+                </select>
             </form>
             <button (click)="agregarCarrito(producto)">Agregar</button>
         </div>
@@ -29,13 +24,9 @@
     <div class="botones_cel">
         <button [routerLink]="['/main/Productos', producto.idproductos]">Ver más</button>
         <form action="" [formGroup]="cantidad">
-            <input 
-                title="Cantidad" 
-                type="number" 
-                min="0" 
-                max="{{producto.cantidad}}" 
-                formControlName="cantidad"
-            >
+            <select title="Cantidad" formControlName="cantidad" id="cantidad">
+                <option *ngFor="let i of stockProducto()" [value]="i">{{i}}</option>
+            </select>
         </form>
         <button (click)="agregarCarrito(producto)">Agregar</button>
     </div>
