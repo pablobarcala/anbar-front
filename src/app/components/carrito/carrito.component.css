@@ -41,9 +41,19 @@
     margin-bottom: 5px;
 }
 
+h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--second-dark-color);
+}
+
 h5 {
     font-size: 1.1rem;
     font-weight: 600;
+}
+
+#cantidad {
+    font-size: 0.8rem;
 }
 
 .eliminar_container {
@@ -51,15 +61,15 @@ h5 {
     gap: 5px;
 }
 
-form > input {
-    font-size: 0.7rem;
+form > select {
+    font-size: 0.9rem;
     border: #ccc 1px solid;
     border-radius: 10px;
     text-align: center;
     padding: 5px;
 }
 
-input:focus {
+select:focus {
     outline: none;
 }
 
@@ -79,6 +89,7 @@ input:focus {
     background-color: var(--second-color);
     padding: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
 }
 
 .cerrar {
@@ -115,10 +126,6 @@ input:focus {
     #cantidad {
         font-size: 0.9rem;
         margin-top: 10px;
-    }
-    
-    .categoria {
-        font-size: 0.7rem;
     }
 }
 

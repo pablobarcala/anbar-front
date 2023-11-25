@@ -24,8 +24,24 @@ export class CarritoComponent {
       this.precio = precio
     })
     this.form = this.formBuilder.group({
-      cantidad: [0]
+      cantidad: [1]
     })
+  }
+
+  stockProducto(productoX: Producto): number[] {
+    let i: number
+    let cantidadProducto: number[] = []
+
+    this.productos.forEach((producto: any) => {
+      if(producto.idproductos == productoX.idproductos)
+      if(producto.cantidad) {
+        for(i = 1; i <= producto.cantidad; i++){
+          cantidadProducto.push(i)
+        }
+      }
+    })
+
+    return cantidadProducto
   }
 
   cerrarCarrito() {
